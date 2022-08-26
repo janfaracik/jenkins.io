@@ -1,10 +1,108 @@
 .app-blog-page {
+  position: relative;
+  max-width: 1350px;
+  margin: auto;
+  padding: 6rem 1rem;
+
+  .movie {
+    position: absolute;
+    top: 2rem;
+    right: -1.5rem;
+    width: 14rem;
+    height: 14.5rem;
+    transform: rotate(20deg);
+    z-index: -1;
+    opacity: 0.4;
+  }
+
+  .blog-date {
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--color--secondary);
+    text-transform: uppercase;
+    margin: 0 0 0.5rem;
+  }
+
+  h1 {
+    font-size: 2.75rem;
+    font-weight: 800;
+    color: var(--color);
+    margin-bottom: 2rem;
+    font-family: "Georgia", serif;
+  }
+
+  .app-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2.5rem;
+    box-sizing: border-box;
+    padding: 0;
+    list-style-type: none;
+
+    .img {
+      aspect-ratio: 16 / 8;
+      background-color: var(--color--secondary);
+    }
+
+    .app-card {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+
+      & > a {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        color: var(--color);
+
+        &:hover {
+          text-decoration: none !important;
+
+          .app-card__title {
+            text-decoration: underline !important;
+          }
+        }
+      }
+
+      .img {
+        background-position: center;
+        background-size: cover;
+      }
+
+      &__title {
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin: 0;
+        max-width: 90%;
+        line-height: 1.2;
+      }
+
+      &__teaser {
+        color: var(--color--secondary);
+        margin: 0;
+        text-decoration: none !important;
+        line-height: 1.66;
+      }
+    }
+
+    .app-card:first-of-type {
+      grid-column: span 2;
+
+      .app-card__title {
+        font-size: 2rem;
+        font-weight: 700;
+      }
+    }
+  }
+
   .attrs {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
     flex-wrap: wrap;
+    font-weight: 500;
 
     & > div {
       display: flex;
@@ -12,4 +110,7 @@
       gap: 1rem;
     }
   }
+}
+
+.app-blog-list {
 }

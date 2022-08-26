@@ -7,7 +7,22 @@ section: blog
 :ruby
   page_count = page.posts ? page.posts.pages.size : 0
 
-%div.container.blog-post
+%div.app-blog-page
+  %p.blog-date
+    21 August 2022
+  %h1
+    The Jenkins Blog
+
+  %img.movie{:src => "/images/blog-badge.png"}
+
+  - if page.posts
+    = partial('blogcardlist.html.haml', :posts => page.posts)
+
+
+  -#- if page_count > 1
+  -#  = partial('pagination.html.haml', :posts => page.posts)
+
+.container.blog-post
   .row.body
     %div#content.col-md-8{:class => 'main-content with-sidebar'}
       - if page.author

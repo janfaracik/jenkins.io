@@ -2,32 +2,26 @@
 - # consistent list of blog post-cards on a page. It should be relatively portable
 - # to drop into any page with the jenkins.css
 
-%div{:class => 'content blog-posts app-blog-page'}
-  %div.item-list
-    %ul.ji-blog-list.ji-item-list
-      - page.posts.each do |post|
-        - next if post.layout != 'post'
-        %li.post
-          %a.body{:href => expand_link(post.url)}
-            .header
-              .date
-                .month
-                  = post.date.strftime('%h')
-                .day
-                  = post.date.strftime('%d')
+%ul.app-cards
+  - page.posts.each do |post|
+    - next if post.layout != 'post'
+    %li.app-card
 
-              %h5.title
-                = post.title
-            %p.teaser
-              = post.summary || summarize(html_to_text(post.content).strip, 64)
-              %span.more
+      %div.img{:style => "background-image: url(https://cdn.dribbble.com/users/45782/screenshots/11304218/gradient_02_a_4x.jpg)"}
 
-          .attrs
-            %div
-              = display_author_for(post)
-            - if post.tags
-              %ul.app-tags
-                - post.tags.each do |tag|
-                  %li
-                    %a.app-tags__tag{:href => expand_link("node/tags/#{tag}")}
-                      = tag
+      %a{:href => expand_link(post.url)}
+        %h5.app-card__title
+          = post.title
+        %p.app-card__teaser
+          = post.summary || summarize(html_to_text(post.content).strip, 64)
+          %span.more
+
+      .attrs
+        %div
+          = display_author_for(post)
+        - if post.tags
+          %ul.app-tags
+            - post.tags.each do |tag|
+              %li
+                %a.app-tags__tag{:href => expand_link("node/tags/#{tag}")}
+                  = tag
