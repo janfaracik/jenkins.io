@@ -7,7 +7,7 @@
     - next if post.layout != 'post'
     %li.app-card
 
-      %div.img{:style => "background-image: url(https://cdn.dribbble.com/users/45782/screenshots/11304218/gradient_02_a_4x.jpg)"}
+      %div.img{:style => "background-image: url(#{post.opengraph ? post.opengraph.image : 'https://cdn.dribbble.com/users/45782/screenshots/11304218/gradient_02_a_4x.jpg'})"}
 
       %a{:href => expand_link(post.url)}
         %h5.app-card__title
@@ -19,9 +19,11 @@
       .attrs
         %div
           = display_author_for(post)
-        - if post.tags
-          %ul.app-tags
-            - post.tags.each do |tag|
-              %li
-                %a.app-tags__tag{:href => expand_link("node/tags/#{tag}")}
-                  = tag
+          - if post.date
+            = post.date.strftime('%B %d, %Y')
+        -#- if post.tags
+        -#  %ul.app-tags
+        -#    - post.tags.each do |tag|
+        -#      %li
+        -#        %a.app-tags__tag{:href => expand_link("node/tags/#{tag}")}
+        -#          = tag

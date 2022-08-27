@@ -13,6 +13,11 @@
     transform: rotate(20deg);
     z-index: -1;
     opacity: 0.4;
+    mask-image: linear-gradient(white 50%, transparent);
+
+    @media screen and (prefers-color-scheme: dark) {
+      filter: invert(100);
+    }
   }
 
   .blog-date {
@@ -41,7 +46,7 @@
     list-style-type: none;
 
     .img {
-      aspect-ratio: 16 / 8;
+      aspect-ratio: 1.91 / 1;
       background-color: var(--color--secondary);
     }
 
@@ -83,6 +88,7 @@
         margin: 0;
         text-decoration: none !important;
         line-height: 1.66;
+        font-size: 1.1rem;
       }
     }
 
