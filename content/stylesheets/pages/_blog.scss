@@ -39,11 +39,19 @@
 
   .app-cards {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
     gap: 2.5rem;
+    grid-template-columns: 1fr 1fr 1fr;
     box-sizing: border-box;
     padding: 0;
     list-style-type: none;
+
+    @media screen and (max-width: $app-tablet-breakpoint) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media screen and (max-width: $app-mobile-breakpoint) {
+      grid-template-columns: 1fr;
+    }
 
     .img {
       aspect-ratio: 1.91 / 1;
@@ -93,7 +101,9 @@
     }
 
     .app-card:first-of-type {
-      grid-column: span 2;
+      @media screen and (min-width: $app-mobile-breakpoint) {
+        grid-column: span 2;
+      }
 
       .app-card__title {
         font-size: 2rem;
