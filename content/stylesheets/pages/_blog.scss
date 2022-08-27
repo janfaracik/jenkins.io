@@ -2,7 +2,7 @@
   position: relative;
   max-width: 1350px;
   margin: auto;
-  padding: 6rem 1rem;
+  padding: 4rem 1rem;
 
   .movie {
     position: absolute;
@@ -14,6 +14,7 @@
     z-index: -1;
     opacity: 0.4;
     mask-image: linear-gradient(white 50%, transparent);
+    display: none;
 
     @media screen and (prefers-color-scheme: dark) {
       filter: invert(100);
@@ -30,7 +31,7 @@
   }
 
   h1 {
-    font-size: 2.75rem;
+    font-size: 2.55rem;
     font-weight: 800;
     color: var(--color);
     margin-bottom: 2rem;
@@ -84,7 +85,7 @@
       }
 
       &__title {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
         font-weight: 700;
         margin: 0;
         max-width: 90%;
@@ -96,7 +97,7 @@
         margin: 0;
         text-decoration: none !important;
         line-height: 1.66;
-        font-size: 1.1rem;
+        font-size: 1rem;
       }
     }
 
@@ -106,7 +107,7 @@
       }
 
       .app-card__title {
-        font-size: 2rem;
+        font-size: 1.9rem;
         font-weight: 700;
       }
     }
@@ -124,6 +125,7 @@
       display: flex;
       align-items: center;
       gap: 1rem;
+      flex-wrap: wrap;
     }
   }
 }

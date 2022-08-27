@@ -6,10 +6,8 @@
   - page.posts.each do |post|
     - next if post.layout != 'post'
     %li.app-card
-
-      %div.img{:style => "background-image: url(#{post.opengraph ? post.opengraph.image : 'https://cdn.dribbble.com/users/45782/screenshots/11304218/gradient_02_a_4x.jpg'})"}
-
       %a{:href => expand_link(post.url)}
+        %div.img{:style => "background-image: url(#{post.opengraph ? post.opengraph.image : 'https://cdn.dribbble.com/users/45782/screenshots/11304218/gradient_02_a_4x.jpg'})"}
         %h5.app-card__title
           = post.title
         %p.app-card__teaser
