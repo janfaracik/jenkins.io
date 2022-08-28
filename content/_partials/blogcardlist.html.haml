@@ -2,12 +2,13 @@
 - # consistent list of blog post-cards on a page. It should be relatively portable
 - # to drop into any page with the jenkins.css
 
-%ul.app-cards
+%ul{:class => page.frontpage == true ? "app-cards app-cards--front-page" : "app-cards"}
   - page.posts.each do |post|
     - next if post.layout != 'post'
     %li.app-card
       %a{:href => expand_link(post.url)}
-        %div.img{:style => "background-image: url(#{post.opengraph ? post.opengraph.image : 'https://cdn.dribbble.com/users/45782/screenshots/11304218/gradient_02_a_4x.jpg'})"}
+        %div.app-card__preview
+          %img{:src => post.opengraph&.image, :loading => "lazy", :alt => post.title}
         %h5.app-card__title
           = post.title
         %p.app-card__teaser
