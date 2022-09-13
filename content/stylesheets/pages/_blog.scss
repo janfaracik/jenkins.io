@@ -1,6 +1,6 @@
 .app-blog-page {
   position: relative;
-  max-width: Max(Min(90vw, 1600px), $app-tablet-breakpoint);
+  max-width: Max(Min(85vw, 1600px), $app-tablet-breakpoint);
   margin: auto;
   padding: 4rem 1rem;
 
@@ -15,7 +15,7 @@
   }
 
   .blog-date {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 800;
     letter-spacing: 1px;
     color: var(--color--secondary);
@@ -24,7 +24,7 @@
   }
 
   h1 {
-    font-size: Max(2rem, Min(2.5vw, 2.55rem));
+    font-size: Max(2rem, Min(2.25vw, 2.55rem));
     font-weight: 800;
     color: var(--color);
     font-family: "Georgia", serif;
@@ -73,23 +73,20 @@
         z-index: 0;
         border-radius: 0.66rem;
 
-        &::before {
+        &::before, &::after {
           content: "";
           position: absolute;
           inset: 0;
           background: currentColor;
           z-index: -1;
           opacity: 0.1;
-          animation: pop 1s linear infinite;
-          
-          @keyframes pop {
-            50% {
-              opacity: 0.25;
-            }
-            100% {
-              opacity: 0.1;
-            }
-          }
+        }
+
+        &::after {
+          mask-image: url("/images/logos/transparent/transparent.svg");
+          mask-size: 100px 100px;
+          mask-position: center;
+          mask-repeat: no-repeat;
         }
 
         img {

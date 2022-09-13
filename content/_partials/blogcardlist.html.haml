@@ -8,7 +8,8 @@
     %li.app-card
       %a{:href => expand_link(post.url)}
         %div.app-card__preview
-          %img{:src => post.opengraph&.image, :loading => "lazy", :alt => post.title}
+          - if post.opengraph&.image
+            %img{:src => post.opengraph&.image, :loading => "lazy", :alt => post.title}
         %h5.app-card__title
           = post.title
         %p.app-card__teaser
