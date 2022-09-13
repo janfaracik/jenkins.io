@@ -9,7 +9,7 @@
       %a{:href => expand_link(post.url)}
         %div.app-card__preview
           - if post.opengraph&.image
-            %img{:src => post.opengraph&.image, :loading => "lazy", :alt => post.title}
+            %img{:src => post.opengraph&.image, :loading => "lazy", :alt => post.title, :onload => "this.style.opacity = 1"}
         %h5.app-card__title
           = post.title
         %p.app-card__teaser
@@ -21,9 +21,3 @@
           = display_author_for(post)
           - if post.date
             = post.date.strftime('%B %d, %Y')
-        -#- if post.tags
-        -#  %ul.app-tags
-        -#    - post.tags.each do |tag|
-        -#      %li
-        -#        %a.app-tags__tag{:href => expand_link("node/tags/#{tag}")}
-        -#          = tag

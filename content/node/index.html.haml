@@ -30,6 +30,7 @@ section: blog
   - else
     There are no blog posts by this author yet.
 
-  .col-md-4.events.vertical
-    .content
-      = partial('events.html.haml')
+%div{:class => "app-events"}
+  %h2
+    Upcoming events
+  = partial('events.html.haml')
