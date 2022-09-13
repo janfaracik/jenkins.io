@@ -1,25 +1,25 @@
 ---
 layout: project
+backLink:
+  title: Special Interest Groups
+  link: /sigs
 ---
 
-.container
-  .row.body
-    .col-lg-12
+.row.body
+  .col-lg-12
 
-      - if page.logo
-        %img{:title => "Logo", :src => expand_link(page.logo), :style => "float:right", :width => "192"}
+    - if page.logo
+      %img{:title => "Logo", :src => expand_link(page.logo), :style => "float:right", :width => "192"}
 
-      %h2.title
-        Overview
+    %h2.title
+      Overview
 
 
-      - if page.overview
-        %p
-          = page.overview
+    - if page.overview
+      %p
+        = page.overview
 
-      %a{:href => "/sigs", :target => "_blank"}
-        (Back to List of Jenkins Special Interest Groups )
-
+- if page.leads or page.participants
   .row
     .col-lg-12
       %h2.title
@@ -63,14 +63,9 @@ layout: project
             %li
               = display_user(user)
 
+.row
+  .col-lg-12
+    %h2.title
+      Description
 
-  .row
-    .col-lg-12
-      %h2.title
-        Description
-
-      = content
-
-      %a{:href => "/sigs", :target => "_blank"}
-        (Back to List of Jenkins Special Interest Groups)
-
+    = content
