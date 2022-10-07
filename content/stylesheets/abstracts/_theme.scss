@@ -4,7 +4,26 @@
   --color--secondary: hsl(212, 30%, 40%);
   --accent-color: hsl(212, 100%, 42%);
 
+  // Links
   --link-color: var(--accent-color);
   --link-color--hover: hsl(212, 100%, 35%);
   --link-color--active: hsl(212, 100%, 30%);
+
+  // Buttons
+  --button-background: hsla(240, 0.25, 0.75, 0.1);
+  --button-background--hover: hsla(240, 0.25, 0.75, 0.175);
+  --button-background--active: hsla(240, 0.25, 0.75, 0.25);
+  --button-box-shadow--focus: hsla(240, 0.25, 0.75, 0.1);
+
+  // Colors
+  --blue: #007aff;
+  --brown: #a2845e;
+  --cyan: #32ade6;
+  --green: #1ea64b;
+  --indigo: #5856d6;
+  --orange: #fe820a;
+  --pink: #fb0f45;
+  --purple: #af52de;
+  --red: #e6001f;
+  --yellow: #ffb31a;
 }

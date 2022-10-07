@@ -5,28 +5,29 @@ show_ratings: true
 has_rss: true
 ---
 
-%div{:style => 'margin: 10px; padding: 10px; background-color: #FFFFCE;'}
+%div.app-lts-upgrade-notice
   See the
   %a{:href => '/doc/upgrade-guide/'}
     LTS upgrade guide
-  for advice on upgrading Jenkins.
+  for advice on upgrading Jenkins
 
-.ratings
-  - # source: https://github.com/jenkins-infra/jenkins.io/blob/master/content/_data/changelogs/lts.yml
-  - site.changelogs[:lts].reverse_each do | release |
-    - if Gem::Version.new(release.version) <= Gem::Version.new(site.jenkins.stable)
+- # source: https://github.com/jenkins-infra/jenkins.io/blob/master/content/_data/changelogs/lts.yml
+- site.changelogs[:lts].reverse_each do | release |
+  - if Gem::Version.new(release.version) <= Gem::Version.new(site.jenkins.stable)
+    %div.release-note
       = partial('release-header.html.haml', :release => release)
-      -if release.changes and release.lts_changes and release.lts_baseline
-        %div
-          %strong
+
+      %div.release-note-inner.image
+        -if release.changes and release.lts_changes and release.lts_baseline
+          %h3
             -# TODO figure out how to get rid of this
             = "Changes since #{release.lts_baseline}:"
-      %ul.image
-        = partial('changelog-changes.html.haml', :changes => release.changes)
-      -if release.changes and release.lts_changes
-        %div
-          %strong
-            = "Notable changes since #{release.lts_predecessor}:"
         %ul.image
-          = partial('changelog-changes.html.haml', :changes => release.lts_changes)
-  = partial('changelog-stable.html')
+          = partial('changelog-changes.html.haml', :changes => release.changes)
+        -if release.changes and release.lts_changes
+          %h3
+            = "Notable changes since #{release.lts_predecessor}:"
+          %ul.image
+            = partial('changelog-changes.html.haml', :changes => release.lts_changes)
+
+= partial('changelog-stable.html')

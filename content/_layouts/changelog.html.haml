@@ -1,41 +1,52 @@
 ---
 layout: simplepage
 title: Changelog
+notitle: true
 ---
 
-%link{:href => "/css/changelog.css", :rel => "stylesheet", :type => "text/css"}/
+%div.app-changelog-page
+  %div.jenkins-app-bar
+    %div.jenkins-app-bar__content
+      %h1
+        = page.title
+    %div.jenkins-app-bar__controls
+      - if page.has_rss
+        .w-100.text-right{:style => "margin: 0 0 10px 0;"}
+          %a{:href => "rss.xml", :class => "jenkins-button"}
+            <svg width="460px" height="460px" viewBox="0 0 460 460" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(56.440081, 56.222063)" stroke="currentColor"><path d="M51.8355914,263.237609 C60.9709503,263.260732 69.2414786,266.967806 75.2384778,272.952922 C81.2358437,278.938404 84.9594026,287.202208 85.0001926,296.338927 C84.9725106,305.421743 81.2764727,313.639618 75.3166433,319.590173 C69.3466112,325.550914 61.1050301,329.236566 52.0036901,329.237536 C42.9023476,329.238505 34.6599806,325.554606 28.6886687,319.595137 C22.7173419,313.635654 19.017079,305.400589 18.9999666,296.299365 C18.9829135,287.198016 22.6522367,278.949119 28.6011501,272.967262 C34.5402452,266.995277 42.7514145,263.282855 51.8355914,263.237609 Z" stroke-width="38" fill-rule="nonzero"></path><path d="M15.5639188,0 C189.695661,18.9886079 327.916779,157.508264 346.44594,331.777403" stroke-width="40" stroke-linecap="round"></path><path d="M16.5639188,121.777403 C126.781388,133.796328 214.269067,221.472967 225.997183,331.777403" stroke-width="40" stroke-linecap="round"></path></g></g></svg>
+            RSS
 
-- if page.show_ratings
-  #head
-  %script{:src => "/files/rate.js", :type => "text/javascript"}
-  #ratings
+  -#.iconlegend
+  -#  Legend:
+  -#  %ul.image
+  -#    %li.security security fix
+  -#    %li.major.bug major bug fix
+  -#    %li.bug bug fix
+  -#    %li.major.rfe major enhancement
+  -#    %li.rfe enhancement
+  -#
+  -#.iconlegend
+  -#  Community feedback:
+  -#  %ul.feedback
+  -#    %li
+  -#      <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><line x1="256" y1="48" x2="256" y2="96" style="fill:none;stroke:var(--yellow);stroke-linecap:round;stroke-miterlimit:10;stroke-width:40px"/><line x1="256" y1="416" x2="256" y2="464" style="fill:none;stroke:var(--yellow);stroke-linecap:round;stroke-miterlimit:10;stroke-width:40px"/><line x1="403.08" y1="108.92" x2="369.14" y2="142.86" style="fill:none;stroke:var(--yellow);stroke-linecap:round;stroke-miterlimit:10;stroke-width:40px"/><line x1="142.86" y1="369.14" x2="108.92" y2="403.08" style="fill:none;stroke:var(--yellow);stroke-linecap:round;stroke-miterlimit:10;stroke-width:40px"/><line x1="464" y1="256" x2="416" y2="256" style="fill:none;stroke:var(--yellow);stroke-linecap:round;stroke-miterlimit:10;stroke-width:40px"/><line x1="96" y1="256" x2="48" y2="256" style="fill:none;stroke:var(--yellow);stroke-linecap:round;stroke-miterlimit:10;stroke-width:40px"/><line x1="403.08" y1="403.08" x2="369.14" y2="369.14" style="fill:none;stroke:var(--yellow);stroke-linecap:round;stroke-miterlimit:10;stroke-width:40px"/><line x1="142.86" y1="142.86" x2="108.92" y2="108.92" style="fill:none;stroke:var(--yellow);stroke-linecap:round;stroke-miterlimit:10;stroke-width:40px"/><circle cx="256" cy="256" r="80" style="fill:none;stroke:var(--yellow);stroke-linecap:round;stroke-miterlimit:10;stroke-width:40px"/></svg>
+  -#      no major issues
+  -#    %li
+  -#      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M100.18 241.19a15.93 15.93 0 0013.37-13.25C126.6 145.59 186.34 96 256 96c64.69 0 107.79 42.36 124.92 87a16.11 16.11 0 0012.53 10.18C449.36 202.06 496 239.21 496 304c0 66-54 112-120 112H116c-55 0-100-27.44-100-88 0-54.43 43.89-80.81 84.18-86.81z" fill="none" stroke="var(--color--secondary)" stroke-linejoin="round" stroke-width="40"/></svg>
+  -#      notable issues
+  -#    %li
+  -#      <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><path d="M315.27,33,96,304H224L192.49,477.23a2.36,2.36,0,0,0,2.33,2.77h0a2.36,2.36,0,0,0,1.89-.95L416,208H288L319.66,34.75A2.45,2.45,0,0,0,317.22,32h0A2.42,2.42,0,0,0,315.27,33Z" style="fill:none;stroke:var(--cyan);stroke-linecap:round;stroke-linejoin:round;stroke-width:40px"/></svg>
+  -#      required rollback
 
-.w-100.text-right
-  .iconlegend
-    Legend:
-    %ul.image
-      %li.security security fix
-      %li.major.bug major bug fix
-      %li.bug bug fix
-      %li.major.rfe major enhancement
-      %li.rfe enhancement
-.w-100.text-right{:style => "margin: 10px 0;"}
-  .iconlegend
-    Community feedback:
-    %ul.feedback
-      %li.sunny no major issues
-      %li.cloudy notable issues
-      %li.storm required rollback
-- if page.has_rss
-  .w-100.text-right{:style => "margin: 10px 0;"}
-    %a{:href => "rss.xml"}
-      %img{:src => "/images/changelog/feed-icon.svg", :height => "20px"}/
-      RSS
+  - if page.show_ratings
+    :javascript
+      $(document).ready(function() {
+          loaddata(this);
+      });
 
-- if page.show_ratings
-  :javascript
-    $(document).ready(function() {
-        loaddata(this);
-    });
+  = content
 
-= content
+  - if page.show_ratings
+    #head
+    %script{:src => "/files/rate.js", :type => "text/javascript"}
+    #ratings

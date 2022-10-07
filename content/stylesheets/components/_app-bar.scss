@@ -1,0 +1,23 @@
+.jenkins-app-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--section-padding);
+  gap: 1rem;
+
+  .jenkins-app-bar__content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    min-height: 36px;
+  }
+
+  .jenkins-app-bar__controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 36px;
+    gap: 1rem;
+  }
+}

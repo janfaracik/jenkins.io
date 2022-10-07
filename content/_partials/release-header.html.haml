@@ -1,7 +1,8 @@
-%h3{:id => "v#{page.release.version}" }
-  = "What's new in #{page.release.version}"
+%h2{:id => "v#{page.release.version}" }
+  = "#{page.release.version}"
   - if page.release.date
-    = "(#{page.release.date})"
+    %span.todoasd
+      = page.release.date.strftime('%B %d, %Y')
 - if page.release.banner
   %div{:style => 'margin: 10px; padding: 10px; background-color: #FFFFCE;'}
     = page.release.banner
