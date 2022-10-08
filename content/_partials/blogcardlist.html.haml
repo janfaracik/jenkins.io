@@ -13,7 +13,7 @@
         %h5.app-card__title
           = post.title
         %p.app-card__teaser
-          = post.summary || summarize(html_to_text(post.content).strip, 64)
+          = post.summary || summarize(html_to_text(post.content).strip, 32)
           %span.more
 
       .attrs
