@@ -2,6 +2,14 @@
 layout: developer
 title: Create a Plugin
 ---
+ifdef::backend-html5[]
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+:notitle:
+endif::[]
 
 - link:../prepare[Step 1: Preparing for Plugin Development]
 - link:../create[*Step 2: Create a Plugin*]
@@ -50,8 +58,12 @@ Choose io.jenkins.archetypes:hello-world-plugin version:
 12: 1.12
 13: 1.13
 14: 1.14
+15: 1.15
+16: 1.16
+17: 1.17
+18: 1.18
 
-Choose a number: 14: *14* // <2>
+Choose a number: 18: *18* // <2>
 …
 [INFO] Using property: groupId = unused // <3>
 [INFO] Using property: package = io.jenkins.plugins.sample
@@ -68,7 +80,7 @@ version: 1.0-SNAPSHOT
 
 ----
 <1> Enter the number for the `hello-world-plugin` archetype, *4* in this case.
-<2> This tutorial is based on version 1.14 of the *hello-world-plugin* archetype, so enter *14* to select it.
+<2> This tutorial is based on version 1.18 of the *hello-world-plugin* archetype, so enter *18* to select it.
 <3> `groupId` uniquely identifies your project across all projects.
     A group ID should follow Java's package name rules.
     This means it starts with a reversed domain name.
@@ -103,7 +115,7 @@ Maven will download several more dependencies, and then go through the configure
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
 [INFO] Total time:  47.141 s
-[INFO] Finished at: 2022-10-01T14:04:29-07:00
+[INFO] Finished at: 2022-11-17T10:04:29-07:00
 [INFO] ------------------------------------------------------------------------
 
 NOTE: To learn more about what's involved in a plugin build, see link:../../plugin-development/build-process[Plugin Build Process].

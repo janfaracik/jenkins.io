@@ -4,7 +4,7 @@
 
 = Contributing to jenkins.io
 
-image:https://badges.gitter.im/jenkinsci/docs.svg[link="https://gitter.im/jenkinsci/docs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge"]
+image:https://badges.gitter.im/jenkinsci/docs.svg[link="https://app.gitter.im/#/room/#jenkins/docs:matrix.org"]
 
 toc::[]
 
@@ -28,13 +28,18 @@ image::https://gitpod.io/button/open-in-gitpod.svg[Open in Gitpod]
 === Information for newcomers
 
 The documentation below describes common cases for contributors.
-If you have any questions, please do not hesitate to ask in link:https://gitter.im/jenkinsci/newcomer-contributors[newcomers] or link:https://gitter.im/jenkinsci/docs[Documentation SIG] Gitter chats.
+If you have any questions, please do not hesitate to ask in link:https://app.gitter.im/#/room/#jenkinsci_newcomer-contributors:gitter.im[newcomers] or link:https://app.gitter.im/#/room/#jenkins/docs:matrix.org[Documentation SIG] Gitter chats.
 If you have any feedback about your contributor experience, please also share it with us in these channels so that we can improve our guidelines.
 
-You can also find some newbie-friendly issues in our task trackers:
+You can also find some newbie-friendly issues in our task tracker:
 
 * link:https://github.com/jenkins-infra/jenkins.io/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22[Good First Issues on GitHub]
-* link:https://issues.jenkins.io/issues/?filter=18650&jql=project%20%3D%20WEBSITE%20AND%20labels%20%3D%20newbie-friendly%20and%20status%20in%20(Open%2C%20Reopened%2C%20%22To%20Do%22)[Jenkins Jira query]
+
+If you found an issue that you would like to work on, you are welcome to go ahead and start contributing.
+Please don't ask to be assigned to an issue, we don't assign individuals to issues, just go ahead and start working on it.
+If you want to avoid having other people work on the same issue, feel free to add a comment to the issue stating that you're working on it.
+If the last comment on the issue is older than a week and there is no pull request linked to the issue, you can assume nobody is working on it.
+If you need any help, please ask in the xref:contacts[].
 
 [[contacts]]
 === Communication channels
@@ -42,8 +47,7 @@ You can also find some newbie-friendly issues in our task trackers:
 Jenkins website is largely maintained by the link:https://jenkins.io/sigs/docs/[Jenkins documentation] special interest group.
 This group has various communication channels which can be used to discuss contributing to the website:
 
-* link:https://groups.google.com/forum/#!forum/jenkinsci-docs[Mailing list]
-* link:https://gitter.im/jenkinsci/docs[Gitter chat]
+* link:https://app.gitter.im/#/room/#jenkins/docs:matrix.org[Gitter chat]
 * link:https://jenkins.io/sigs/docs/#meetings[Regular meetings]
 
 [[forking]]
@@ -84,9 +88,10 @@ converting source code into the site is the
 link:https://github.com/awestruct/awestruct[Awestruct] static site generator,
 which is downloaded automatically as part of the build process.
 
-Ensure you have GNU/Make and Docker available on your machine:
+Ensure you have GNU/Make and Curl and Docker available on your machine:
 
 * `make --version`
+* `curl --version`
 * `docker version`
 
 Docker must be version 17.04 or greater.
@@ -105,14 +110,11 @@ to achieve specific results.
   dependencies and resources will not be downloaded again unless the `clean` target is called first.
   The exception being `all` which will download and regenerate external resources
   (but not download dependencies which are more bandwidth intensive).
-* *generate* will run `site` and `pdfs`.
-* *site* will explicitly generate static website files.
-* *pdfs* will explicitly generate new PDFs.
+* *generate* will explicitly generate static website files.
 * *run* will run a live-reloading development server on
   link:http://localhost:4242/[localhost:4242].
-* *user-site* will publish the `jenkins.io` website to your own "GitHub Pages".
-  While useful for review purposes, this has some known issues and limitations.
-  See <<user-site>> for details.
+* *check* will look for typos. It is advised to use  *check* to examine the documentation for typos and spelling mistakes before submitting a pull request.
+
 
 
 == Editing content
@@ -669,7 +671,7 @@ Some tips for contributors:
   If you are interested to review changes, please just do so (and thanks in advance!). 
   No special permissions needed
 * If you need help with reviews for documentation changes,
-  you can ask in the link:https://gitter.im/jenkinsci/docs[Documentation SIG Gitter channel].
+  you can ask in the link:https://app.gitter.im/#/room/#jenkins/docs:matrix.org[Documentation SIG Gitter channel].
 
 [[merging-common]]
 === Merging changes in common areas
@@ -688,43 +690,3 @@ Pull requests to common areas can be merged by any _Copy Editor_ once all of the
 Special areas are managed by their owners.
 _Copy Editors_ should not merge substantial changes in these areas unless they get explicit sign-off from owners identified in the link:/.github/CODEOWNERS[CODEOWNERS].
 Minor changes like typo fixes might be integrated by _Copy Editors_.
-
-[[user-site]]
-== Deploying jenkins.io on GitHub pages
-
-There is rudimentary support for publishing the `jenkins.io` website to your own
-link:https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/#enabling-github-pages-to-publish-your-site-from-master-or-gh-pages[GitHub Pages]
-for demonstration purposes. This feature is useful if you want to show reviewers
-what your changes will actually look like on the production website,
-without reviewers needing to fetch and build those changes locally.
-
-To generate your site from local changes:
-
-. Make changes in a local branch (for example, `my_branch_name`).
-. Run the command `make user-site GITHUB_USER=<your_username>`,
-  replacing `<your_username>` with your GitHub user name. This will regenerate
-  the site based on your changes and push it to `origin/gh-pages` (of your
-  `jenkins.io` fork on GitHub). +
-  **NOTE**: If your local `gh-pages` or `origin/gh-pages` branches don't exist,
-  these will be created automatically.
-. Assuming this process completes successfully (it might initially take a
-  while), your changes will be visible to anyone under
-  `https://<your_username>.github.io/jenkins.io/my_branch_name`.
-
-For example, if my user name were `jenkinscontributor` and I were working
-locally in a branch called `siteredesign`, I would run the command
-`make user-site GITHUB_USER=jenkinscontributor`. When done, people would be able
-to see the site with my `siteredesign` branch changes at the URL
-`https://jenkinscontributor.github.io/jenkins.io/siteredesign`.
-
-
-[WARNING]
-====
-"Rudimentary support" (above) means there are a number of known issues and if
-anything doesn't work, you're on your own.
-
-Known issues/limitations:
-
-* Images and other internal site links that use _absolute_ path references
-  (as opposed to _relative_ paths) will appear broken or "not found".
-====
