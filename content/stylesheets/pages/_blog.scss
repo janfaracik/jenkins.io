@@ -53,10 +53,10 @@
 
           &:not(:first-of-type) {
             margin-left: -2px;
+          }
 
-            img {
-              box-shadow: 0 0 0 2px var(--background);
-            }
+          img {
+            box-shadow: 0 0 0 2px var(--background);
           }
 
           span {
