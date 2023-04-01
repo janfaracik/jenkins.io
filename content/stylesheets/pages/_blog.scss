@@ -30,7 +30,7 @@
     font-family: "Georgia", serif;
   }
 
-  .attrs {
+  .app-card__details {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -39,14 +39,48 @@
     font-weight: 500;
     color: var(--color--secondary);
 
-    & > div {
+    .app-card__details__authors {
       display: flex;
       align-items: center;
       gap: 1rem;
       flex-wrap: wrap;
+
+      &--compact {
+        gap: 0;
+
+        .app-author-link {
+          transition: 0.2s ease;
+
+          &:not(:first-of-type) {
+            margin-left: -2px;
+
+            img {
+              box-shadow: 0 0 0 2px var(--background);
+            }
+          }
+
+          span {
+            display: none;
+          }
+
+          &:last-of-type {
+            margin-right: 1rem;
+          }
+
+          &:hover {
+            z-index: 1;
+            translate: 0 -2px;
+            scale: 1.05;
+          }
+        }
+
+        &:has(a:hover) {
+          .app-author-link:not(:hover) {
+            scale: 90%;
+            filter: saturate(0.75) blur(0.5px);
+          }
+        }
+      }
     }
   }
-}
-
-.app-blog-list {
 }

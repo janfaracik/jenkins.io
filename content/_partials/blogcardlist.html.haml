@@ -5,6 +5,7 @@
 %ul{:class => page.frontpage == true ? "app-cards app-cards--front-page" : "app-cards"}
   - page.posts.each do |post|
     - next if post.layout != 'post'
+
     %li.app-card
       %a{:href => expand_link(post.url)}
         %div.app-card__preview
@@ -13,11 +14,20 @@
         %h5.app-card__title
           = post.title
         %p.app-card__teaser
-          = post.summary || summarize(html_to_text(post.content).strip, 32)
-          %span.more
+          = post.summary || summarize(html_to_text(post.content).strip, 60)
 
-      .attrs
-        %div
+      .app-card__details
+        .app-card__details__authors
           = display_author_for(post)
           - if post.date
             = post.date.strftime('%B %d, %Y')
+
+  :javascript
+    $(document).ready(function() {
+        document.querySelectorAll(".app-card__details__authors").forEach(authors => {
+          if (authors.offsetHeight > 30) {
+            authors.classList.add("app-card__details__authors--compact")
+          }
+        })
+        document.querySelector(".app-cards").style.opacity = 1;
+    });
