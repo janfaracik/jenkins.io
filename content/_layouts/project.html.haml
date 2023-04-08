@@ -21,6 +21,11 @@ layout: default
 .container
   .row.body
     .col-lg-9
+      - if page.back_link
+        %div{:class => "app-!-display-flex"}
+          %a{:href => page.back_link.url, :class => "app-back-link"}
+            = 'Back to ' + page.back_link.text
+
       %h1
         = page.title
       = content

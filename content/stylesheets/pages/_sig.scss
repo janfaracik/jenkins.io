@@ -1,0 +1,7 @@
+.app-sig-page {
+  &__overview {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+  }
+}
