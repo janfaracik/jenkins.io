@@ -7,6 +7,28 @@ section: blog
 :ruby
   page_count = page.posts ? page.posts.pages.size : 0
 
+:ruby
+  tags = []
+  site.pages.reverse_each do |page|
+    # Some pages don't have tags
+    next if page.tags.nil?
+    page.tags.each do |tag|
+      # tag is an Awestruct::Extensions::Tagger::TagStat
+      next unless !tags.include?(tag.to_s)
+      tags << tag.to_s
+    end
+  end
+  tags = tags.sort_by {|obj| obj.to_s.downcase}
+
+%div
+  = page.selected_tag
+  %select
+    %option{:selected => page.selected_tag == null ? true : null}
+      Tags
+    - tags.each do |tag|
+      %option{:value => tag, :selected => page.selected_tag == tag.to_s ? true : null}
+        = tag
+
 %div.app-blog-page
   - if page.author
     = partial("author.html.haml", :author => page.author, :blogroll => true)
