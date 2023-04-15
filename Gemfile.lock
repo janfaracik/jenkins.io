@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/jenkins-infra/awestruct-ibeams
-  revision: 109c8659ab20b47742168a69a802841cd7ab9328
-  tag: v0.4.5
+  revision: ce579733da74a4ff371a3e211131eeada45df21a
+  tag: v0.4.4
   specs:
-    awestruct-ibeams (0.4.5)
+    awestruct-ibeams (0.4.3)
       awestruct (>= 0.5.6, < 0.7.0)
       naturally (~> 2.2.1)
 
@@ -157,4 +157,4 @@ DEPENDENCIES
   webrick (~> 1.8.1)
 
 BUNDLED WITH
-   2.4.1
+   2.4.6
