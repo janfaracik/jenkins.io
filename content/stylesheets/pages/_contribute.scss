@@ -1,0 +1,93 @@
+.app-contribute-container {
+  --blue: #006fe6;
+  --light-blue: #4da3ff;
+  --dark-blue: #003e80;
+  --brown: #a2845e;
+  --light-brown: #c7b59f;
+  --dark-brown: #624f38;
+  --cyan: #32ade6;
+  --light-cyan: #8dd1f1;
+  --dark-cyan: #13739f;
+  --green: #1ea64b;
+  --light-green: #4bdf7c;
+  --dark-green: #0e5024;
+  --indigo: #5856d6;
+  --light-indigo: #a9a8ea;
+  --dark-indigo: #29279f;
+  --orange: #fe820a;
+  --light-orange: #feb670;
+  --dark-orange: #a15001;
+  --pink: #fb0f45;
+  --light-pink: #fd7393;
+  --dark-pink: #a10327;
+  --purple: #af52de;
+  --light-purple: #d7a8ee;
+  --dark-purple: #7c20aa;
+  --red: #e6001f;
+  --light-red: #ff4d65;
+  --dark-red: #800011;
+  --yellow: #ffb31a;
+  --light-yellow: #ffd580;
+  --dark-yellow: #b37800;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  margin-block: 2rem;
+}
+
+.app-contribute__item {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: 0.66rem;
+  background: color-mix(in srgb, var(--card-background) 5%, transparent);
+  border: 2px solid color-mix(in srgb, var(--card-background) 3%, transparent);
+  box-shadow: 0 0 0 10px transparent;
+  padding: 1.25rem 1.4rem;
+  text-decoration: none !important;
+  aspect-ratio: 1;
+  transition: 0.2s ease;
+
+  h3 {
+    font-size: 1.2rem;
+    font-weight: 550;
+  }
+
+  p {
+    opacity: 0.75;
+    font-weight: 500;
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 0.35rem;
+    font-weight: 500;
+    margin-top: auto;
+
+    ion-icon {
+      transition: 0.2s ease;
+    }
+  }
+
+  * {
+    margin-bottom: 0;
+    color: var(--card-color) !important;
+  }
+
+  &:hover {
+    background: color-mix(in srgb, var(--card-background) 10%, transparent);
+
+    ion-icon {
+      translate: 3px 0;
+    }
+  }
+
+  &:active {
+    background: color-mix(in srgb, var(--card-background) 15%, transparent);
+    border-color: transparent;
+    box-shadow: 0 0 0 5px color-mix(in srgb, var(--card-background) 7.5%, transparent);
+  }
+}
