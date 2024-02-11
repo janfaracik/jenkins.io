@@ -1,7 +1,7 @@
 #sponsorsblock {
   position: relative;
   text-align: center;
-  padding-block: 2rem;
+  padding: 3rem 2rem;
 
   &::before {
     content: "";
@@ -24,7 +24,8 @@
     ul {
       display: flex;
       justify-content: space-between;
-      width: 100%;
+      flex-wrap: wrap;
+      gap: 2rem;
       list-style-type: none;
       padding: 0;
       text-align: center;
@@ -33,21 +34,35 @@
       li {
         display: contents;
 
-        svg {
-          color: var(--color);
-          width: 120px;
-          height: 100px;
-          flex-grow: 1;
+        a {
+          transition: 0.2s ease;
+
+          svg {
+            color: var(--color);
+            width: 120px;
+            height: 100px;
+            flex-grow: 1;
+          }
+
+          &:hover {
+            opacity: 0.75;
+          }
+
+          &:active {
+            opacity: 0.5;
+            scale: 0.9;
+          }
         }
       }
     }
   }
 
   .supporters {
-    padding-top: 2rem;
+    padding-top: 3rem;
 
     ul {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       list-style-type: none;
       text-align: center;
