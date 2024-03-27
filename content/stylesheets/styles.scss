@@ -3,3 +3,109 @@
 @import "core/_all";
 @import "components/_all";
 @import "pages/_all";
+
+.underneathcover {
+  padding: 0;
+  list-style-type: none;
+}
+
+.nomattertime {
+  display: grid;
+  grid-template-columns: 85px 1fr;
+  gap: 15px;
+  align-items: start;
+}
+
+.notwinning {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: start;
+  border-radius: 100px;
+  line-height: 1;
+  font-size: 0.65rem;
+  padding: 5px 10px;
+  font-weight: 500;
+  //letter-spacing: 0.5px;
+  //text-transform: uppercase;
+  color: var(--notwinning-color);
+  background: color-mix(in srgb, var(--notwinning-color) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--notwinning-color) 5%, transparent);
+}
+
+.notwinning-security {
+  --notwinning-color: var(--orange);
+
+  //&.notwinning {
+  //  background: var(--notwinning-color);
+  //  border: none;
+  //  color: var(--background);
+  //}
+}
+
+.notwinning-majorrfe {
+  --notwinning-color: var(--purple);
+}
+
+.notwinning-rfe {
+  --notwinning-color: var(--blue);
+}
+
+.notwinning-majorbug {
+  --notwinning-color: var(--dark-red);
+}
+
+.notwinning-bug {
+  --notwinning-color: var(--red);
+}
+
+.illvisit {
+  list-style-type: none;
+
+  position: relative;
+  margin: 0 0 10px;
+  padding: 0;
+
+  li {
+    position: relative;
+    padding-left: 25px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 11px;
+      left: 8px;
+      width: 6px;
+      height: 6px;
+      background: color-mix(in srgb, var(--notwinning-color) 20%, transparent);
+      border: 1px solid color-mix(in srgb, var(--notwinning-color) 15%, transparent);
+      border-radius: 100px;
+    }
+  }
+}
+
+.nobodyelsewillbethere {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  //border: 2px solid red;
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+.notthecrowd {
+  font-weight: 500;
+  color: var(--color--secondary);
+}
+
+.boop {
+  margin-top: -15px;
+}
+
+.banana {
+  font-size: 0.75rem;
+}
+
+.idkanymore a {
+  color: var(--color) !important;
+}
