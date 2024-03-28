@@ -118,82 +118,145 @@
   margin-top: 15px;
 }
 
-ul.image li {
-  list-style: none !important;
-  margin-bottom: 5px;
-}
+//ul.image li {
+//  list-style: none !important;
+//  margin-bottom: 5px;
+//}
 
-.iconlegend ul.feedback li.sunny, ul.feedback li.cloudy, ul.feedback li.storm {
-  list-style: none !important;
-  margin-bottom: 5px;
-  padding: 5px;
-  padding-left: 28px;
-  background-repeat: no-repeat;
-  background-position: left center;
-}
+//.iconlegend ul.feedback li.sunny, ul.feedback li.cloudy, ul.feedback li.storm {
+//  list-style: none !important;
+//  margin-bottom: 5px;
+//  padding: 5px;
+//  padding-left: 28px;
+//  background-repeat: no-repeat;
+//  background-position: left center;
+//}
 
-.light {
-  opacity: 0.5;
-}
-
-li.sunny {
-  background-image: url(../images/changelog/sunny.svg);
-}
-
-li.cloudy {
-  background-image: url(../images/changelog/cloudy.svg);
-}
-
-li.storm {
-  background-image: url(../images/changelog/storm.svg);
-}
-
-ul.image li.security:before, ul.image li.rfe:before, ul.image li.bug:before {
-  content: "•";
-  position: relative;
-  left: -7px;
-  font-size: 18px;
-  margin-left: -15px;
-  line-height: 0;
-}
-ul.image li.major:before, ul.image li.security:before {
-  left: -3px;
-  top: 3px;
-  font-size: 28px;
-  margin-left: -22px;
-}
-
-ul.image li.rfe:before {
-  color: #99f;
-}
-ul.image li.rfe.major:before {
-  color: #99f;
-}
-ul.image li.bug:before {
-  color: red;
-}
-ul.image li.bug.major:before {
-  color: red;
-}
-ul.image li.security:before {
-  color: #fa0;
-}
-ul.image li.security {
-  font-weight: bold;
-}
-
-.iconlegend ul, .iconlegend ul li {
-  display: inline;
-}
-.iconlegend ul li.bug, .iconlegend ul li.rfe, .iconlegend ul li.security {
-  margin-left: 40px;
-}
-.iconlegend ul li.sunny, .iconlegend ul li.cloudy, .iconlegend ul li.storm {
-  margin-left: 15px;
-}
+//ul.image li.security:before, ul.image li.rfe:before, ul.image li.bug:before {
+//  content: "•";
+//  position: relative;
+//  left: -7px;
+//  font-size: 18px;
+//  margin-left: -15px;
+//  line-height: 0;
+//}
+//ul.image li.major:before, ul.image li.security:before {
+//  left: -3px;
+//  top: 3px;
+//  font-size: 28px;
+//  margin-left: -22px;
+//}
+//
+//ul.image li.rfe:before {
+//  color: #99f;
+//}
+//ul.image li.rfe.major:before {
+//  color: #99f;
+//}
+//ul.image li.bug:before {
+//  color: red;
+//}
+//ul.image li.bug.major:before {
+//  color: red;
+//}
+//ul.image li.security:before {
+//  color: #fa0;
+//}
+//ul.image li.security {
+//  font-weight: bold;
+//}
+//
+//.iconlegend ul, .iconlegend ul li {
+//  display: inline;
+//}
+//.iconlegend ul li.bug, .iconlegend ul li.rfe, .iconlegend ul li.security {
+//  margin-left: 40px;
+//}
+//.iconlegend ul li.sunny, .iconlegend ul li.cloudy, .iconlegend ul li.storm {
+//  margin-left: 15px;
+//}
 
 /* For community ratings */
-img.rate { vertical-align: middle; margin-right: 2em; width: 36px; height: 36px; }
-img.rate:hover { cursor: pointer; }
-div.rate-offset { padding-left: 2em; margin-bottom: 5px; }
-span.related-issues { display: block; }
+div.rate-offset {
+  display: flex;
+  gap: 5px;
+
+  button {
+    --button-background: color-mix(in srgb, var(--color--secondary), transparent);
+    gap: 5px;
+    padding: 6px 11px;
+
+    * {
+      transition: 0.2s ease;
+    }
+
+    img {
+      width: 1.75rem;
+      height: 1.75rem;
+    }
+  }
+
+  &.light * {
+    opacity: 0.5;
+  }
+}
+
+*[data-tooltip] {
+  position: relative;
+
+  @media (hover: hover) {
+    &:hover {
+      &::before {
+        opacity: 1;
+        scale: 1;
+        translate: -50% -2px;
+      }
+    }
+  }
+
+  &::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    white-space: nowrap;
+
+    --tooltip-color: var(--color);
+    --tooltip-box-shadow: 0 0 8px 2px rgba(0, 0, 30, 0.05), 0 0 1px 1px rgba(0, 0, 20, 0.025), 0 10px 20px rgba(0, 0, 20, 0.15);
+
+    color: var(--tooltip-color);
+    padding: 0.4rem 0.75rem;
+    border-radius: 0.66rem;
+    box-shadow: var(--tooltip-box-shadow);
+    font-weight: 550;
+    font-size: 0.7rem;
+    z-index: 2;
+    background: var(--background);
+    opacity: 0;
+    scale: 0.9;
+    translate: -50% 5px;
+    transition: 0.2s ease;
+    pointer-events: none;
+  }
+}
+
+.bananarama {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 50px;
+}
+
+.ownerpapi {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 2px;
+}
+
+.related-issues {
+  margin-right: 12px;
+  color: var(--color--secondary);
+  font-weight: 500;
+  font-size: 0.85rem;
+}

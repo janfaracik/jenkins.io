@@ -10,12 +10,14 @@ function loaddata() {
     if (this.readyState=='loaded' || this.readyState=='complete') do_loaddata();
   }
   document.getElementById('head').appendChild(script);
-  document.getElementById('ratings').style.display = 'block';
   return false;
 }
 
-function health(nm,cls,ver,rate,desc) {
-  return '<img src="/images/changelog/' + nm + '.svg" onclick="rate(\'' + ver + '\',' + rate + ')" class="rate ' + cls + '" alt="' + nm + '" title="' + desc + '"/>';
+function health(nm, cls, ver, rate, desc, rating) {
+  return `<button class="app-button app-button--tertiary ${cls}" data-tooltip="${desc}" onclick="rate('${ver}',${rate})">
+            <span>${rating}</span>
+            <img src="/images/changelog/${nm}.svg" alt="${desc}" />
+          </button>`;
 }
 
 function do_loaddata() {
@@ -23,13 +25,17 @@ function do_loaddata() {
   for (var anchors = document.getElementsByTagName('H3'), i = 0; i < anchors.length; i++) {
     if (anchors[i].id.charAt(0) != 'v') continue;
     r = data[v = anchors[i].id.substring(1)];
-    div1 = document.createElement('DIV');
-    div1.className = 'rate-outer';
+    const owner = document.createElement('div');
+    owner.className = 'ownerpapi'
     div2 = document.createElement('DIV');
     div2.className = 'rate-offset';
-    txt = (r && r[0] ? r[0] + ' ' : '0 ') + health('sunny',(r && r[0] ? '' : 'light'),v,1, 'No major issues with this release')
-        + (r && r[1] ? r[1] + ' ' : '0 ') + health('cloudy',(r && r[1] ? '' : 'light'),v,0, 'I experienced notable issues')
-        + (r && r[2] ? r[2] + ' ' : '0 ') + health('storm',(r && r[2] ? '' : 'light'),v,-1, 'I had to roll back');
+    txt = health('sunny',(r && r[0] ? '' : 'light'),v,1, 'No major issues with this release', (r && r[0] ? r[0] + ' ' : '0 '))
+        + health('cloudy',(r && r[1] ? '' : 'light'),v,0, 'I experienced notable issues', (r && r[1] ? r[1] + ' ' : '0 '))
+        + health('storm',(r && r[2] ? '' : 'light'),v,-1, 'I had to roll back', (r && r[2] ? r[2] + ' ' : '0 '));
+    div2.innerHTML = txt;
+
+    txt = ''
+    const div3 = document.createElement('DIV');
     if (r && r.length > 3) {
       txt += '<span class="related-issues">Community reported issues: ';
       var issues = [];
@@ -38,10 +44,13 @@ function do_loaddata() {
       for (j = 0; j < issues.length; j++)
         txt += issues[j].count + '&times;<a href="https://issues.jenkins.io/browse/JENKINS-' + issues[j].id + '">JENKINS-' + issues[j].id + '</a> ';
       txt += '</span>';
+    } else {
+      txt += `<span class="related-issues">   </span>`
     }
-    div2.innerHTML = txt;
-    div1.appendChild(div2);
-    anchors[i].parentNode.insertBefore(div1, anchors[i].nextElementSibling);
+    div3.innerHTML = txt;
+    owner.appendChild(div2);
+    owner.appendChild(div3);
+    anchors[i].parentNode.parentNode.appendChild(owner);
   }
 }
 
