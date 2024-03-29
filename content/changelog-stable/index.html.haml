@@ -15,9 +15,8 @@ has_rss: true
           = partial('changelog-changes.html.haml', :changes => release.changes)
 
     - if release.changes and release.lts_changes
-      %h3{:class => 'idkanymore' }
-        %a{:href => "/asd/asd/"}
-          = release.lts_baseline
+      .hownottocry
+        = "Notable changes since #{release.lts_baseline}"
       %div.nobodyelsewillbethere
         = partial('changelog-changes.html.haml', :changes => release.lts_changes)
 

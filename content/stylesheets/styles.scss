@@ -118,64 +118,6 @@
   margin-top: 15px;
 }
 
-//ul.image li {
-//  list-style: none !important;
-//  margin-bottom: 5px;
-//}
-
-//.iconlegend ul.feedback li.sunny, ul.feedback li.cloudy, ul.feedback li.storm {
-//  list-style: none !important;
-//  margin-bottom: 5px;
-//  padding: 5px;
-//  padding-left: 28px;
-//  background-repeat: no-repeat;
-//  background-position: left center;
-//}
-
-//ul.image li.security:before, ul.image li.rfe:before, ul.image li.bug:before {
-//  content: "•";
-//  position: relative;
-//  left: -7px;
-//  font-size: 18px;
-//  margin-left: -15px;
-//  line-height: 0;
-//}
-//ul.image li.major:before, ul.image li.security:before {
-//  left: -3px;
-//  top: 3px;
-//  font-size: 28px;
-//  margin-left: -22px;
-//}
-//
-//ul.image li.rfe:before {
-//  color: #99f;
-//}
-//ul.image li.rfe.major:before {
-//  color: #99f;
-//}
-//ul.image li.bug:before {
-//  color: red;
-//}
-//ul.image li.bug.major:before {
-//  color: red;
-//}
-//ul.image li.security:before {
-//  color: #fa0;
-//}
-//ul.image li.security {
-//  font-weight: bold;
-//}
-//
-//.iconlegend ul, .iconlegend ul li {
-//  display: inline;
-//}
-//.iconlegend ul li.bug, .iconlegend ul li.rfe, .iconlegend ul li.security {
-//  margin-left: 40px;
-//}
-//.iconlegend ul li.sunny, .iconlegend ul li.cloudy, .iconlegend ul li.storm {
-//  margin-left: 15px;
-//}
-
 /* For community ratings */
 div.rate-offset {
   display: flex;
@@ -186,18 +128,10 @@ div.rate-offset {
     gap: 5px;
     padding: 6px 11px;
 
-    * {
-      transition: 0.2s ease;
-    }
-
-    img {
+    svg {
       width: 1.75rem;
       height: 1.75rem;
     }
-  }
-
-  &.light * {
-    opacity: 0.5;
   }
 }
 
@@ -228,7 +162,7 @@ div.rate-offset {
     padding: 0.4rem 0.75rem;
     border-radius: 0.66rem;
     box-shadow: var(--tooltip-box-shadow);
-    font-weight: 550;
+    font-weight: 500;
     font-size: 0.7rem;
     z-index: 2;
     background: var(--background);
@@ -252,11 +186,49 @@ div.rate-offset {
   flex-direction: column;
   align-items: end;
   gap: 2px;
+  animation: swag 0.35s ease both;
+}
+
+@keyframes swag {
+  from {
+    opacity: 0;
+  }
 }
 
 .related-issues {
+  display: block;
   margin-right: 12px;
   color: var(--color--secondary);
   font-weight: 500;
   font-size: 0.85rem;
+  max-width: 650px;
+  overflow: hidden;
+  text-align: right;
+}
+
+.sunny svg {
+  transition: 1s ease;
+}
+
+.sunny:hover svg {
+  rotate: 180deg;
+}
+
+.sunny svg {
+  transition: 1s ease;
+}
+
+.sunny:hover svg {
+  rotate: 180deg;
+}
+
+.cloudy svg {
+  scale: 90%;
+  * {
+    stroke-width: 1.65px;
+  }
+}
+
+.hownottocry {
+  font-weight: 550;
 }

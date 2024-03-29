@@ -11,17 +11,11 @@ backlink:
   %div{:class => 'notthecrowd boop'}
     = page.release.date.strftime('%B %-d, %Y')
 
--# = partial('release-header.html.haml', :release => page.release)
--if page.release.changes and page.release.lts_changes and page.release.lts_baseline
-  %div
-    %strong
-      -# TODO figure out how to get rid of this
-      = "Changes since #{page.release.lts_baseline}:"
 %div.nobodyelsewillbethere
   = partial('changelog-changes.html.haml', :changes => page.release.changes)
+
 -if page.release.changes and page.release.lts_changes
-  %div
-    %strong
-      = "Notable changes since #{page.release.lts_predecessor}:"
-  %ul.image
+  .hownottocry
+    = "Notable changes since #{page.release.lts_predecessor}"
+  %div.nobodyelsewillbethere
     = partial('changelog-changes.html.haml', :changes => page.release.lts_changes)
