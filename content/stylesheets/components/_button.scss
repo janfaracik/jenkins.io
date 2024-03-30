@@ -14,6 +14,7 @@
   font-size: 0.85rem;
   border: none;
   background: color-mix(in srgb, var(--button-background) var(--button-background-opacity), transparent);
+  box-sizing: border-box;
   color: var(--button-color) !important;
   text-decoration: none !important;
   box-shadow: 0 0 0 10px transparent;
@@ -30,7 +31,7 @@
   }
 
   &:active, &:focus {
-    --button-background-opacity: 30%;
+    --button-background-opacity: 25%;
 
     box-shadow: 0 0 0 5px color-mix(in srgb, var(--button-background) 15%, transparent);
   }
@@ -41,17 +42,6 @@
 
   &--primary {
     --button-background: var(--blue);
-    --button-color: var(--background);
-    --button-background-opacity: 100%;
-
-    &:hover {
-      --button-background-opacity: 80%;
-    }
-
-    &:active, &:focus {
-      --button-background-opacity: 60%;
-
-      box-shadow: 0 0 0 5px color-mix(in srgb, var(--button-background) 30%, transparent);
-    }
+    --button-color: var(--blue);
   }
 }
