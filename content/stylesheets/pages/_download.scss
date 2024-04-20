@@ -6,15 +6,20 @@
   gap: 0 4rem;
   margin: 60px 0;
 
+  .details {
+    display: flex;
+    gap: 10px;
+  }
+
   @media screen and (max-width: $app-tablet-breakpoint) {
     display: flex;
     flex-direction: column;
     margin: 0;
-  }
 
-  .details {
-    display: flex;
-    gap: 10px;
+    .details {
+      flex-direction: column;
+      margin-bottom: 30px;
+    }
   }
 }
 
@@ -25,7 +30,7 @@
 
 .app-download-page__downloads {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 4rem;
   margin: 10px 0 20px 0;
 }
@@ -42,7 +47,15 @@
     padding: 12px 18px;
     justify-content: start;
     font-size: 1rem;
-    gap: 15px;
+    gap: 5px 15px;
+
+    @media screen and (max-width: $app-tablet-breakpoint) {
+      grid-template-columns: auto 1fr;
+
+      span {
+        grid-column: 2;
+      }
+    }
 
     &:first-of-type {
       grid-template-columns: auto 1fr;
@@ -74,10 +87,18 @@
       align-items: center;
       justify-content: space-between;
       font-size: 0.7rem;
+
+      @media screen and (max-width: $app-tablet-breakpoint) {
+        display: none;
+      }
     }
 
     span {
       color: var(--color--secondary);
+    }
+
+    svg {
+      scale: 110%;
     }
   }
 }
