@@ -1,4 +1,5 @@
 usecase: "Android"
+description: "Automate Android app builds and testing with Jenkins"
 color: '#3DDC84'
 blog_tags:
   - android

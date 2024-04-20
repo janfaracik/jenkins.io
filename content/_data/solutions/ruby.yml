@@ -1,4 +1,5 @@
 usecase: "Ruby"
+description: "Implement automated build and test processes for Ruby applications using Jenkins to streamline development workflows"
 color: '#C2322D'
 dark: true;
 blog_tags:

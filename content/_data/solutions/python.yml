@@ -1,4 +1,5 @@
 usecase: "Python"
+description: "Utilize Jenkins for building, testing, and deploying Python applications efficiently"
 color: '#4786BB'
 articles:
 -

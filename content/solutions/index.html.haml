@@ -4,7 +4,7 @@ title: "Use cases"
 noanchors: true
 ---
 
-%div.app-info-cards.app-info-cards--eight-column
+%div.app-info-cards.app-info-cards--four-column.app-info-cards--square.app-use-cases
   - site.solutions.sort.each do |key, solution|
   - link = expand_link("solutions/#{key}")
   - cssClass = solution["dark"] ? "dark" : "light"
@@ -12,3 +12,8 @@ noanchors: true
       = File.read("content/images/solution-images/#{key}.svg")
       %h3
         = solution["usecase"]
+      %p
+        = solution["description"]
+      %span.app-info-cards__learn-more
+        Learn more
+        %ion-icon{:name => "arrow-forward-outline"}

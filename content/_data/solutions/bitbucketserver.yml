@@ -1,4 +1,5 @@
 usecase: "Bitbucket Server"
+description: "Integrate Jenkins with Bitbucket Server for seamless CI/CD workflows"
 color: '#0052CC'
 dark: true
 blog_tags:

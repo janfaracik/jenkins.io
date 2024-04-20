@@ -1,5 +1,5 @@
----
 usecase: "PHP"
+description: "Set up continuous integration and delivery for PHP projects with Jenkins"
 color: '#777BB4'
 blog_tags:
 - php

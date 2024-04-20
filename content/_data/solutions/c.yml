@@ -1,4 +1,5 @@
 usecase: "C/C++"
+description: "Utilize Jenkins for continuous integration and deployment of C/C++ projects"
 color: '#00599C'
 dark: true;
 articles:

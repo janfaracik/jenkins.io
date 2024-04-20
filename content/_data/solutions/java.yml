@@ -1,4 +1,5 @@
 usecase: "Java"
+description: "Automate Java builds and testing using Jenkins for faster delivery cycles"
 color: '#0093A6'
 articles:
 plugins:

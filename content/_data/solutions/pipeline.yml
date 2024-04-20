@@ -1,5 +1,6 @@
 usecase: "Continuous Delivery"
-color: '#FEAA2D'
+description: "Achieve continuous delivery practices using Jenkins for automated deployments"
+color: 'var(--orange)'
 jumbotron:
   image: '/images/full-pipeline.jpg'
 blog_tags:

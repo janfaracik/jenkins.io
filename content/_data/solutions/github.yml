@@ -1,5 +1,6 @@
 usecase: "GitHub"
-color: '#181817'
+description: "Implement CI/CD pipelines with Jenkins and GitHub for version control integration"
+color: '#171515'
 dark: true
 articles:
 -

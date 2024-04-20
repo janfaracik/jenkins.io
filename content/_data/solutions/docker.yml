@@ -1,5 +1,6 @@
 usecase: "Docker"
-color: '#2496ED'
+description: "Leverage Jenkins with Docker for container-based build and deployment processes"
+color: '#1D63ED'
 blog_tags:
   - docker
   - containers
