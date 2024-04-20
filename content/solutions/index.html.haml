@@ -4,11 +4,11 @@ title: "Use cases"
 noanchors: true
 ---
 
-.app-use-cases
+%div.app-info-cards.app-info-cards--eight-column
   - site.solutions.sort.each do |key, solution|
   - link = expand_link("solutions/#{key}")
   - cssClass = solution["dark"] ? "dark" : "light"
-    %a.app-use-cases__card{:style => "background-color:#{solution["color"]}", :href => link, :class => cssClass}
+    %a.app-info-cards__item{:style => "--card-background: #{solution["color"]}; --card-color: #{solution["color"]}", :href => link, :class => cssClass}
+      = File.read("content/images/solution-images/#{key}.svg")
       %h3
         = solution["usecase"]
-      %img{:src => "/images/solution-images/#{key}.svg"}
