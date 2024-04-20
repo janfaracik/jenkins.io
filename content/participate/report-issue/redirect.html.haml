@@ -58,43 +58,28 @@ uneditable: true
         margin-bottom: 22%;
     }
 
-%p
+%p.app-description
     Choose the kind of issue you'd like to report below.
-    %strong
-        Please be sure to to follow the 
-        %a{:href => '/participate/report-issue/' }
-            advice on how to report great issues.
+    Please be sure to to follow the
+    %a{:href => '/participate/report-issue/' }
+        advice on how to report great issues.
 
-.grid-container
-    .card
-        .bg-img.bg-img-bug
-        .content
-            %h3
-                Bug
-            %p.p1
-                Report that something is broken.
-            %a.btn.btn-bug.bl#link-bug{:href => 'https://issues.jenkins.io/secure/CreateIssueDetails!init.jspa?pid=10172&issuetype=1&priority=4' }
-                Continue
-    .card
-        .bg-img.bg-img-rfe
-        .content
-            %h3
-                Improvement
-            %p.p1
-                Request a new feature or improvement.
-            %a.btn.btn-rfe.bl#link-rfe{:href => 'https://issues.jenkins.io/secure/CreateIssueDetails!init.jspa?pid=10172&issuetype=2&priority=4' }
-                Continue
-    .card
-        .bg-img.bg-img-security
-        .content
-            %h3
-                Security Issue
-            %p.p1
-                Report a security issue privately.
-                %a{:href => '/security/reporting/' }
-                    Learn more...
-            %a.btn.btn-security.bl{:href => 'https://issues.jenkins.io/secure/CreateIssueDetails!init.jspa?pid=10180&issuetype=10103&components=17329&summary=[INSERT_PLUGIN_ID_HERE]%20Insert%20Summary%20Here' }
-                Continue
+.app-info-cards
+    %a.app-info-cards__item#link-rfe{:href => 'https://issues.jenkins.io/secure/CreateIssueDetails!init.jspa?pid=10172&issuetype=2&priority=4', :style => "--card-background: var(--green); --card-color: var(--green)"}
+        %h3
+            Improvement
+        %p
+            Request a new feature or improvement
+    %a.app-info-cards__item#link-bug{:href => 'https://issues.jenkins.io/secure/CreateIssueDetails!init.jspa?pid=10172&issuetype=1&priority=4', :style => "--card-background: var(--red); --card-color: var(--red)"}
+        %h3
+            Bug
+        %p
+            Report that something is broken
+    %a.app-info-cards__item{:href => 'https://issues.jenkins.io/secure/CreateIssueDetails!init.jspa?pid=10180&issuetype=10103&components=17329&summary=[INSERT_PLUGIN_ID_HERE]%20Insert%20Summary%20Here', :style => "--card-background: var(--orange); --card-color: var(--orange)"}
+        %h3
+            Security Issue
+        %p
+            Report a security issue privately
 
 :javascript
     // TODO Also pass the plugin name and show it on the UI, but for now this is simpler and probably safer.
