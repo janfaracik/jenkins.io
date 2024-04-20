@@ -96,6 +96,12 @@ body h1.page-title .in-tag {
   background: #fff;
 }
 
+.carousel-item .app-button {
+  --button-background: currentColor;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
 .carousel-item>.carousel-caption {
   bottom: auto;
   top: 1.5rem
