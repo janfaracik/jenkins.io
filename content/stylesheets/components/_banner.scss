@@ -1,6 +1,7 @@
 .app-banner {
-  margin: 10px 0;
-  padding: 10px 15px;
-  background-color: color-mix(in srgb, currentColor 5%, transparent);
+  padding: 20px 25px;
   border-radius: 10px;
+  background: color-mix(in srgb, var(--color--secondary) 5%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color--secondary) 2.5%, transparent);
+  margin-top: 15px;
 }

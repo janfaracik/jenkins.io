@@ -110,14 +110,6 @@
   color: var(--color) !important;
 }
 
-.app-banner {
-  padding: 20px 25px;
-  border-radius: 10px;
-  background: color-mix(in srgb, var(--color--secondary) 5%, transparent);
-  border: 1px solid color-mix(in srgb, var(--color--secondary) 2.5%, transparent);
-  margin-top: 15px;
-}
-
 /* For community ratings */
 div.rate-offset {
   display: flex;
