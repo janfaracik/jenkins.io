@@ -43,24 +43,24 @@
   color: var(--notwinning-color);
   background: color-mix(in srgb, var(--notwinning-color) 10%, transparent);
   border: 1px solid color-mix(in srgb, var(--notwinning-color) 10%, transparent);
-}
 
-.notwinning-security {
-  --notwinning-color: var(--orange);
-}
+  &-security {
+    --notwinning-color: var(--orange);
+  }
 
-.notwinning-majorrfe {
-  --notwinning-color: var(--purple);
-}
+  &-majorrfe {
+    --notwinning-color: var(--purple);
+  }
 
-.notwinning-rfe {
-  --notwinning-color: var(--blue);
-}
+  &-rfe {
+    --notwinning-color: var(--blue);
+  }
 
-.notwinning-majorbug {
-  --notwinning-color: var(--dark-red);
-}
+  &-majorbug {
+    --notwinning-color: var(--dark-red);
+  }
 
-.notwinning-bug {
-  --notwinning-color: var(--red);
+  &-bug {
+    --notwinning-color: var(--red);
+  }
 }
