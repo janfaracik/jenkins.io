@@ -13,7 +13,7 @@ has_rss: true
     -#   %small
     -#     %a{:href => "/changelog/#{release.version}/" }
     -#       permalink to this entry
-    %div.nobodyelsewillbethere
+    %div.app-releases__list__items
       = partial('changelog-changes.html.haml', :changes => release.changes)
 
 

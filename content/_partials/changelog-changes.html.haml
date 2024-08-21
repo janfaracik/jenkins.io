@@ -13,7 +13,7 @@
 - page.changes.group_by { |message| message["type"] }.each do | type, logs |
   %div{:class => 'notwinning notwinning-' + type.gsub(' ', '')}
     = tags[type.gsub(' ', '')]
-  %ul.illvisit{:class => 'notwinning-' + type.gsub(' ', '')}
+  %ul.app-releases__list{:class => 'notwinning-' + type.gsub(' ', '')}
     - logs.each do | change |
       %li
         = change.message

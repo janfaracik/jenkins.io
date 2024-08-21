@@ -8,14 +8,14 @@ backlink:
 ---
 
 - if page.release.date
-  %div{:class => 'notthecrowd boop'}
+  %div{:class => 'app-releases__item__date boop'}
     = page.release.date.strftime('%B %-d, %Y')
 
-%div.nobodyelsewillbethere
+%div.app-releases__list__items
   = partial('changelog-changes.html.haml', :changes => page.release.changes)
 
 -if page.release.changes and page.release.lts_changes
-  .hownottocry
+  .app-releases__notable-changes
     = "Notable changes since #{page.release.lts_predecessor}"
-  %div.nobodyelsewillbethere
+  %div.app-releases__list__items
     = partial('changelog-changes.html.haml', :changes => page.release.lts_changes)

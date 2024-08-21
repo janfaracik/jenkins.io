@@ -63,9 +63,9 @@ function do_loaddata() {
     if (anchors[i].id.charAt(0) != 'v') continue;
     r = data[v = anchors[i].id.substring(1)];
     const owner = document.createElement('div');
-    owner.className = 'ownerpapi'
+    owner.className = 'app-status-container'
     div2 = document.createElement('DIV');
-    div2.className = 'rate-offset';
+    div2.className = 'app-status-container__icons';
     txt = health('sunny',(r && r[0] ? '' : 'light'),v,1, 'No major issues with this release', (r && r[0] ? r[0] + ' ' : '0 '))
         + health('cloudy',(r && r[1] ? '' : 'light'),v,0, 'I experienced notable issues', (r && r[1] ? r[1] + ' ' : '0 '))
         + health('storm',(r && r[2] ? '' : 'light'),v,-1, 'I had to roll back', (r && r[2] ? r[2] + ' ' : '0 '));
@@ -75,7 +75,7 @@ function do_loaddata() {
     if (r && r.length > 3) {
       const div3 = document.createElement('DIV');
       txt = ''
-      txt += '<span class="related-issues">Community reported issues: ';
+      txt += '<span class="app-status-container__issues">Community reported issues: ';
       var issues = [];
       for (j = 3; j < r.length; j += 2) {issues.push({id: r[j], count: r[j + 1]})}
       issues.sort(function (a, b) {return b.count - a.count;});

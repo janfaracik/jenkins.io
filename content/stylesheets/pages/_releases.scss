@@ -1,4 +1,4 @@
-.illvisit {
+.app-releases__list {
   list-style-type: none;
 
   position: relative;
@@ -23,16 +23,26 @@
   }
 }
 
-.nobodyelsewillbethere {
+.app-releases__list__items {
   display: flex;
   flex-direction: column;
   gap: 5px;
-  //border: 2px solid red;
   margin-top: 15px;
   margin-bottom: 30px;
 }
 
-.notthecrowd {
+.app-releases__list__header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 50px;
+
+  .app-releases__item__title a {
+    color: var(--color) !important;
+  }
+}
+
+.app-releases__item__date {
   font-weight: 500;
   color: var(--color--secondary);
 }
@@ -45,73 +55,6 @@
   font-size: 0.75rem;
 }
 
-.idkanymore a {
-  color: var(--color) !important;
-}
-
-/* For community ratings */
-div.rate-offset {
-  display: flex;
-  gap: 5px;
-
-  button {
-    --button-background: color-mix(in srgb, var(--color--secondary), transparent);
-    gap: 5px;
-    padding: 6px 11px;
-
-    svg {
-      width: 1.75rem;
-      height: 1.75rem;
-    }
-  }
-}
-
-//*[data-tooltip] {
-//  position: relative;
-//
-//  @media (hover: hover) {
-//    &:hover {
-//      &::before {
-//        opacity: 1;
-//        scale: 1;
-//        translate: -50% -2px;
-//      }
-//    }
-//  }
-//
-//  &::before {
-//    content: attr(data-tooltip);
-//    position: absolute;
-//    top: -35px;
-//    left: 50%;
-//    white-space: nowrap;
-//
-//    --tooltip-color: var(--color);
-//    --tooltip-box-shadow: 0 0 8px 2px rgba(0, 0, 30, 0.05), 0 0 1px 1px rgba(0, 0, 20, 0.025), 0 10px 20px rgba(0, 0, 20, 0.15);
-//
-//    color: var(--tooltip-color);
-//    padding: 0.4rem 0.75rem;
-//    border-radius: 0.66rem;
-//    box-shadow: var(--tooltip-box-shadow);
-//    font-weight: 500;
-//    font-size: 0.7rem;
-//    z-index: 2;
-//    background: var(--background);
-//    opacity: 0;
-//    scale: 0.9;
-//    translate: -50% 5px;
-//    transition: 0.2s ease;
-//    pointer-events: none;
-//  }
-//}
-
-.bananarama {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
-  gap: 50px;
-}
-
-.hownottocry {
+.app-releases__notable-changes {
   font-weight: 550;
 }
