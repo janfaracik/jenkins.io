@@ -1,15 +1,13 @@
 ---
 layout: changelog
 show_ratings: true
-has_rss: false
+notitle: true
 backlink:
   label: Back to changelogs
   url: ../
 ---
 
-- if page.release.date
-  %div{:class => 'app-releases__item__date app-releases__item__date--tight'}
-    = page.release.date.strftime('%B %-d, %Y')
+= partial('release-header.html.haml', :release => page.release, :entry => true)
 
 %div.app-releases__list__items
   = partial('changelog-changes.html.haml', :changes => page.release.changes)
@@ -17,5 +15,6 @@ backlink:
 -if page.release.changes and page.release.lts_changes
   .app-releases__notable-changes
     = "Notable changes since #{page.release.lts_predecessor}"
+
   %div.app-releases__list__items
     = partial('changelog-changes.html.haml', :changes => page.release.lts_changes)

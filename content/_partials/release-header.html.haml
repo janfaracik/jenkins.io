@@ -1,8 +1,12 @@
 %div.app-releases__list__header
   %div
-    %h3{:id => "v#{page.release.version}", :class => 'app-releases__item__title' }
-      %a{:href => "/#{page.url}/#{page.release.version}/"}
-        = page.release.version
+    - if page.entry
+      %h1{:id => "v#{page.release.version}", :class => 'app-releases__item__title', :'data-type' => 'release-header', :'data-version' => page.release.version}
+        = 'Changelog for ' + page.release.version
+    - else
+      %h3{:id => "v#{page.release.version}", :class => 'app-releases__item__title', :'data-type' => 'release-header', :'data-version' => page.release.version}
+        %a{:href => "/#{page.url}/#{page.release.version}/"}
+          = page.release.version
     - if page.release.date
       %div{:class => 'app-releases__item__date'}
         = page.release.date.strftime('%B %-d, %Y')

@@ -36,10 +36,17 @@ function loaddata() {
   return false;
 }
 
-function health(nm, cls, ver, rate, desc, rating) {
+/**
+ * @param {'sunny' | 'cloudy' | 'storm'} status - the status
+ * @param {string} version - the version of the release
+ * @param {number} rate - what to rate the release when clicked, 1 for no major issues, 0 for notable issues, -1 for having to roll back
+ * @param {string} description - the tooltip to show
+ * @param {string} currentRating - the current rating
+ */
+function health(status, version, rate, description, currentRating) {
   let icon;
 
-  switch (nm) {
+  switch (status) {
     case 'sunny':
       icon = sunny;
       break;
@@ -51,33 +58,32 @@ function health(nm, cls, ver, rate, desc, rating) {
       break;
   }
 
-  return `<button class="app-button app-button--tertiary ${nm}" data-tooltip="${desc}" onclick="rate('${ver}',${rate})">
-            <span>${rating}</span>
+  return `<button class="app-button app-button--tertiary ${status}" data-tooltip="${description}" onclick="rate('${version}', ${rate})">
+            <span>${currentRating}</span>
             ${icon}
           </button>`;
 }
 
 function do_loaddata() {
-  var r, v, j = true, div1, div2, txt;
-  for (var anchors = document.getElementsByTagName('H3'), i = 0; i < anchors.length; i++) {
-    if (anchors[i].id.charAt(0) != 'v') continue;
-    r = data[v = anchors[i].id.substring(1)];
+  for (var anchors = document.querySelectorAll("[data-type='release-header']"), i = 0; i < anchors.length; i++) {
+    const version = anchors[i].dataset.version;
+    const information = data[version];
+    let txt = '';
     const owner = document.createElement('div');
     owner.className = 'app-status-container'
     div2 = document.createElement('DIV');
     div2.className = 'app-status-container__icons';
-    txt = health('sunny',(r && r[0] ? '' : 'light'),v,1, 'No major issues with this release', (r && r[0] ? r[0] + ' ' : '0 '))
-        + health('cloudy',(r && r[1] ? '' : 'light'),v,0, 'I experienced notable issues', (r && r[1] ? r[1] + ' ' : '0 '))
-        + health('storm',(r && r[2] ? '' : 'light'),v,-1, 'I had to roll back', (r && r[2] ? r[2] + ' ' : '0 '));
+    txt = health('sunny',version,1, 'No major issues with this release', (information && information[0] ? information[0] + ' ' : '0 '))
+        + health('cloudy',version,0, 'I experienced notable issues', (information && information[1] ? information[1] + ' ' : '0 '))
+        + health('storm',version,-1, 'I had to roll back', (information && information[2] ? information[2] + ' ' : '0 '));
     div2.innerHTML = txt;
     owner.appendChild(div2);
 
-    if (r && r.length > 3) {
+    if (information && information.length > 3) {
       const div3 = document.createElement('DIV');
-      txt = ''
-      txt += '<span class="app-status-container__issues">Community reported issues: ';
+      txt = '<span class="app-status-container__issues">Community reported issues: ';
       var issues = [];
-      for (j = 3; j < r.length; j += 2) {issues.push({id: r[j], count: r[j + 1]})}
+      for (j = 3; j < information.length; j += 2) {issues.push({id: information[j], count: information[j + 1]})}
       issues.sort(function (a, b) {return b.count - a.count;});
       for (j = 0; j < issues.length; j++)
         txt += issues[j].count + '&times;<a href="https://issues.jenkins.io/browse/JENKINS-' + issues[j].id + '">JENKINS-' + issues[j].id + '</a> ';
