@@ -17,7 +17,7 @@
     - logs.each do | change |
       %li
         = change.message
-        %span.banana
+        %span.app-releases__references
           - if change.references
             - change.references.each_with_index do | reference, index |
               - if index != 0

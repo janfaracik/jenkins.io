@@ -45,13 +45,13 @@
 .app-releases__item__date {
   font-weight: 500;
   color: var(--color--secondary);
+
+  &--tight {
+    margin-top: -15px;
+  }
 }
 
-.boop {
-  margin-top: -15px;
-}
-
-.banana {
+.app-releases__references {
   font-size: 0.75rem;
 }
 

@@ -8,7 +8,7 @@ backlink:
 ---
 
 - if page.release.date
-  %div{:class => 'app-releases__item__date boop'}
+  %div{:class => 'app-releases__item__date app-releases__item__date--tight'}
     = page.release.date.strftime('%B %-d, %Y')
 
 %div.app-releases__list__items
