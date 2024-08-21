@@ -9,7 +9,7 @@
     display: flex;
     gap: 5px;
 
-    button {
+    .app-button {
       --button-background: color-mix(in srgb, var(--color--secondary), transparent);
       gap: 5px;
       padding: 6px 11px;
@@ -20,26 +20,23 @@
       }
     }
 
-    .sunny svg {
-      transition: 1s ease;
+    .sunny {
+      svg {
+        transition: 1s ease;
+      }
+
+      &:hover svg {
+        rotate: 180deg;
+      }
     }
 
-    .sunny:hover svg {
-      rotate: 180deg;
-    }
+    .cloudy {
+      svg {
+        scale: 90%;
 
-    .sunny svg {
-      transition: 1s ease;
-    }
-
-    .sunny:hover svg {
-      rotate: 180deg;
-    }
-
-    .cloudy svg {
-      scale: 90%;
-      * {
-        stroke-width: 1.65px;
+        * {
+          stroke-width: 1.65px;
+        }
       }
     }
   }
