@@ -20,5 +20,4 @@ has_rss: true
       %div.app-releases__list__items
         = partial('changelog-changes.html.haml', :changes => release.lts_changes)
 
-  - # TODO - this is wherre they important old ones, change this
   = partial('changelog-stable.html')
