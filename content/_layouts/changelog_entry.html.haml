@@ -1,13 +1,22 @@
 ---
-layout: changelog
-show_ratings: true
+layout: simplepage
+title: Changelog
 notitle: true
+tight: true
 backlink:
   label: Back to changelogs
   url: ../
 ---
 
 = partial('release-header.html.haml', :release => page.release, :entry => true)
+
+#head
+  %script{:src => "/files/rate.js", :type => "text/javascript"}
+
+:javascript
+  $(document).ready(function() {
+      loaddata(this);
+  });
 
 %div.app-releases__list__items
   = partial('changelog-changes.html.haml', :changes => page.release.changes)

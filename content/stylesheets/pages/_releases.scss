@@ -21,6 +21,26 @@
       border-radius: 100px;
     }
   }
+
+  &--security {
+    --app-releases__tag-color: var(--orange);
+  }
+
+  &--majorrfe {
+    --app-releases__tag-color: var(--purple);
+  }
+
+  &--rfe {
+    --app-releases__tag-color: var(--blue);
+  }
+
+  &--majorbug {
+    --app-releases__tag-color: color-mix(in srgb, var(--red) 70%, hsl(212, 100%, 5%));
+  }
+
+  &--bug {
+    --app-releases__tag-color: var(--red);
+  }
 }
 
 .app-releases__list__items {
@@ -64,6 +84,9 @@
 }
 
 .app-releases__tag {
+  --app-releases__tag-color: currentColor;
+  --app-releases__tag-opacity: 10%;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -76,26 +99,28 @@
   letter-spacing: 0.5px;
   text-transform: uppercase;
   color: var(--app-releases__tag-color);
-  background: color-mix(in srgb, var(--app-releases__tag-color) 10%, transparent);
-  border: 1px solid color-mix(in srgb, var(--app-releases__tag-color) 10%, transparent);
+  background: color-mix(in srgb, var(--app-releases__tag-color) var(--app-releases__tag-opacity), transparent);
+  border: 1px solid color-mix(in srgb, var(--app-releases__tag-color) 12%, transparent);
 
-  &-security {
+  &--security {
     --app-releases__tag-color: var(--orange);
   }
 
-  &-majorrfe {
+  &--majorrfe {
     --app-releases__tag-color: var(--purple);
+    --app-releases__tag-opacity: 15%;
   }
 
-  &-rfe {
+  &--rfe {
     --app-releases__tag-color: var(--blue);
   }
 
-  &-majorbug {
-    --app-releases__tag-color: var(--dark-red);
+  &--majorbug {
+    --app-releases__tag-color: var(--red);
+    --app-releases__tag-opacity: 15%;
   }
 
-  &-bug {
+  &--bug {
     --app-releases__tag-color: var(--red);
   }
 }

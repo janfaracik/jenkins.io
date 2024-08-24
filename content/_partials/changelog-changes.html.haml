@@ -11,9 +11,9 @@
   %em
     No notable changes in this release.
 - page.changes.group_by { |message| message["type"] }.each do | type, logs |
-  %div{:class => 'app-releases__tag app-releases__tag-' + type.gsub(' ', '')}
+  %div{:class => 'app-releases__tag app-releases__tag--' + type.gsub(' ', '')}
     = tags[type.gsub(' ', '')]
-  %ul.app-releases__list{:class => 'app-releases__tag-' + type.gsub(' ', '')}
+  %ul.app-releases__list{:class => 'app-releases__list--' + type.gsub(' ', '')}
     - logs.each do | change |
       %li
         = change.message
