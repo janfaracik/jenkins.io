@@ -37,8 +37,12 @@
   align-items: center;
   gap: 50px;
 
-  .app-releases__item__title a {
-    color: var(--color) !important;
+  .app-releases__item__title {
+    text-wrap: nowrap;
+
+    a {
+      color: var(--color) !important;
+    }
   }
 }
 
