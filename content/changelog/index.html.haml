@@ -12,8 +12,7 @@ has_rss: true
     %div.app-releases__list__items
       = partial('changelog-changes.html.haml', :changes => release.changes)
 
-%p
-  %b
-    Changelogs of historical releases can be found
-    %a{:href => '/changelog-old/'}
-      in the changelog archive.
+.app-banner
+  Changelogs of historical releases can be found
+  %a{:href => '/changelog-old/'}
+    in the changelog archive.
