@@ -101,6 +101,11 @@
       line-height: 1.66;
       font-size: 1.15rem;
     }
+
+    hr {
+      border-top: 2px solid var(--color--secondary);
+      opacity: 0.1;
+    }
   }
 
   .twitter-share-button {
