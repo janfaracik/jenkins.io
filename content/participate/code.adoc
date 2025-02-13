@@ -2,6 +2,9 @@
 layout: project
 title: Contribute code
 section: participate
+backlink:
+  label: Back to Participate and Contribute
+  url: ../
 tags:
   - outreach-programs
   - developer
@@ -10,7 +13,7 @@ tags:
 Jenkins project includes a lot of code, and we invite everyone to contribute to the project.
 There is a diverse set of programming languages used in Jenkins,
 including but not limited to: Java, JavaScript, Groovy, Golang, Ruby, Shell scripts.
-And, since Jenkins is an automation server with hundreds of plugins, there is a huge number of technologies involved.
+And, since Jenkins is an automation server with thousands of plugins, there is a huge number of technologies involved.
 If you are an expert or just want to study something new while contributing,
 you may find interesting opportunities in our project.
 
@@ -31,7 +34,7 @@ so please see the repositories for specific contributing guidelines.
 
 === Plugins
 
-There are more than link:https://plugins.jenkins.io[1800 plugins] in Jenkins,
+There are more than link:https://plugins.jenkins.io[2000 plugins] in Jenkins,
 and these plugins implement the majority of Jenkins functionality.
 Every plugin is an isolated component which can be developed independently of other parts of the project,
 with help of the APIs and development tools provided by the project.
@@ -98,11 +101,3 @@ Are you an established contributor to Jenkins and looking for a new challenge?
 The link:/security#team[Jenkins Security Team] is looking for members willing to help improve Jenkins security.
 Also, there are many link:/sigs[special interest groups] and link:/projects[sub-projects] which are seeking contributors 
 in order to push bigger projects forward.
-
-////
-TODO: delete?
-* https://wiki.jenkins.io/display/JENKINS/Instructions+for+Committers[Instructions for committers]
-* https://wiki.jenkins.io/display/JENKINS/GitHub+commit+messages[On writing GitHub commit messages]
-* https://wiki.jenkins.io/display/JENKINS/Introduction
-
-////
