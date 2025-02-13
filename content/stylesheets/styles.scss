@@ -3,3 +3,53 @@
 @import "core/_all";
 @import "components/_all";
 @import "pages/_all";
+
+.testest {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  border-radius: 10px;
+  margin-top: -2rem;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  z-index: 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: calc(50% - 500px);
+    left: calc(50% - 500px);
+    width: 1000px;
+    height: 1000px;
+    background: var(--background);
+    background-size: cover;
+    background-position: center;
+    filter: saturate(1.5) blur(80px);
+    opacity: 0.3;
+    z-index: -1;
+    animation: rotate 100s linear infinite;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: color-mix(in srgb, var(--color), transparent);
+    border: 2px solid var(--color);
+    opacity: 0.06;
+  }
+
+  img {
+    width: auto;
+    height: 110px;
+  }
+}
+
+@keyframes rotate {
+  to {
+    rotate: 360deg;
+  }
+}

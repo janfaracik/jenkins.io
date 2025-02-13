@@ -7,16 +7,11 @@ backLink:
 
 .row.body
   .col-lg-12
-
-    - if page.logo
-      %img{:title => "Logo", :src => expand_link(page.logo), :style => "float:right", :width => "192"}
-
-    %h2.title
-      Overview
-
+    .testest{:style => '--background: url("' + expand_link(page.logo) + '")'}
+      %img{:title => "Logo", :src => expand_link(page.logo), :height => "100"}
 
     - if page.overview
-      %p
+      %p.app-description
         = page.overview
 
 - if page.leads or page.participants
@@ -62,10 +57,5 @@ backLink:
           - part2.each do |user|
             %li
               = display_user(user)
-
-.row
-  .col-lg-12
-    %h2.title
-      Description
 
     = content

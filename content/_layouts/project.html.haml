@@ -22,7 +22,7 @@ layout: default
   .row.body.flex-lg-nowrap
     .col-lg-9
       - if page.backLink
-        %div{:class => "app-!-display-flex"}
+        %div{:class => "app-!-display-flex", :style => "margin-bottom: 20px"}
           %a.app-back-link{:href => expand_link(page.backLink.link)}
             = 'Back to ' + page.backLink.title
 
