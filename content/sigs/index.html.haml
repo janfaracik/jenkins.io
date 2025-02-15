@@ -3,7 +3,7 @@ layout: default
 title: Jenkins Special Interest Groups
 ---
 
-.app-container.app-container--compact.slipsliding
+.app-container.app-container--compact.app-sigs
   %h1
     Jenkins Special Interest Groups
   %p
@@ -17,8 +17,8 @@ title: Jenkins Special Interest Groups
   - sigs.each do |item|
     -# Skip the item if it does not contain links - a retired SIG
     - next if not item.links
-    .groupthing
-      .todo{:style => '--background: url("' + expand_link(item.logo) + '")'}
+    .app-sigs__item
+      .app-sigs__item__icon{:style => '--background: url("' + expand_link(item.logo) + '")'}
         - if item.logo.end_with?('.png')
           %img{:title => "Logo", :src => expand_link(item.logo), :width => "96"}
         - else
