@@ -22,6 +22,7 @@
 }
 
 .groupthing {
+  position: relative;
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 2rem;
@@ -30,6 +31,18 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+  }
+
+  a {
+    z-index: 0;
+  }
+
+  a::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    bottom: 50px;
+    z-index: -1;
   }
 
   h2 {
