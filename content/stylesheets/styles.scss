@@ -14,7 +14,6 @@
   }
 
   p {
-    font-size: 1.125rem;
     font-weight: 450;
     color: var(--color--secondary);
     margin: 0;
@@ -25,7 +24,7 @@
   position: relative;
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 2rem;
+  gap: 1.5rem;
 
   & > div {
     display: flex;
@@ -47,7 +46,7 @@
 
   h2 {
     font-size: 1.125rem;
-    font-weight: 600;
+    font-weight: 500;
     margin: 0;
   }
 
@@ -101,13 +100,17 @@
   }
 
   svg {
-    width: 50px;
-    height: 50px;
+    width: 55%;
+    height: 55%;
   }
 
   img {
     width: auto;
-    height: 60px;
+    height: 66%;
+  }
+
+  @media (max-width: 768px) {
+    width: 50px;
   }
 }
 
