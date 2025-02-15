@@ -4,6 +4,100 @@
 @import "components/_all";
 @import "pages/_all";
 
+.slipsliding {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  h1 {
+    margin-bottom: 0;
+  }
+
+  p {
+    font-size: 1.125rem;
+    font-weight: 450;
+    color: var(--color--secondary);
+    margin: 0;
+  }
+}
+
+.groupthing {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2rem;
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  h2 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    list-style-type: none;
+    padding: 0;
+
+    li, a {
+      display: contents;
+    }
+  }
+}
+
+.todo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  aspect-ratio: 1;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  z-index: 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: calc(50% - 75px);
+    left: calc(50% - 75px);
+    width: 150px;
+    height: 150px;
+    background: var(--background);
+    background-size: cover;
+    background-position: center;
+    filter: saturate(2) blur(60px);
+    opacity: 0.3;
+    z-index: -1;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: color-mix(in srgb, var(--color), transparent);
+    border: 2px solid var(--color);
+    opacity: 0.06;
+  }
+
+  svg {
+    width: 50px;
+    height: 50px;
+  }
+
+  img {
+    width: auto;
+    height: 60px;
+  }
+}
+
 .testest {
   position: relative;
   display: flex;
@@ -11,8 +105,8 @@
   justify-content: center;
   height: 200px;
   border-radius: 10px;
-  margin-top: -2rem;
-  margin-bottom: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
   overflow: hidden;
   z-index: 0;
 
@@ -52,4 +146,27 @@
   to {
     rotate: 360deg;
   }
+}
+
+.thingytest {
+  h2, h3 {
+    font-weight: 550;
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    border-top: 2px solid color-mix(in srgb, var(--color--secondary) 10%, transparent);
+    padding-top: 1rem;
+  }
+
+  p {
+    font-size: 1rem;
+    font-weight: 450;
+  }
+}
+
+.quietlight {
+  list-style-type: none;
+  padding: 0;
 }

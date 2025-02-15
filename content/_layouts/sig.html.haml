@@ -5,33 +5,30 @@ backLink:
   link: /sigs
 ---
 
-.row.body
-  .col-lg-12
-    .testest{:style => '--background: url("' + expand_link(page.logo) + '")'}
-      %img{:title => "Logo", :src => expand_link(page.logo), :height => "100"}
+.thingytest
+  .testest{:style => '--background: url("' + expand_link(page.logo) + '")'}
+    %img{:title => "Logo", :src => expand_link(page.logo), :height => "100"}
 
-    - if page.overview
-      %p.app-description
-        = page.overview
+  - if page.overview
+    %p
+      = page.overview
 
-- if page.leads or page.participants
-  .row
-    .col-lg-12
-      %h2.title
-        Members
+  - if page.leads or page.participants
+    %h2
+      Members
 
     .col-lg-4
       - if page.leads
         Lead#{if page.leads.length > 1 then 's' end}:
 
-        %ul
+        %ul.quietlight
           - page.leads.each do |user|
             %li
               = display_user(user)
 
       - if page.organizations
         Organizations:
-        %ul
+        %ul.quietlight
           - page.organizations.each do |item|
             %li
               %a{:href => "https://github.com/#{item.github}", :target => "_blank", :rel => "noreferrer noopener"}
@@ -45,7 +42,7 @@ backLink:
           - part1,part2 = part1.each_slice( (part1.size/2.0).round ).to_a
 
         Participants:
-        %ul
+        %ul.quietlight
           - part1.each do |user|
             %li
               = display_user(user)
@@ -53,7 +50,7 @@ backLink:
     .col-lg-4
       - if page.participants
         &nbsp;
-        %ul
+        %ul.quietlight
           - part2.each do |user|
             %li
               = display_user(user)
