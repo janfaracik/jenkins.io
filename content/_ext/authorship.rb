@@ -7,25 +7,25 @@ require 'authorlist.rb'
 module Authorship
   include AuthorList::AuthorLink
 
-  def display_author_for(node)
+  def display_author_for(node, clickable = true)
     if node.author
-      display_user(node.author)
+      display_user(node.author, clickable)
     elsif node.authors
-      display_users(node.authors)
+      display_users(node.authors, clickable)
     else
       return
     end
   end
 
-  def display_users(users)
+  def display_users(users, clickable = true)
     res = Array.new
     users.each { |user|
-      res << display_user(user)
+      res << display_user(user, clickable)
     }
     return res.join('')
   end
 
-  def display_user(author)
+  def display_user(author, clickable = true)
     if site.authors.has_key? author.to_sym
       full_name = site.authors[author].name
       avatar = Dir.glob("content/images/avatars/#{author}.{bmp,gif,ico,jpg,jpeg,png,svg}").first
@@ -37,10 +37,18 @@ module Authorship
     link = author_link(author)
 
     if avatar
-      avatar_element = "<img alt=\"#{full_name}\" class=\"app-avatar__image\" loading=\"lazy\" onload=\"this.style.opacity = 1\" src=\"#{avatar}\">"
+      avatar_element = "<img alt=\"#{full_name}\" class=\"app-avatar__image\" loading=\"lazy\" onload=\"this.style.opacity = 1\" src=\"#{avatar}\" />"
     end
 
-    return "<a class=\"app-author-link\" data-user-name=\"#{full_name}\" href=\"#{link}\"><div class=\"app-avatar\">#{avatar_element}</div><span>#{full_name}</span></a>"
+    prefix = "div"
+    suffix = "div"
+
+    if clickable
+      prefix = "a href=\"#{link}\""
+      suffix = "a"
+    end
+
+    return "<#{prefix} class=\"app-author-link\" data-user-name=\"#{full_name}\" ><div class=\"app-avatar\">#{avatar_element}</div><span>#{full_name}</span></#{suffix}>"
   end
 
   def display_user_optional(author)

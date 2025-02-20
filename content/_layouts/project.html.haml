@@ -18,13 +18,12 @@ layout: default
 
 = partial('anchors.html.haml', :selector => '.container .row .col-lg-9');
 
-.app-container
-  .row.flex-lg-nowrap
-    .col-lg-9
-      - if page.backLink
-        %div{:class => "app-!-display-flex", :style => "margin-bottom: 20px"}
-          %a.app-back-link{:href => expand_link(page.backLink.link)}
-            = 'Back to ' + page.backLink.title
+.app-container{:style => 'display: grid; grid-template-columns: 1fr 340px; gap: 2rem'}
+  .hello
+    - if page.backLink
+      %div{:class => "app-!-display-flex", :style => "margin-bottom: 20px"}
+        %a.app-back-link{:href => expand_link(page.backLink.link)}
+          = 'Back to ' + page.backLink.title
 
       %h1
         = page.title
@@ -32,46 +31,40 @@ layout: default
 
       = partial('discuss.html.haml', :links => page.links)
 
-    #projects-sidebar-menu.col-lg-3
-      - if page.title.strip == "Advocacy and Outreach" || page.title.strip == "Documentation" || page.title.strip == "Google Summer of Code" || page.title.strip == "Platform" || page.title.strip == "User Experience"
-        .sidebar-nav
-          %h4
-            On this page
+  #projects-sidebar-menu
+    - if page.title.strip == "Advocacy and Outreach" || page.title.strip == "Documentation" || page.title.strip == "Google Summer of Code" || page.title.strip == "Platform" || page.title.strip == "User Experience"
+      %h4
+        On this page
 
-          = document.converter.convert document, 'outline'
+      = document.converter.convert document, 'outline'
 
-          = partial("connect-h4-div.html.haml", :links => page.links, :sig => page.sig, :project => page.project)
+      = partial("connect-h4-div.html.haml", :links => page.links, :sig => page.sig, :project => page.project)
 
-          %div
-            - # Only render articles if we have them
-            - if articles.size > 0
-              %div{:id => 'block-block-15', :class => 'block block-block even blog-posts'}
-                %h4.title
-                  Recent Blog Posts
+      - # Only render articles if we have them
+      %h4
+        Recent posts
 
-                %ul
-                  - articles.each do |article|
-                    %li
-                      %a{:href => article.url}
-                        = article.title
-      - else
-        #sidebar-content.sidebar-nav.tour
-          %h4
-            On this page
+      %ul{:class => 'listlist'}
+        - articles.each do |article|
+          %li
+            %a.sidebyside{:href => article.url}
+              %div{:class => "testtest"}
+                %img{:src => article.opengraph&.image, :loading => "lazy", :alt => article.title, :onload => "this.style.opacity = 1"}
+              %div{:class => 'rylan'}
+                %div.trapdoortrigger
+                  = article.title
+                %div{:style => 'display: flex; align-items: center; color: var(--color--secondary); text-decoration: none !important; font-size: 12px'}
+                  .app-card__details
+                    .app-card__details__authors.app-card__details__authors--compact
+                      = display_author_for(article, false)
+                  - if article.date
+                    = article.date.strftime('%B %-d, %Y')
+    - else
+      %div
+        %h4
+          On this page
 
-          = document.converter.convert document, 'outline'
+        = document.converter.convert document, 'outline'
 
-          = partial("connect-h4-div.html.haml", :links => page.links, :sig => page.sig, :project => page.project)
+        = partial("connect-h4-div.html.haml", :links => page.links, :sig => page.sig, :project => page.project)
 
-          %div
-            - # Only render articles if we have them
-            - if articles.size > 0
-              %div{:id => 'block-block-15', :class => 'block block-block even blog-posts'}
-                %h4.title
-                  Recent Blog Posts
-
-                %ul
-                  - articles.each do |article|
-                    %li
-                      %a{:href => article.url}
-                        = article.title
