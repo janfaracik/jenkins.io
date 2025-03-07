@@ -27,7 +27,8 @@ GEM
     base64 (0.2.0)
     coderay (1.1.3)
     colorize (0.8.1)
-    concurrent-ruby (1.3.4)
+    concurrent-ruby (1.3.5)
+    csv (3.3.2)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     em-websocket (0.5.3)
@@ -131,7 +132,7 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.8.2)
-    uri (0.13.1)
+    uri (0.13.2)
     webrick (1.8.2)
 
 PLATFORMS
@@ -144,6 +145,7 @@ DEPENDENCIES
   base64
   colorize
   concurrent-ruby (~> 1.1)
+  csv (~> 3.3.2)
   faraday (~> 2.12.0)
   faraday-follow_redirects (~> 0.3.0)
   faraday-net_http (~> 3.4)
