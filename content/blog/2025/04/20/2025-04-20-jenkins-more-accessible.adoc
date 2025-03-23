@@ -1,0 +1,30 @@
+---
+layout: post
+title: "Accessibility improvements in Jenkins 2.502.1"
+tags:
+- jenkins
+- user-experience
+- ux
+authors:
+- janfaracik
+description: "Announcing issues opened for Jenkins contributor awards 2025"
+opengraph:
+  image: /images/post-images/2025/03/community-awards-2025-jenkins.png
+---
+
+image::/images/post-images/2025/02/2025-02-05-command-palette/opengraph.png[role=center]
+
+Jenkins now fully supports increased contrast settings, offering a more accessible user interface experience. With this
+update, users will notice sharper borders and clearer visual differentiation between interface elements, making Jenkins
+more user-friendly for all, particularly those with visual impairments.
+
+According to the World Health Organization, approximately 15% of the global population lives with some form of
+disability, with an estimated 4.5% experiencing moderate to severe vision impairment. Enhancements like increased
+contrast play a crucial role in ensuring digital tools like Jenkins are usable by everyone.
+
+This feature and more are now available as part of the latest Jenkins release.
+To learn more about all the exciting changes included in this version,
+link:/changelog/2.502.1[view the changelog].
+
+If you’re passionate about user experience and accessibility, join the
+link:/sigs/ux[User Experience SIG] to contribute and help shape the future of Jenkins.
