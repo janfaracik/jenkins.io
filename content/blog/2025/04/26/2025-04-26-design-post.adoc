@@ -1,0 +1,40 @@
+---
+layout: post
+title: "Redesigning Jenkins (Part Two)"
+tags:
+- jenkins
+- user-experience
+- ux
+authors:
+- janfaracik
+opengraph:
+  image: /images/post-images/2025/04/2025-04-26-design-post/opengraph.png
+---
+
+image::/images/post-images/2025/04/2025-04-26-design-post/banner.png[role=center]
+
+Jenkins is the most used CI/CD platform in the world. It's one of the oldest, most mature systems in
+continuous integration and delivery, and it powers software pipelines across critical industries like finance,
+healthcare, and government.
+With over a million lines of code, more than 2,000 plugins, and millions of users,
+Jenkins is less a "tool" and more of a global infrastructure backbone.
+
+And because of all that - making changes is hard. Really hard.
+
+== Part Two - The Problem
+
+
+
+=== What's next
+
+In Part Three, we'll dive deeper into the design decisions behind some of the new UI features, how we're improving the
+developer experience, and what we're doing to ensure compatibility across the plugin ecosystem without slowing
+down progress.
+
+---
+
+If you want to get involved in the UI and UX discussions of Jenkins join the link:/sigs/ux[User Experience SIG].
+
+Take advantage of new components and patterns in your plugin via the link:https://weekly.ci.jenkins.io/design-library/[Design Library].
+
+You can watch our monthly meetings on link:https://www.youtube.com/playlist?list=PLN7ajX_VdyaOnsIIsZHsv_fM9QhOcajWe[YouTube] and you can view in-progress work on link:https://github.com/jenkinsci/jenkins/pulls?q=is%3Apr+is%3Aopen+label%3Aweb-ui[GitHub].
