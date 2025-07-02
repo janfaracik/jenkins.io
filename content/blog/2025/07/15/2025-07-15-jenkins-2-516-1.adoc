@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Jenkins 2.516.1
+title: A new interface for Jenkins 2.516.1
 tags:
 - jenkins
 - user-experience
@@ -11,9 +11,15 @@ authors:
 opengraph:
   image: /Users/janfaracik/Developer/jenkins.io/images/post-images/2025/07/15/jenkins-2-516-1.png
 links:
-discourse: true
+  discourse: true
 ---
 
 image:/Users/janfaracik/Developer/jenkins.io/images/post-images/2025/07/15/jenkins-2-516-1.png[Jenkins 2.516.1]
 
-Enter your text here 🙂
+---
+
+If you want to get involved in the UI and UX discussions of Jenkins join the link:/sigs/ux[User Experience SIG].
+
+Take advantage of new components and patterns in your plugin via the link:https://weekly.ci.jenkins.io/design-library/[Design Library].
+
+You can watch our monthly meetings on link:https://www.youtube.com/playlist?list=PLN7ajX_VdyaOnsIIsZHsv_fM9QhOcajWe[YouTube] and you can view in-progress work on link:https://github.com/jenkinsci/jenkins/pulls?q=is%3Apr+is%3Aopen+label%3Aweb-ui[GitHub].
