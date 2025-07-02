@@ -1,0 +1,19 @@
+---
+layout: post
+title: Jenkins 2.516.1
+tags:
+- jenkins
+- user-experience
+- ux
+- pipeline
+authors:
+- janfaracik
+opengraph:
+  image: /Users/janfaracik/Developer/jenkins.io/images/post-images/2025/07/15/jenkins-2-516-1.png
+links:
+discourse: true
+---
+
+image:/Users/janfaracik/Developer/jenkins.io/images/post-images/2025/07/15/jenkins-2-516-1.png[Jenkins 2.516.1]
+
+Enter your text here 🙂
