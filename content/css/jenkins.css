@@ -83,36 +83,38 @@ body h1.page-title .in-tag {
   text-align: right;
 }
 
-.carousel-item {
-  min-height: 27rem;
-  background: #fff;
-}
-
-.carousel-item .app-button {
-  --button-background: currentColor;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-}
-
-.carousel-item video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  opacity: 0.67;
-}
-
-.carousel-item .mask {
-  position: absolute;
-  left: 20%;
-  right: 20%;
-  top: 0;
-  bottom: 0;
-  background: rgba(255, 255, 255, 0.5);
-  box-shadow: 0 0 100px 10px #fff;
-}
+/*.carousel-item {*/
+/*  min-height: 27rem;*/
+/*  background: red;*/
+/*  border-radius: 100px;*/
+/*  overflow: hidden;*/
+/*}*/
+/**/
+/*.carousel-item .app-button {*/
+/*  --button-background: currentColor;*/
+/*  -webkit-backdrop-filter: blur(10px);*/
+/*  backdrop-filter: blur(10px);*/
+/*}*/
+/**/
+/*.carousel-item video {*/
+/*  position: absolute;*/
+/*  top: 0;*/
+/*  left: 0;*/
+/*  right: 0;*/
+/*  bottom: 0;*/
+/*  width: 100%;*/
+/*  opacity: 0.67;*/
+/*}*/
+/**/
+/*.carousel-item .mask {*/
+/*  position: absolute;*/
+/*  left: 20%;*/
+/*  right: 20%;*/
+/*  top: 0;*/
+/*  bottom: 0;*/
+/*  background: rgba(255, 255, 255, 0.5);*/
+/*  box-shadow: 0 0 100px 10px #fff;*/
+/*}*/
 
 /* so that banner do not float over fixed navbar*/
 .carousel {
@@ -999,11 +1001,6 @@ blockquote {
   padding: 0.25rem 0 0.25rem 5.5rem;
   width: auto;
   margin: 0.25rem 1rem 0.25rem 0.25rem;
-}
-
-/* override carousel.scss's text-shadowing which is bad and it should feel bad */
-.carousel-caption {
-  text-shadow: none;
 }
 
 .admonitionblock td.content > .title,

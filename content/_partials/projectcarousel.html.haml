@@ -1,8 +1,5 @@
 
 - carousel_id = rand(1000)
-- carousel_background = page.background || "#4799d6"
-- if page.background_image
-  - carousel_background = "#{carousel_background} url(#{page.background_image.src}) no-repeat center"
 
 :css
   .carousel_#{carousel_id} {
@@ -18,9 +15,6 @@
     margin-left: auto;
     margin-right: auto;
   }
-  #ProjectCarousel_#{carousel_id} {
-    background: #{carousel_background};
-  }
 
 .carousel.slide#ProjectCarousel{:id => carousel_id, :class => "carousel_#{carousel_id}", :data => { :bs => {:ride => "carousel"}}}
   .container
@@ -32,9 +26,9 @@
       - page.slides.each_with_index do |slide, index|
         - slide_background = slide.background || "rgba(0,0,0,0)"
         - if slide.background_image
-          - slide_background = "#{slide_background} url(#{expand_link(slide.background_image.src)}) no-repeat center"
+          - slide_background = "url(#{expand_link(slide.background_image)})"
         .carousel-item{:class => "carousel_#{carousel_id} #{index == 0 ? "active" : ""}",
-          :style => "background: #{slide_background};"}
+          :style => "background-image: #{slide_background};"}
           .container
             -# Spacing to make content more even
             .row.mt-5.mb-5

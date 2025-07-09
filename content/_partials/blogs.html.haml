@@ -7,12 +7,12 @@
     post
   end
   # Remove all our nils and then trim to nine posts
-  articles = articles.compact.slice(0, 9)
+  articles = articles.compact.slice(0, 6)
 
 
 - # Only render articles if we have them
 - if articles.size > 0
   %h2.app-events__heading
-    Recent posts
+    The Jenkins Blog
 
   = partial('blogcardlist.html.haml', :posts => articles)
