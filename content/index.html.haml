@@ -30,89 +30,85 @@ css:
       %a{:class => 'app-button', :href => '/doc/book'}
         Docs
 
-  -# = partial('downloadbanner.html.haml')
-  -#
-  -# Carousel
-  = partial('projectcarousel.html.haml',
-    :slides => slides)
+  .cokepepsi
+    = partial('projectcarousel.html.haml',
+      :slides => slides)
 
-  .cards
-    .card
-      %ion-icon{:name=>"git-pull-request-outline"}
-      %h5
-        Continuous Integration and Continuous Delivery
-      %p
-        As an extensible automation server, Jenkins can be used as a simple
-        CI server or turned into the continuous delivery hub for any project.
-    .card
-      %ion-icon{:name=>"download-outline"}
-      %h5
-        Easy installation
-      %p
-        Jenkins is a self-contained Java-based program, ready to run
-        out-of-the-box, with packages for Windows, Linux, macOS and other
-        Unix-like operating systems.
-    .card
-      %ion-icon{:name=>"options-outline"}
-      %h5
-        Easy configuration
-      %p
-        Jenkins can be easily set up and configured via its web interface,
-        which includes on-the-fly error checks and built-in help.
-    .card
-      %ion-icon{:name=>"apps-outline"}
-      %h5
-        Plugins
-      %p
-        With hundreds of plugins in the Update Center, Jenkins integrates
-        with practically every tool in the continuous integration and
-        continuous delivery toolchain.
-    .card
-      %ion-icon{:name=>"extension-puzzle-outline"}
-      %h5
-        Extensible
-      %p
-        Jenkins can be extended via its plugin architecture, providing
-        nearly infinite possibilities for what Jenkins can do.
-    .card
-      %ion-icon{:name=>"git-network-outline"}
-      %h5
-        Distributed
-      %p
-        Jenkins can easily distribute work across multiple machines,
-        helping drive builds, tests and deployments across multiple
-        platforms faster.
+  .cokepepsi
+    %h2.testingtestingtodo
+      Why Jenkins
+    .cards
+      .card
+        %ion-icon{:name=>"git-pull-request-outline"}
+        %h5
+          Continuous Integration and Continuous Delivery
+        %p
+          As an extensible automation server, Jenkins can be used as a simple
+          CI server or turned into the continuous delivery hub for any project.
+      .card
+        %ion-icon{:name=>"download-outline"}
+        %h5
+          Easy installation
+        %p
+          Jenkins is a self-contained Java-based program, ready to run
+          out-of-the-box, with packages for Windows, Linux, macOS and other
+          Unix-like operating systems.
+      .card
+        %ion-icon{:name=>"options-outline"}
+        %h5
+          Easy configuration
+        %p
+          Jenkins can be easily set up and configured via its web interface,
+          which includes on-the-fly error checks and built-in help.
+      .card
+        %ion-icon{:name=>"apps-outline"}
+        %h5
+          Plugins
+        %p
+          With hundreds of plugins in the Update Center, Jenkins integrates
+          with practically every tool in the continuous integration and
+          continuous delivery toolchain.
+      .card
+        %ion-icon{:name=>"extension-puzzle-outline"}
+        %h5
+          Extensible
+        %p
+          Jenkins can be extended via its plugin architecture, providing
+          nearly infinite possibilities for what Jenkins can do.
+      .card
+        %ion-icon{:name=>"git-network-outline"}
+        %h5
+          Distributed
+        %p
+          Jenkins can easily distribute work across multiple machines,
+          helping drive builds, tests and deployments across multiple
+          platforms faster.
 
-  %a{:href => 'artwork'}
-    Artwork!
+  .cokepepsi
+    = partial('blogs.html.haml')
 
-  .container
-    .section
-      = partial('blogs.html.haml')
+  .cokepepsi.div
+    .div
+      .sponsors
+        %p
+          We thank the following organizations for their major commitments to
+          support the Jenkins project.
 
-  .sponsorblock-wrapper
-    .container
-      #sponsorsblock.section
-        .sponsors
-          %p
-            We thank the following organizations for their major commitments to
-            support the Jenkins project.
+        %ul
 
-          %ul
+          - supporters.select{|sponsor| sponsor[:logo]}.each do |sponsor|
+            %li
+              %a{:href => sponsor['url'], :target => '_blank', :rel => 'noreferrer noopener'}
+                = File.read("content/images/sponsors/#{sponsor['logo']}")
 
-            - supporters.select{|sponsor| sponsor[:logo]}.each do |sponsor|
-              %li
-                %a{:href => sponsor['url'], :target => '_blank', :rel => 'noreferrer noopener'}
-                  = File.read("content/images/sponsors/#{sponsor['logo']}")
+      .supporters
+        %p
+          We thank the following organizations for their support of the Jenkins
+          project through free and/or open source licensing programs.
 
-        .supporters
-          %p
-            We thank the following organizations for their support of the Jenkins
-            project through free and/or open source licensing programs.
-
-          %ul
-            - supporters.reject{|sponsor| sponsor[:logo]}.each do |supporter|
-              %li
-                %a{:href => supporter['url'], :target => '_blank', :rel => 'noreferrer noopener'}= supporter['name']
+        %ul
+          - supporters.reject{|sponsor| sponsor[:logo]}.each do |supporter|
+            %li
+              %a{:href => supporter['url'], :target => '_blank', :rel => 'noreferrer noopener'}= supporter['name']
 
   = partial('thank-you-note.html.haml')
