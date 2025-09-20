@@ -1,5 +1,6 @@
 ---
 name: "Alexander Brandes"
+spotlight: "alexander-brandes"
 github: "NotMyFault"
 linkedin: "alexander-brandes"
 ---

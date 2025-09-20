@@ -34,7 +34,7 @@
   li {
     display: contents;
 
-    a {
+    .app-button {
       --button-color: var(--accent-color);
       --button-background: var(--button-color);
 
@@ -42,7 +42,6 @@
       display: inline-flex;
       width: 2.5rem;
       height: 2.5rem;
-      font-size: 0;
       flex-shrink: 0;
       padding: 0;
 
@@ -61,6 +60,13 @@
         &::after {
           display: none;
         }
+      }
+    }
+
+    .app-button--spotlight {
+      img {
+        width: 1.5rem;
+        height: 1.5rem;
       }
     }
   }

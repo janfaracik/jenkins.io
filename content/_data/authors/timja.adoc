@@ -1,6 +1,7 @@
 ---
 name: "Tim Jacomb"
 github: "timja"
+spotlight: tim-jacomb
 twitter: Tjaynz
 linkedin: tim-jacomb-98043174
 ---

@@ -1,5 +1,6 @@
 ---
 name: "Kohsuke Kawaguchi"
+spotlight: kohsuke-kawaguchi
 twitter: kohsukekawa
 github: kohsuke
 ---

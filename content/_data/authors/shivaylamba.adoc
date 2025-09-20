@@ -1,5 +1,6 @@
 ---
 name: Shivay Lamba
+spotlight: shivay-lamba
 github: "shivaylamba"
 twitter: "howdevelop"
 ---

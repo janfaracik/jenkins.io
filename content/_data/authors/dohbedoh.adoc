@@ -1,5 +1,6 @@
 ---
 name: "Allan Burdajewicz"
+spotlight: "allan-burdajewicz"
 github: "dohbedoh"
 twitter: "Dohbedoh"
 linkedin: "allan-burdajewicz-0122452b"

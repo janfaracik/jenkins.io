@@ -1,6 +1,7 @@
 ---
 name: "Mark Waite"
 twitter: MarkEWaite
+spotlight: mark-waite
 github: markewaite
 irc: markewaite
 linkedin: markwaite

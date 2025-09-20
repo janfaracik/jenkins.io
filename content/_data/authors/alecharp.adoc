@@ -1,5 +1,6 @@
 ---
 name: "Adrien Lecharpentier"
+spotlight: adrien-lecharpentier
 twitter: alecharp
 github: alecharp
 blog: https://alecharp.fr

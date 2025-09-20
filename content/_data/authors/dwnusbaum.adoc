@@ -1,5 +1,6 @@
 ---
 name: "Devin Nusbaum"
+spotlight: devin-nusbaum
 github: dwnusbaum
 ---
 

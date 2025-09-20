@@ -1,6 +1,7 @@
 ---
 name: "Jan Faracik"
 blog: "https://janfaracik.github.io"
+spotlight: "jan-faracik"
 github: "janfaracik"
 twitter: janfaracik
 linkedin: janfaracik

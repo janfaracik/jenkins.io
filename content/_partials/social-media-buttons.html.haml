@@ -27,12 +27,19 @@
       %ul.app-social-media-buttons
         - sigs.each do |item|
           %li
-            %a{:href => item.url, :class => "app-button", :'data-tooltip' => item.title + ' ' + item.type}
+            %a{:href => item.url, :class => "app-button", :'data-tooltip' => item.title + ' ' + item.type, :target => "_blank"}
               .app-sigs__item__icon{:style => '--background: url("' + expand_link(item.logo) + '")'}
                 - if item.logo.end_with?('.png')
                   %img{:title => "Logo", :src => expand_link(item.logo), :width => "96"}
                 - else
                   = File.read("content/" + expand_link(item.logo))
+
+    - if author.spotlight
+      %ul.app-social-media-buttons
+        %li
+          %a{:href => "https://contributors.jenkins.io/pages/contributors/#{author.spotlight}", :class => "app-button app-button--spotlight", :'data-tooltip' => 'Featured on the Jenkins Contributor Spotlight', :target => "_blank"}
+            .app-sigs__item__icon{:style => '--background: url("' + expand_link('/images/logos/jenkins/jenkins.svg') + '")'}
+              %img{:title => "Logo", :src => expand_link('/images/logos/jenkins/jenkins.svg'), :width => "96"}
 
     - if social_links.any?
       %ul.app-social-media-buttons

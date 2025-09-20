@@ -1,5 +1,6 @@
 ---
 name: "Stefan Spieker"
+spotlight: stefan-spieker
 github: StefanSpieker
 linkedin: stefan-spieker-446168161
 ---

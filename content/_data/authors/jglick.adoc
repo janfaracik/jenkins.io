@@ -1,5 +1,6 @@
 ---
 name: "Jesse Glick"
+spotlight: jesse-glick
 twitter: tyvole
 github: jglick
 ---

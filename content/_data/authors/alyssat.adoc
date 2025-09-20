@@ -1,5 +1,6 @@
 ---
 name: "Alyssa Tong"
+spotlight: alyssa-tong
 github: alyssat
 ---
 

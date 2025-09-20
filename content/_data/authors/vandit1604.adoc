@@ -1,5 +1,6 @@
 ---
 name: "Vandit Singh"
+spotlight: vandit-singh
 github: vandit1604
 twitter: vandittwts
 linkedin: vandit-singh

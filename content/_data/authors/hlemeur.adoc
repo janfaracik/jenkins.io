@@ -1,5 +1,6 @@
 ---
 name: "Hervé Le Meur"
+spotlight: herve-le-meur
 github: lemeurherve
 irc: hervelemeur
 linkedin: hervelemeur

@@ -1,5 +1,6 @@
 ---
 name: "Bruno Verachten"
+spotlight: bruno-verachten
 twitter: poddingue
 github: gounthar
 irc: poddingue

@@ -1,5 +1,6 @@
 ---
 name: "Harsh Pratap Singh"
+spotlight: harsh-pratap-singh
 github: harsh-ps-2003
 twitter: harsh_ps2003
 linkedin: harsh-pratap-singh-787485255

@@ -1,5 +1,6 @@
 ---
 name: "Kris Stern"
+spotlight: kris-stern
 github: krisstern
 twitter: krisstern13
 linkedin: kris-stern

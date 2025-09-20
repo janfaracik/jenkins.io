@@ -1,5 +1,6 @@
 ---
 name: "Alex Earl"
+spotlight: alex-earl
 twitter: alexcearl
 github: slide
 ---
