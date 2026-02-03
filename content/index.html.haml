@@ -133,6 +133,20 @@ css:
 %div.app-home-landing2
   .app-container
     %h2
+      There's a Jenkins for you
+    %p{:class => 'paulsimon'}
+      The leading open source automation server, Jenkins provides thousands of plugins to support building, deploying, and automating any project.
+    .betty
+      %a.app-button.app-button--primary{:href => "artwork"}
+        Find your Jenkins
+        %ion-icon{:name => "chevron-forward-outline"}
+    %div.artworkpop
+      - site.logo.to_a.shuffle.select { |_, logo| logo[:vector] || logo["vector"] }.first(5).each do |key, logo|
+        %img.logo-thumb{:src => expand_link("images/#{logo['vector']}"), :alt => logo['name'], :loading => "lazy", :style => "rotate: 10deg"}
+
+%div.app-home-landing2
+  .app-container
+    %h2
       Get involved
     .cards
       .card
@@ -142,17 +156,6 @@ css:
         %p
           As an extensible automation server, Jenkins can be used as a simple
           CI server or turned into the continuous delivery hub for any project.
-
-%div.app-home-landing2
-  .app-container
-    %h2
-      There's a Jenkins for you
-    %a{:href => "artwork"}
-      Find your Jenkins.
-    %div.artworkpop
-      - site.logo.sort.to_h.select { |_, logo| logo[:vector] || logo["vector"] }.first(5).each do |key, logo|
-        %a{:href => expand_link("images/#{logo['url']}")}
-          %img.logo-thumb{:src => expand_link("images/#{logo['vector']}"), :alt => logo['name']}
 
   -# .cokepepsi
   -#   = partial('blogs.html.haml')

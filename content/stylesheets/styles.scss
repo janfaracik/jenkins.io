@@ -9,9 +9,64 @@
 }
 
 .artworkpop {
-  width: 100px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  translate: 0 -50%;
+  width: 500px;
+  height: 500px;
   overflow: hidden;
-  border: 2px solid black;
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: 500px;
+    height: 500px;
+    animation: popSwap 5s infinite both;
+  }
+
+  /* 5 images x 3s each = 15s total cycle */
+  img:nth-of-type(1) {
+    animation-delay: 0s;
+  }
+
+  img:nth-of-type(2) {
+    animation-delay: 5s;
+  }
+
+  img:nth-of-type(3) {
+    animation-delay: 10s;
+  }
+
+  img:nth-of-type(4) {
+    animation-delay: 15s;
+  }
+
+  img:nth-of-type(5) {
+    animation-delay: 20s;
+  }
+
+  @keyframes popSwap {
+    /* each image's 3s window inside its own delayed timeline */
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    10% {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+    90% {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0);
+    }
+  }
 }
 
 .testingtestingtodo {
@@ -319,32 +374,32 @@
       font-style: italic;
     }
   }
+}
 
-  .betty {
-    display: flex;
-    gap: 1rem;
-    --control-shadow: 0 2px 2px color-mix(in srgb, black 2%, transparent);
+.betty {
+  display: flex;
+  gap: 1rem;
+  --control-shadow: 0 2px 2px color-mix(in srgb, black 2%, transparent);
 
-    .app-button {
-      font-size: 1.25rem;
-      padding: 0.75rem 2rem;
-      border-radius: 100px;
-      --button-background: transparent !important;
-      color: var(--text-color) !important;
-      position: relative;
-      z-index: 0;
-      background-color: color-mix(in srgb, var(--color--secondary) 5%, transparent);
-      border: 1px solid color-mix(in srgb, var(--color--secondary) 10%, transparent);
-      box-shadow: var(--control-shadow);
-      text-box: cap alphabetic;
-      gap: 0.5rem;
-    }
+  .app-button {
+    font-size: 1.25rem;
+    padding: 0.75rem 2rem;
+    border-radius: 100px;
+    --button-background: transparent !important;
+    color: var(--text-color) !important;
+    position: relative;
+    z-index: 0;
+    background-color: color-mix(in srgb, var(--color--secondary) 5%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color--secondary) 10%, transparent);
+    box-shadow: var(--control-shadow);
+    text-box: cap alphabetic;
+    gap: 0.5rem;
+  }
 
-    .app-button--primary {
-      font-weight: 500;
-      background-color: color-mix(in srgb, var(--accent-color) 100%, transparent);
-      color: white !important;
-    }
+  .app-button--primary {
+    font-weight: 500;
+    background-color: color-mix(in srgb, var(--accent-color) 100%, transparent);
+    color: white !important;
   }
 }
 
