@@ -137,9 +137,13 @@ css:
     %p{:class => 'paulsimon'}
       Make Jenkins your own with thousands of plugins available to install and customize.
     .betty
-      %a.app-button.app-button--primary{:href => "plugins"}
+      %a.app-button.app-button--primary{:href => "https://plugins.jenkins.io"}
         View plugins
         %ion-icon{:name => "chevron-forward-outline"}
+
+%div.app-home-landing2
+  .app-container
+    = partial('blogs.html.haml')
 
 %div.app-home-landing2
   .app-container
@@ -160,9 +164,9 @@ css:
     %h2
       Get involved
     %p{:class => 'paulsimon'}
-      Jenkins wouldn't be Jenkins without its thousands of contributors. Any contribution matters: code, documentation, localization, blog posts, artwork, meetups, and everything else.
+      Jenkins wouldn't be Jenkins without its thousands of contributors. Every contribution matters: code, documentation, localization, blog posts, artwork, meetups, and more.
     .betty
-      %a.app-button.app-button--primary{:href => "contribute"}
+      %a.app-button.app-button--primary{:href => "participate"}
         Get involved
         %ion-icon{:name => "chevron-forward-outline"}
 

@@ -354,10 +354,11 @@
 }
 
 .app-home-landing2 {
+  background: var(--background);
   gap: 3rem;
 
   &:nth-of-type(even) {
-    background: color-mix(in srgb, var(--color--secondary) 10%, transparent);
+    --background: color-mix(in srgb, var(--color--secondary) 10%, white);
   }
 
   .app-container {
