@@ -35,6 +35,7 @@ css:
       %a{:class => 'app-button', :href => '/doc'}
         %ion-icon{:name => "book"}
         Docs
+    %img{:src => "/images/logos/jenkins/jenkins.svg"}
 
 %div.app-home-landing2
   .app-container
@@ -169,6 +170,7 @@ css:
       %a.app-button.app-button--primary{:href => "participate"}
         Get involved
         %ion-icon{:name => "chevron-forward-outline"}
+  = partial('thank-you-note.html.haml')
 
 %div.app-home-landing2
   .app-container
@@ -188,5 +190,3 @@ css:
       - supporters.reject{|supporter| supporter[:logo]}.each do |supporter|
         %li
           %a{:href => supporter[:url]}= supporter[:name]
-
-  = partial('thank-you-note.html.haml')
