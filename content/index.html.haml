@@ -36,10 +36,10 @@ css:
         %ion-icon{:name => "book"}
         Docs
 
-%div.app-home-landing2.darkbg
+%div.app-home-landing2
   .app-container
     %h2
-      Jenkins 3 is here.
+      Jenkins 3 is here
     %p{:class => 'paulsimon'}
       The leading open source automation server, Jenkins provides thousands of plugins to support building, deploying, and automating any project.
     .macwindow
@@ -114,28 +114,39 @@ css:
           Jenkins on Jenkins
         %p
           Read about how Jenkins uses Jenkins to build Jenkins.
-      %div
-      .card
-        %ion-icon{:name=>"git-pull-request-outline"}
-        %h5
-          Continuous Integration and Continuous Delivery
-        %p
-          As an extensible automation server, Jenkins can be used as a simple
-          CI server or turned into the continuous delivery hub for any project.
-      .card
-        %ion-icon{:name=>"git-pull-request-outline"}
-        %h5
-          Continuous Integration and Continuous Delivery
-        %p
-          As an extensible automation server, Jenkins can be used as a simple
-          CI server or turned into the continuous delivery hub for any project.
+      %div{:style => "display: grid; grid-template-rows: 1fr 1fr; gap: 1rem"}
+        .card
+          %ion-icon{:name=>"git-pull-request-outline"}
+          %h5
+            something
+          %p
+            As an extensible automation server, Jenkins can be used as a simple
+            CI server or turned into the continuous delivery hub for any project.
+        .card
+          %ion-icon{:name=>"git-pull-request-outline"}
+          %h5
+            something
+          %p
+            As an extensible automation server, Jenkins can be used as a simple
+            CI server or turned into the continuous delivery hub for any project.
+
+%div.app-home-landing2
+  .app-container
+    %h2
+      Plugins
+    %p{:class => 'paulsimon'}
+      Make Jenkins your own with thousands of plugins available to install and customize.
+    .betty
+      %a.app-button.app-button--primary{:href => "plugins"}
+        View plugins
+        %ion-icon{:name => "chevron-forward-outline"}
 
 %div.app-home-landing2
   .app-container
     %h2
       There's a Jenkins for you
     %p{:class => 'paulsimon'}
-      The leading open source automation server, Jenkins provides thousands of plugins to support building, deploying, and automating any project.
+      Meet your Jenkins match - a gallery of playful, community-made Jenkins variations, each with its own personality and style.
     .betty
       %a.app-button.app-button--primary{:href => "artwork"}
         Find your Jenkins
@@ -148,40 +159,30 @@ css:
   .app-container
     %h2
       Get involved
-    .cards
-      .card
-        %ion-icon{:name=>"git-pull-request-outline"}
-        %h5
-          Continuous Integration and Continuous Delivery
-        %p
-          As an extensible automation server, Jenkins can be used as a simple
-          CI server or turned into the continuous delivery hub for any project.
+    %p{:class => 'paulsimon'}
+      Jenkins wouldn't be Jenkins without its thousands of contributors. Any contribution matters: code, documentation, localization, blog posts, artwork, meetups, and everything else.
+    .betty
+      %a.app-button.app-button--primary{:href => "contribute"}
+        Get involved
+        %ion-icon{:name => "chevron-forward-outline"}
 
-  -# .cokepepsi
-  -#   = partial('blogs.html.haml')
-  -#
-  -# .cokepepsi
-  -#   .div
-  -#     .sponsors
-  -#       %p
-  -#         We thank the following organizations for their major commitments to
-  -#         support the Jenkins project.
-  -#
-  -#       %ul
-  -#
-  -#         - supporters.select{|sponsor| sponsor[:logo]}.each do |sponsor|
-  -#           %li
-  -#             %a{:href => sponsor[:url]}
-  -#               = File.read("content/images/sponsors/#{sponsor[:logo]}")
-  -#
-  -#     .supporters
-  -#       %p
-  -#         We thank the following organizations for their support of the Jenkins
-  -#         project through free and/or open source licensing programs.
-  -#
-  -#       %ul
-  -#         - supporters.reject{|supporter| supporter[:logo]}.each do |supporter|
-  -#           %li
-  -#             %a{:href => supporter[:url]}= supporter[:name]
+%div.app-home-landing2
+  .app-container
+    %h2
+      With thanks to
+    %p{:class => 'paulsimon'}
+      We thank the following organizations for their major commitments to
+      support the Jenkins project.
 
-  -# = partial('thank-you-note.html.haml')
+    %ul.supporters
+      - supporters.select{|sponsor| sponsor[:logo]}.each do |sponsor|
+        %li
+          %a{:href => sponsor[:url]}
+            = File.read("content/images/sponsors/#{sponsor[:logo]}")
+
+    %ul.supporters
+      - supporters.reject{|supporter| supporter[:logo]}.each do |supporter|
+        %li
+          %a{:href => supporter[:url]}= supporter[:name]
+
+  = partial('thank-you-note.html.haml')

@@ -8,13 +8,48 @@
   //max-width: 1200px;
 }
 
+.supporters {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+  margin: 0;
+
+  li {
+    display: contents;
+
+    a {
+      transition: 0.2s ease;
+
+      svg {
+        color: var(--color);
+        width: 120px;
+        height: 100px;
+        flex-grow: 1;
+      }
+
+      &:hover {
+        opacity: 0.75;
+      }
+
+      &:active {
+        opacity: 0.5;
+        scale: 0.9;
+      }
+    }
+  }
+}
+
 .artworkpop {
   position: absolute;
   top: 50%;
   right: 0;
   translate: 0 -50%;
-  width: 500px;
-  height: 500px;
+  width: 600px;
+  height: 600px;
   overflow: hidden;
 
   img {
@@ -22,8 +57,8 @@
     top: 50%;
     left: 50%;
     translate: -50% -50%;
-    width: 500px;
-    height: 500px;
+    width: 600px;
+    height: 600px;
     animation: popSwap 5s infinite both;
   }
 
@@ -306,30 +341,29 @@
 .stories {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 1rem;
 }
 
 .paulsimon {
   margin: 0;
   font-size: 1.25rem;
-  font-weight: 450;
   max-width: 700px;
   color: var(--color--secondary);
   line-height: 1.66;
   text-box: cap alphabetic;
 }
 
-.darkbg {
-  background: color-mix(in srgb, var(--color--secondary) 10%, transparent);
-}
-
 .app-home-landing2 {
   gap: 3rem;
-  border-bottom: 2px solid red;
+
+  &:nth-of-type(even) {
+    background: color-mix(in srgb, var(--color--secondary) 10%, transparent);
+  }
 
   .app-container {
     display: flex;
     flex-direction: column;
-    padding-block: 6rem;
+    padding-block: 8rem;
     gap: 3rem;
     min-height: 0;
   }
@@ -407,23 +441,22 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
+}
 
-  .card {
-    position: relative;
-    z-index: 0;
-    height: 100px;
-    color: black;
-    padding: 2rem;
+.card {
+  position: relative;
+  z-index: 0;
+  color: black;
+  padding: 2rem;
 
-    &::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-color: var(--accent-color);
-      opacity: 0.3;
-      border-radius: 1rem;
-      z-index: -1;
-    }
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--accent-color);
+    opacity: 0.3;
+    border-radius: 1rem;
+    z-index: -1;
   }
 }
 
