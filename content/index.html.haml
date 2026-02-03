@@ -13,9 +13,10 @@ css:
 
   supporters = site.indexpage[:supporters]
   slides = site.indexpage[:carousel]
+  latestRelease = site.jenkins.stable
 
-.app-container
-  %div.app-home-landing
+%div.app-home-landing
+  .app-container
     %h1
       Build great things at
       %span
@@ -27,18 +28,32 @@ css:
       %a{:class => 'app-button app-button--primary', :href => '/download'}
         %ion-icon{:name => "download"}
         Get Jenkins
-      %a{:class => 'app-button', :href => '/doc'}
+      %a{:class => 'app-button', :href => '/changelog/' + latestRelease}
         %ion-icon{:name => "sparkles"}
-        What's new in Jenkins 3
+        What's new in Jenkins
+        = latestRelease
       %a{:class => 'app-button', :href => '/doc'}
         %ion-icon{:name => "book"}
         Docs
 
-  .cokepepsi
-    = partial('projectcarousel.html.haml',
-      :slides => slides)
+%div.app-home-landing2.darkbg
+  .app-container
+    %h2
+      Jenkins 3 is here.
+    %p{:class => 'paulsimon'}
+      The leading open source automation server, Jenkins provides thousands of plugins to support building, deploying, and automating any project.
+    .macwindow
+      .titlebar
+        .trafficlight
+        .trafficlight
+        .trafficlight
 
-  .cokepepsi
+-# .cokepepsi
+-#   = partial('projectcarousel.html.haml',
+-#     :slides => slides)
+
+%div.app-home-landing2
+  .app-container
     %h2.testingtestingtodo
       Why Jenkins
     .cards
@@ -88,31 +103,82 @@ css:
           helping drive builds, tests and deployments across multiple
           platforms faster.
 
-  .cokepepsi
-    = partial('blogs.html.haml')
-
-  .cokepepsi.div
-    .div
-      .sponsors
+%div.app-home-landing2
+  .app-container
+    %h2
+      Stories
+    .stories
+      .card
+        %ion-icon{:name=>"git-pull-request-outline"}
+        %h5
+          Jenkins on Jenkins
         %p
-          We thank the following organizations for their major commitments to
-          support the Jenkins project.
-
-        %ul
-
-          - supporters.select{|sponsor| sponsor[:logo]}.each do |sponsor|
-            %li
-              %a{:href => sponsor[:url]}
-                = File.read("content/images/sponsors/#{sponsor[:logo]}")
-
-      .supporters
+          Read about how Jenkins uses Jenkins to build Jenkins.
+      %div
+      .card
+        %ion-icon{:name=>"git-pull-request-outline"}
+        %h5
+          Continuous Integration and Continuous Delivery
         %p
-          We thank the following organizations for their support of the Jenkins
-          project through free and/or open source licensing programs.
+          As an extensible automation server, Jenkins can be used as a simple
+          CI server or turned into the continuous delivery hub for any project.
+      .card
+        %ion-icon{:name=>"git-pull-request-outline"}
+        %h5
+          Continuous Integration and Continuous Delivery
+        %p
+          As an extensible automation server, Jenkins can be used as a simple
+          CI server or turned into the continuous delivery hub for any project.
 
-        %ul
-          - supporters.reject{|supporter| supporter[:logo]}.each do |supporter|
-            %li
-              %a{:href => supporter[:url]}= supporter[:name]
+%div.app-home-landing2
+  .app-container
+    %h2
+      Get involved
+    .cards
+      .card
+        %ion-icon{:name=>"git-pull-request-outline"}
+        %h5
+          Continuous Integration and Continuous Delivery
+        %p
+          As an extensible automation server, Jenkins can be used as a simple
+          CI server or turned into the continuous delivery hub for any project.
 
-  = partial('thank-you-note.html.haml')
+%div.app-home-landing2
+  .app-container
+    %h2
+      There's a Jenkins for you
+    %a{:href => "artwork"}
+      Find your Jenkins.
+    %div.artworkpop
+      - site.logo.sort.to_h.select { |_, logo| logo[:vector] || logo["vector"] }.first(5).each do |key, logo|
+        %a{:href => expand_link("images/#{logo['url']}")}
+          %img.logo-thumb{:src => expand_link("images/#{logo['vector']}"), :alt => logo['name']}
+
+  -# .cokepepsi
+  -#   = partial('blogs.html.haml')
+  -#
+  -# .cokepepsi
+  -#   .div
+  -#     .sponsors
+  -#       %p
+  -#         We thank the following organizations for their major commitments to
+  -#         support the Jenkins project.
+  -#
+  -#       %ul
+  -#
+  -#         - supporters.select{|sponsor| sponsor[:logo]}.each do |sponsor|
+  -#           %li
+  -#             %a{:href => sponsor[:url]}
+  -#               = File.read("content/images/sponsors/#{sponsor[:logo]}")
+  -#
+  -#     .supporters
+  -#       %p
+  -#         We thank the following organizations for their support of the Jenkins
+  -#         project through free and/or open source licensing programs.
+  -#
+  -#       %ul
+  -#         - supporters.reject{|supporter| supporter[:logo]}.each do |supporter|
+  -#           %li
+  -#             %a{:href => supporter[:url]}= supporter[:name]
+
+  -# = partial('thank-you-note.html.haml')
