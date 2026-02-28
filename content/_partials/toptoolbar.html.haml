@@ -1,1 +1,18 @@
--# %jio-navbar#ji-toolbar.fixed-nav{:property=>"https://www.jenkins.io", :theme => "auto", :showSearchBox=>!page.hide_search_bar}
+%div.app-nav
+  %div.app-nav-logo
+    %a{:href => '/', :aria-label => 'Home'}
+      %img{:src => "/images/logos/jenkins/jenkins.svg"}
+  %div.app-nav-links.glassy
+    %a{:href => '/blog'}
+      Blog
+    %a{:href => 'https://plugins.jenkins.io'}
+      Plugins
+    %a{:href => '/doc'}
+      Docs
+    %a{:href => '/contribute'}
+      Contribute
+    %a{:href => '/download', :aria-label => 'Get Jenkins'}
+      Get
+  %div.app-nav-links.glassy
+    %button.app-nav-search{:aria-label => 'Search'}
+      %ion-icon{:name => "search-outline"}

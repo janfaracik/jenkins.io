@@ -4,45 +4,49 @@
 @import "components/_all";
 @import "pages/_all";
 
+:root {
+  --control-shadow: 0 2px 2px color-mix(in srgb, black 2%, transparent);
+}
+
+* {
+  box-sizing: border-box;
+}
+
 .app-nav {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
-  padding: 1rem;
+  padding: 0.75rem 0;
 
-  display: grid;
-  grid-template-columns: 1fr auto auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   gap: 1rem;
+  font-size: 14px;
+  max-width: Max(Min(85vw, 1600px), $app-tablet-breakpoint);
+  margin: auto;
 
   .glassy {
-    backdrop-filter: blur(10px);
-    background: color-mix(in srgb, var(--background) 50%, transparent);
+    backdrop-filter: saturate(1.5) blur(15px);
+    background: color-mix(in srgb, var(--background) 70%, transparent);
+    border: 1px solid color-mix(in srgb, var(--background) 10%, transparent);
     border-radius: 100px;
-    min-height: 40px;
+    min-height: 48px;
+    box-shadow: var(--control-shadow);
   }
 
-  & > div {
+  .app-nav-logo {
     display: flex;
     align-items: stretch;
     justify-content: start;
-    gap: 4px;
-    padding: 4px;
+    width: 150px;
 
     a {
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--color) !important;
-      font-weight: 450;
-      border-radius: 100px;
-      padding-inline: 1.25rem;
-      text-decoration: none;
-
-      &:hover {
-        background: color-mix(in srgb, currentColor 5%, transparent);
-      }
 
       img {
         width: 2.25rem;
@@ -50,22 +54,46 @@
       }
     }
   }
+
+  .app-nav-links {
+    display: flex;
+    align-items: stretch;
+    justify-content: start;
+    gap: 4px;
+    padding: 4px;
+
+    a, button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color--secondary);
+      font-weight: 450;
+      border-radius: 100px;
+      padding-inline: 1.125rem;
+      text-decoration: none;
+      transition: 0.2s ease;
+      appearance: none;
+      background: none;
+      outline: none;
+      border: none;
+      cursor: pointer;
+
+      &:hover {
+        background: color-mix(in srgb, currentColor 5%, transparent);
+        box-shadow: inset 0 0 0 1px color-mix(in srgb, currentColor 5%, transparent);
+        color: var(--color);
+      }
+    }
+  }
 }
 
 .app-nav-search {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  appearance: none;
-  outline: none;
-  border: none;
-  border-radius: 100px;
-  font: inherit;
-  min-width: 200px;
-  padding: 0.375rem 1rem;
-  text-align: left;
-  cursor: pointer;
-  min-height: 40px;
+  padding: 0 !important;
+  width: 40px;
+  height: 40px;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+  --ionicon-stroke-width: 44px;
 }
 
 .supporters {
@@ -453,6 +481,10 @@
   text-box: cap alphabetic;
 }
 
+:root {
+  --background: hsl(212, 100%, 97%);
+}
+
 .app-home-landing2 {
   gap: 3rem;
 
@@ -536,7 +568,6 @@
 .betty {
   display: flex;
   gap: 1rem;
-  --control-shadow: 0 2px 2px color-mix(in srgb, black 2%, transparent);
 }
 
 .cards {

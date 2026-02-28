@@ -39,33 +39,12 @@ css:
       %a{:class => 'app-button app-button--primary', :href => '/download'}
         %ion-icon{:name => "download"}
         Get Jenkins
-      %a{:class => 'app-button', :href => '/doc'}
-        %ion-icon{:name => "book"}
-        Docs
-
-    %a{:class => 'app-button', :href => '/changelog/' + latestRelease}
-      %ion-icon{:name => "sparkles"}
-      What's new in Jenkins
-      = latestRelease
+      %a{:class => 'app-button', :href => '/changelog/' + latestRelease}
+        %ion-icon{:name => "sparkles"}
+        What's new in Jenkins
+        = latestRelease
 
     %img{:src => "/images/logos/jenkins/jenkins.svg"}
-
-%div.app-nav
-  %div
-    %a{:href => 'https://jenkins.io'}
-      %img{:src => "/images/logos/jenkins/jenkins.svg"}
-  %div.glassy
-    %a{:href => 'blog'}
-      Blog
-    %a{:href => 'docs'}
-      Docs
-    %a{:href => 'https://plugins.jenkins.io'}
-      Plugins
-    %a{:href => 'download'}
-      Get
-  %button.glassy.app-nav-search
-    %ion-icon{:name => "search-outline"}
-    Search
 
 %div.app-home-landing2.darkbg
   .app-container
