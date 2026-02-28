@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Jenkins
+title: Jenkins - Build great things at any scale
 blogrollup: true
 homepage: true
 css:
@@ -14,8 +14,19 @@ css:
   supporters = site.indexpage[:supporters]
   slides = site.indexpage[:carousel]
   latestRelease = site.jenkins.stable
+  users = [
+    { image: "apple",   title: "Apple" },
+    { image: "netflix",   title: "Netflix" },
+    { image: "uber",      title: "Uber" },
+    { image: "paypal",    title: "PayPal" },
+    { image: "salesforce", title: "Salesforce" },
+    { image: "autodesk",  title: "Autodesk" },
+    { image: "amexgbt",   title: "American Express Global Business Travel" },
+    { image: "cern",      title: "CERN" },
+    { image: "jd",        title: "JD.com" }
+  ]
 
-%div.app-home-landing
+%div.app-home-landing2.app-home-landing
   .app-container
     %h1
       Build great things at
@@ -28,26 +39,40 @@ css:
       %a{:class => 'app-button app-button--primary', :href => '/download'}
         %ion-icon{:name => "download"}
         Get Jenkins
-      %a{:class => 'app-button', :href => '/changelog/' + latestRelease}
-        %ion-icon{:name => "sparkles"}
-        What's new in Jenkins
-        = latestRelease
       %a{:class => 'app-button', :href => '/doc'}
         %ion-icon{:name => "book"}
         Docs
+
+    %a{:class => 'app-button', :href => '/changelog/' + latestRelease}
+      %ion-icon{:name => "sparkles"}
+      What's new in Jenkins
+      = latestRelease
+
     %img{:src => "/images/logos/jenkins/jenkins.svg"}
 
-%div.app-home-landing2
+%div.app-nav
+  %div
+    %a{:href => 'https://jenkins.io'}
+      %img{:src => "/images/logos/jenkins/jenkins.svg"}
+  %div.glassy
+    %a{:href => 'blog'}
+      Blog
+    %a{:href => 'docs'}
+      Docs
+    %a{:href => 'https://plugins.jenkins.io'}
+      Plugins
+    %a{:href => 'download'}
+      Get
+  %button.glassy.app-nav-search
+    %ion-icon{:name => "search-outline"}
+    Search
+
+%div.app-home-landing2.darkbg
   .app-container
-    %h2
-      Jenkins 3 is here
-    %p{:class => 'paulsimon'}
-      The leading open source automation server, Jenkins provides thousands of plugins to support building, deploying, and automating any project.
-    .macwindow
-      .titlebar
-        .trafficlight
-        .trafficlight
-        .trafficlight
+    %div.logo-marquee
+      %div.logo-track
+        - users.shuffle.each do |user|
+          = File.read("content/images/sponsors/#{user[:image]}.svg")
 
 -# .cokepepsi
 -#   = partial('projectcarousel.html.haml',
@@ -103,6 +128,50 @@ css:
           Jenkins can easily distribute work across multiple machines,
           helping drive builds, tests and deployments across multiple
           platforms faster.
+
+:javascript
+  document.addEventListener("DOMContentLoaded", () => {
+    const marquees = document.querySelectorAll(".logo-marquee");
+
+    marquees.forEach((marquee) => {
+      const track = marquee.querySelector(".logo-track");
+      if (!track) return;
+
+      // Clone once to create a seamless loop
+      const originals = Array.from(track.children);
+      originals.forEach((node) => track.appendChild(node.cloneNode(true)));
+
+      let x = 0;
+      let singleSetWidth = 0;
+
+      const recalc = () => {
+        // After cloning once, total width is ~2x, so half is one set
+        const total = track.scrollWidth;
+        singleSetWidth = total / 2;
+        // Keep x within bounds on resize
+        if (singleSetWidth > 0) x = x % singleSetWidth;
+      };
+
+      recalc();
+      window.addEventListener("resize", recalc);
+
+      const speed = 0.7; // pixels per frame, tweak as you like
+
+      const tick = () => {
+        x -= speed;
+
+        // Reset when we've moved one full set
+        if (singleSetWidth > 0 && Math.abs(x) >= singleSetWidth) {
+          x += singleSetWidth;
+        }
+
+        track.style.transform = `translate3d(${x}px, 0, 0)`;
+        requestAnimationFrame(tick);
+      };
+
+      requestAnimationFrame(tick);
+    });
+  });
 
 %div.app-home-landing2
   .app-container
