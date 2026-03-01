@@ -221,7 +221,6 @@
 
 .darkbg {
   position: relative;
-  padding-block: 3rem;
 
   &::before {
     content: "";
@@ -511,6 +510,7 @@
 
 .app-home-section {
   position: relative;
+  padding-block: 3rem;
 
   .app-button {
     font-size: 1.25rem;
@@ -573,6 +573,7 @@
       width: 100%;
       height: auto;
       max-height: 55vh;
+      z-index: 1;
     }
 
     &::before {
