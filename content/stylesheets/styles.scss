@@ -12,10 +12,6 @@
   box-sizing: border-box;
 }
 
-.glassy {
-  border-radius: 100px;
-}
-
 @keyframes shadow-in {
   to {
     background: var(--background);
@@ -100,7 +96,7 @@
       border: none;
       cursor: pointer;
       font-size: 14px;
-      height: 40px;
+      height: 2.375rem;
 
       &:hover {
         background: color-mix(in srgb, currentColor 5%, transparent);
@@ -224,10 +220,20 @@
 }
 
 .darkbg {
-  background: color-mix(in srgb, var(--color--secondary) 5%, var(--background));
+  position: relative;
+  padding-block: 3rem;
 
-  .app-container {
-    padding-block: 4rem !important;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    translate: -50% 0;
+    width: 100vmax;
+    background: var(--color--secondary);
+    opacity: 0.05;
+    pointer-events: none;
   }
 }
 
@@ -503,10 +509,8 @@
   text-box: cap alphabetic;
 }
 
-.app-home-landing2 {
-  gap: 3rem;
-  overflow-x: hidden;
-  z-index: -1;
+.app-home-section {
+  position: relative;
 
   .app-button {
     font-size: 1.25rem;
@@ -529,14 +533,6 @@
     color: white !important;
   }
 
-  .app-container {
-    display: flex;
-    flex-direction: column;
-    padding-block: 8rem;
-    gap: 3rem;
-    min-height: 0;
-  }
-
   h2 {
     font-family: "Georgia";
     font-size: 2.5rem;
@@ -553,13 +549,31 @@
 }
 
 .app-home-landing {
-  margin-top: -3rem;
 
-  .al {
-    width: 35vmax;
-    height: 35vmax;
-    position: absolute;
-    right: 0;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+
+  align-items: center;
+  min-height: calc(100vh - 3rem);
+  margin-top: -6rem;
+
+  &__contents {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  &__logo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      height: auto;
+      max-height: 55vh;
+    }
 
     &::before {
       content: "";
@@ -615,20 +629,6 @@
 
       pointer-events: none;
     }
-
-    img {
-      width: 35vmax;
-      height: 35vmax;
-      position: absolute;
-      right: 0;
-    }
-  }
-
-  .app-container {
-    align-items: start;
-    justify-content: center;
-    min-height: calc(100vh - 4rem);
-    padding-block: 4rem;
   }
 
   h1 {
@@ -648,7 +648,7 @@
 
 .betty {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .cards {

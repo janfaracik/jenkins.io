@@ -26,40 +26,38 @@ css:
     { image: "jd",        title: "JD.com" }
   ]
 
-%div.app-home-landing2.app-home-landing
-  .app-container
-    %h1
-      Build great things at
-      %span
-        any
-      scale.
-    %p{:class => 'paulsimon'}
-      The leading open source automation server, Jenkins provides thousands of plugins to support building, deploying, and automating any project.
-    %div{:class => 'betty'}
-      %a{:class => 'app-button app-button--primary', :href => '/download'}
-        %ion-icon{:name => "download"}
-        Get Jenkins
-      %a{:class => 'app-button', :href => '/changelog/' + latestRelease}
-        %ion-icon{:name => "sparkles"}
-        What's new in Jenkins
-        = latestRelease
-
-    %div.al
+%div.app-container
+  %div.app-home-section.app-home-landing
+    %div.app-home-landing__contents
+      %h1
+        Build great things at
+        %span
+          any
+        scale.
+      %p{:class => 'paulsimon'}
+        The leading open source automation server, Jenkins provides thousands of plugins to support building, deploying, and automating any project.
+      %div{:class => 'betty'}
+        %a{:class => 'app-button app-button--primary', :href => '/download'}
+          %ion-icon{:name => "download"}
+          Get Jenkins
+        %a{:class => 'app-button', :href => '/changelog/' + latestRelease}
+          %ion-icon{:name => "sparkles"}
+          What's new in Jenkins
+          = latestRelease
+    %div.app-home-landing__logo
       %img{:src => "/images/logos/jenkins/jenkins.svg"}
 
-%div.app-home-landing2.darkbg
-  .app-container
+  %div.app-home-section.darkbg
     %div.logo-marquee
       %div.logo-track
         - users.shuffle.each do |user|
           = File.read("content/images/sponsors/#{user[:image]}.svg")
 
--# .cokepepsi
--#   = partial('projectcarousel.html.haml',
--#     :slides => slides)
+  -# .cokepepsi
+  -#   = partial('projectcarousel.html.haml',
+  -#     :slides => slides)
 
-%div.app-home-landing2
-  .app-container
+  %div.app-home-section
     %h2.testingtestingtodo
       Why Jenkins
     .cards
@@ -109,52 +107,51 @@ css:
           helping drive builds, tests and deployments across multiple
           platforms faster.
 
-:javascript
-  document.addEventListener("DOMContentLoaded", () => {
-    const marquees = document.querySelectorAll(".logo-marquee");
+  :javascript
+    document.addEventListener("DOMContentLoaded", () => {
+      const marquees = document.querySelectorAll(".logo-marquee");
 
-    marquees.forEach((marquee) => {
-      const track = marquee.querySelector(".logo-track");
-      if (!track) return;
+      marquees.forEach((marquee) => {
+        const track = marquee.querySelector(".logo-track");
+        if (!track) return;
 
-      // Clone once to create a seamless loop
-      const originals = Array.from(track.children);
-      originals.forEach((node) => track.appendChild(node.cloneNode(true)));
+        // Clone once to create a seamless loop
+        const originals = Array.from(track.children);
+        originals.forEach((node) => track.appendChild(node.cloneNode(true)));
 
-      let x = 0;
-      let singleSetWidth = 0;
+        let x = 0;
+        let singleSetWidth = 0;
 
-      const recalc = () => {
-        // After cloning once, total width is ~2x, so half is one set
-        const total = track.scrollWidth;
-        singleSetWidth = total / 2;
-        // Keep x within bounds on resize
-        if (singleSetWidth > 0) x = x % singleSetWidth;
-      };
+        const recalc = () => {
+          // After cloning once, total width is ~2x, so half is one set
+          const total = track.scrollWidth;
+          singleSetWidth = total / 2;
+          // Keep x within bounds on resize
+          if (singleSetWidth > 0) x = x % singleSetWidth;
+        };
 
-      recalc();
-      window.addEventListener("resize", recalc);
+        recalc();
+        window.addEventListener("resize", recalc);
 
-      const speed = 0.7; // pixels per frame, tweak as you like
+        const speed = 0.7; // pixels per frame, tweak as you like
 
-      const tick = () => {
-        x -= speed;
+        const tick = () => {
+          x -= speed;
 
-        // Reset when we've moved one full set
-        if (singleSetWidth > 0 && Math.abs(x) >= singleSetWidth) {
-          x += singleSetWidth;
-        }
+          // Reset when we've moved one full set
+          if (singleSetWidth > 0 && Math.abs(x) >= singleSetWidth) {
+            x += singleSetWidth;
+          }
 
-        track.style.transform = `translate3d(${x}px, 0, 0)`;
+          track.style.transform = `translate3d(${x}px, 0, 0)`;
+          requestAnimationFrame(tick);
+        };
+
         requestAnimationFrame(tick);
-      };
-
-      requestAnimationFrame(tick);
+      });
     });
-  });
 
-%div.app-home-landing2
-  .app-container
+  %div.app-home-section
     %h2
       Stories
     .stories
@@ -180,8 +177,7 @@ css:
             As an extensible automation server, Jenkins can be used as a simple
             CI server or turned into the continuous delivery hub for any project.
 
-%div.app-home-landing2
-  .app-container
+  %div.app-home-section
     %h2
       Plugins
     %p{:class => 'paulsimon'}
@@ -191,12 +187,10 @@ css:
         View plugins
         %ion-icon{:name => "chevron-forward-outline"}
 
-%div.app-home-landing2
-  .app-container
+  %div.app-home-section
     = partial('blogs.html.haml')
 
-%div.app-home-landing2
-  .app-container
+  %div.app-home-section
     %h2
       There's a Jenkins for you
     %p{:class => 'paulsimon'}
@@ -209,8 +203,7 @@ css:
       - site.logo.to_a.shuffle.select { |_, logo| logo[:vector] || logo["vector"] }.first(5).each do |key, logo|
         %img.logo-thumb{:src => expand_link("images/#{logo['vector']}"), :alt => logo['name'], :loading => "lazy", :style => "rotate: 10deg"}
 
-%div.app-home-landing2
-  .app-container
+  %div.app-home-section
     %h2
       Get involved
     %p{:class => 'paulsimon'}
@@ -221,8 +214,7 @@ css:
         %ion-icon{:name => "chevron-forward-outline"}
   = partial('thank-you-note.html.haml')
 
-%div.app-home-landing2
-  .app-container
+  %div.app-home-section
     %h2
       With thanks to
     %p{:class => 'paulsimon'}
