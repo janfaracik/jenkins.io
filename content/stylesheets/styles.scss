@@ -14,33 +14,12 @@
 
 .glassy {
   border-radius: 100px;
-  min-height: 48px;
-  animation-name: shadow-in;
-  animation-duration: 1s;        /* ignored for scroll timelines, but required */
-  animation-timing-function: linear;
-  animation-fill-mode: both;
-
-  /* Tie animation progress to page scroll */
-  animation-timeline: scroll(root block);
-
-  /* Map 0px..100px of scroll to 0%..100% of the animation */
-  animation-range: 0px 100px;
-
-  /* start state (also in keyframes) */
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-  border: 1px solid transparent;
 }
 
 @keyframes shadow-in {
-  from {
-    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-    border: 1px solid transparent;
-  }
   to {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.075);
-    backdrop-filter: saturate(1.5) blur(15px);
-    background: color-mix(in srgb, var(--background) 70%, transparent);
-    border: 1px solid color-mix(in srgb, var(--background) 10%, transparent);
+    background: var(--background);
+    box-shadow: var(--control-shadow);
   }
 }
 
@@ -50,15 +29,36 @@
   left: 0;
   right: 0;
   z-index: 100;
-  padding-block: 0.75rem;
+  padding-block: 1rem;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  font-size: 14px;
   min-height: unset;
   margin-top: unset;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    bottom: 0;
+    translate: -50% 0;
+    width: 100vw;
+
+    animation-name: shadow-in;
+    animation-duration: 1s;        /* ignored for scroll timelines, but required */
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+
+    /* Tie animation progress to page scroll */
+    animation-timeline: scroll(root block);
+
+    /* Map 0px..100px of scroll to 0%..100% of the animation */
+    animation-range: 0px 100px;
+    z-index: -1;
+  }
 
   .app-nav-logo {
     display: flex;
@@ -81,18 +81,17 @@
   .app-nav-links {
     display: flex;
     align-items: stretch;
-    justify-content: start;
-    gap: 4px;
-    padding: 4px;
+    justify-content: stretch;
+    gap: 0.1875rem;
 
     a, button {
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--color--secondary);
-      font-weight: 500;
+      color: var(--color);
+      font-weight: 550;
       border-radius: 100px;
-      padding-inline: 1.125rem;
+      padding-inline: 1rem;
       text-decoration: none;
       transition: 0.2s ease;
       appearance: none;
@@ -100,10 +99,12 @@
       outline: none;
       border: none;
       cursor: pointer;
+      font-size: 14px;
+      height: 40px;
 
       &:hover {
         background: color-mix(in srgb, currentColor 5%, transparent);
-        box-shadow: inset 0 0 0 1px color-mix(in srgb, currentColor 5%, transparent);
+        box-shadow: inset 0 0 0 1px color-mix(in srgb, currentColor 5%, transparent), var(--control-shadow);
         color: var(--color);
       }
     }
@@ -111,12 +112,10 @@
 }
 
 .app-nav-search {
-  padding: 0 !important;
-  width: 40px;
-  height: 40px;
-  font-weight: 600 !important;
+  padding-inline: 0 !important;
+  aspect-ratio: 1;
   font-size: 1rem !important;
-  --ionicon-stroke-width: 48px;
+  --ionicon-stroke-width: 55px;
 }
 
 .supporters {
@@ -506,7 +505,8 @@
 
 .app-home-landing2 {
   gap: 3rem;
-  overflow: hidden;
+  overflow-x: hidden;
+  z-index: -1;
 
   .app-button {
     font-size: 1.25rem;
@@ -556,8 +556,8 @@
   margin-top: -3rem;
 
   .al {
-    width: 35vw;
-    height: 35vw;
+    width: 35vmax;
+    height: 35vmax;
     position: absolute;
     right: 0;
 
@@ -569,21 +569,59 @@
       translate: -50% -50%;
       width: 200vmax;
       height: 200vmax;
-      background: repeating-conic-gradient(
+      background: linear-gradient(45deg, var(--red) 25%, var(--blue), var(--green), var(--orange), var(--purple) 60%);
+      mask-image: repeating-conic-gradient(
                       from 10deg,
-                      var(--color--secondary) 0deg,
-                      transparent 20deg
+                /* short solid */
+                      rgba(0, 0, 0, 1)   0deg 6deg,
+
+                /* long fade down (blurry edge) */
+                      rgba(0, 0, 0, 0.7) 12deg,
+                      rgba(0, 0, 0, 0.35) 18deg,
+
+                /* "gap" is not fully transparent */
+                      rgba(0, 0, 0, 0.2) 22deg,
+
+                /* long fade back up */
+                      rgba(0, 0, 0, 0.35) 26deg,
+                      rgba(0, 0, 0, 0.7)  32deg,
+
+                /* back to solid at end of the repeat */
+                      rgba(0, 0, 0, 1)   40deg
       );
-      opacity: 0.025;
+      opacity: 0.125;
+
+      @media (prefers-color-scheme: dark) {
+        opacity: 0.065;
+      }
+
       pointer-events: none;
     }
-  }
 
-  img {
-    width: 35vw;
-    height: 35vw;
-    position: absolute;
-    right: 0;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      width: 200vmax;
+      height: 200vmax;
+      background: var(--color--secondary);
+      opacity: 0.05;
+
+      @media (prefers-color-scheme: dark) {
+        opacity: 0;
+      }
+
+      pointer-events: none;
+    }
+
+    img {
+      width: 35vmax;
+      height: 35vmax;
+      position: absolute;
+      right: 0;
+    }
   }
 
   .app-container {
