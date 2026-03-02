@@ -4,6 +4,50 @@
 @import "components/_all";
 @import "pages/_all";
 
+.slidy {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+
+  width: 100vw;
+  margin-left: 50%;
+  translate: -50% 0;
+
+  $contentWidth: clamp(#{$app-tablet-breakpoint}, 85vw, 1600px);
+  $containerPad: 1rem;
+
+  padding-inline: calc((100vw - #{$contentWidth}) / 2 + #{$containerPad});
+  scroll-padding-left: calc((100vw - #{$contentWidth}) / 2 + #{$containerPad});
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+
+  .slidycard {
+    width: 500px;
+    height: 350px;
+    background: var(--color);
+    flex-shrink: 0;
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    box-shadow: var(--control-shadow);
+    color: var(--background);
+    text-wrap: pretty;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    text-decoration: none;
+    scroll-snap-align: start;
+
+    &__title {
+      font-weight: 500;
+      color: inherit;
+    }
+
+    &__description {
+      opacity: 0.75;
+    }
+  }
+}
+
 :root {
   --control-shadow: 0 2px 2px color-mix(in srgb, black 2%, transparent);
 }
