@@ -25,6 +25,11 @@ css:
     { image: "cern",      title: "CERN" },
     { image: "jd",        title: "JD.com" }
   ]
+  stories = [
+    { id: "", title: "Building Jenkins on Jenkins", description: "Tim Jacomb walks us through how Jenkins builds Jenkins on Jenkins." },
+    { id: "", title: "ARM", description: "Chaitanya Dwivedi." },
+    { id: "", title: "Apple", description: "Jenkins speeds up the process of development which makes the software run better with the hardware. It's the secret of successful rollouts by giving us the ability to run extensive automated tests." }
+  ]
   plugins = [
     { id: "pipeline-graph-view", title: "Pipeline Graph View", description: "Pipeline Graph View makes it easy to view pipeline progress and structure.", icon: 'git-network-outline', gradient1: "#dff7e4", gradient2: "#c89aff" },
     { id: "embeddable-build-status", title: "Embeddable Build Status", description: "This plugin provides customizable badges (similar to shields.io) to any website.", icon: 'shield-outline', gradient1: "#e6d9c9", gradient2: "#a57d73" },
@@ -40,7 +45,7 @@ css:
         %span
           any
         scale.
-      %p{:class => 'paulsimon'}
+      %p{:class => 'app-home-landing__contents__description'}
         The leading open source automation server, Jenkins provides thousands of plugins to support building, deploying, and automating any project.
       %div{:class => 'betty'}
         %a{:class => 'app-button app-button--primary', :href => '/download'}
@@ -158,37 +163,32 @@ css:
     });
 
   %div.app-home-section
-    %h2
-      Stories
-    .stories
-      .card
-        %ion-icon{:name=>"git-pull-request-outline"}
-        %h5
-          Jenkins on Jenkins
-        %p
-          Read about how Jenkins uses Jenkins to build Jenkins.
-      %div{:style => "display: grid; grid-template-rows: 1fr 1fr; gap: 1rem"}
-        .card
-          %ion-icon{:name=>"git-pull-request-outline"}
-          %h5
-            something
-          %p
-            As an extensible automation server, Jenkins can be used as a simple
-            CI server or turned into the continuous delivery hub for any project.
-        .card
-          %ion-icon{:name=>"git-pull-request-outline"}
-          %h5
-            something
-          %p
-            As an extensible automation server, Jenkins can be used as a simple
-            CI server or turned into the continuous delivery hub for any project.
+    .lordeeeee
+      %h2
+        Stories
+      %p{:class => 'app-home-landing__contents__description'}
+        Hear from experts on how they use Jenkins to power their workflows.
+      %a.app-button.app-button--primary{:href => "https://stories.jenkins.io"}
+        View stories
+        %ion-icon{:name => "chevron-forward-outline"}
+    .slidy
+      - stories.each do |plugin|
+        %a.slidycard{:href => 'https://plugins.jenkins.io/' + plugin[:id] + '/'}
+          .slidycard__title
+            = plugin[:title]
+            %ion-icon{:name => "chevron-forward-outline"}
+          .slidycard__description
+            = plugin[:description]
 
   %div.app-home-section
-    %h2
-      Plugins
-    %p{:class => 'paulsimon'}
-      Make Jenkins your own with thousands of plugins available to install and customize.
-
+    .lordeeeee
+      %h2
+        Plugins
+      %p{:class => 'app-home-landing__contents__description'}
+        Make Jenkins your own with thousands of plugins available to install and customize.
+      %a.app-button.app-button--primary{:href => "https://plugins.jenkins.io"}
+        View plugins
+        %ion-icon{:name => "chevron-forward-outline"}
     .slidy
       - plugins.each do |plugin|
         %a.slidycard{:href => 'https://plugins.jenkins.io/' + plugin[:id] + '/', :style => '--gradient-1: ' + plugin[:gradient1] + '; --gradient-2: ' + plugin[:gradient2] + ';'}
@@ -201,18 +201,13 @@ css:
           .slidycard__image
             %img{:src => "/images/plugins/#{plugin[:id]}.png", :aria-hidden => true}
 
-    .betty
-      %a.app-button.app-button--primary{:href => "https://plugins.jenkins.io"}
-        View plugins
-        %ion-icon{:name => "chevron-forward-outline"}
-
   %div.app-home-section
     = partial('blogs.html.haml')
 
   %div.app-home-section
     %h2
       There's a Jenkins for you
-    %p{:class => 'paulsimon'}
+    %p{:class => 'app-home-landing__contents__description'}
       Meet your Jenkins match - a gallery of playful, community-made Jenkins variations, each with its own personality and style.
     .betty
       %a.app-button.app-button--primary{:href => "artwork"}
@@ -225,7 +220,7 @@ css:
   %div.app-home-section
     %h2
       Get involved
-    %p{:class => 'paulsimon'}
+    %p{:class => 'app-home-landing__contents__description'}
       Jenkins wouldn't be Jenkins without its thousands of contributors. Every contribution matters: code, documentation, localization, blog posts, artwork, meetups, and more.
     .betty
       %a.app-button.app-button--primary{:href => "participate"}
@@ -236,7 +231,7 @@ css:
   %div.app-home-section
     %h2
       With thanks to
-    %p{:class => 'paulsimon'}
+    %p{:class => 'app-home-landing__contents__description'}
       We thank the following organizations for their major commitments to
       support the Jenkins project.
 
