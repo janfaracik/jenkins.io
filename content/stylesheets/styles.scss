@@ -16,26 +16,31 @@
   $contentWidth: clamp(#{$app-tablet-breakpoint}, 85vw, 1600px);
   $containerPad: 1rem;
 
+  padding-block: 5rem;
+  margin-block: -5rem;
   padding-inline: calc((100vw - #{$contentWidth}) / 2 + #{$containerPad});
   scroll-padding-left: calc((100vw - #{$contentWidth}) / 2 + #{$containerPad});
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
 
   .slidycard {
-    width: 500px;
+    width: 525px;
     height: 350px;
-    background: var(--color);
+    background: linear-gradient(135deg, #fee7b5, #fdbac4);
+    color: #21365c;
     flex-shrink: 0;
-    padding: 1.75rem;
+    padding: 2rem;
     border-radius: 1.5rem;
-    box-shadow: var(--control-shadow);
-    color: var(--background);
     text-wrap: pretty;
     display: grid;
     grid-template-rows: auto auto 1fr;
     gap: 0.5rem;
     text-decoration: none;
     scroll-snap-align: start;
+    overflow: hidden;
+    box-shadow: 0 40px 70px -50px rgba(0, 0, 40, 0.4), inset 0 0 50px #fee7b5;
+    transition: 0.3s ease;
+    font-size: 17px;
 
     &__title {
       font-weight: 500;
@@ -49,11 +54,13 @@
     &__image {
       background: white;
       margin-top: 1rem;
-      margin-right: -1.75rem;
-      margin-bottom: -1.75rem;
+      margin-right: -4rem;
+      margin-bottom: -4rem;
       border-top-left-radius: inherit;
       border-bottom-right-radius: inherit;
       overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      mask-image: radial-gradient(circle at top left, #000 60%, transparent 100%);
 
       img {
         width: 100%;
