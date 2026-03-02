@@ -7,7 +7,7 @@
 .slidy {
   display: flex;
   gap: 1rem;
-  overflow-x: auto;
+  overflow: auto clip;
 
   width: 100vw;
   margin-left: 50%;
@@ -59,6 +59,11 @@
         width: 100%;
         object-fit: cover;
       }
+    }
+
+    &:hover {
+      translate: 0 -2px;
+      scale: 1.05;
     }
   }
 }
