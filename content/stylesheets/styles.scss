@@ -26,19 +26,19 @@
   .slidycard {
     width: 550px;
     height: 350px;
-    background: linear-gradient(135deg, #dff7e4, #c89aff);
-    color: #2b6337;
+    background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
+    color: oklch(from var(--gradient-1) calc(l + (1 - 2 * l) * 0.75) c h);
     flex-shrink: 0;
     padding: 2rem;
     border-radius: 1.5rem;
-    text-wrap: pretty;
+    text-wrap: balance;
     display: grid;
     grid-template-rows: auto auto 1fr;
     gap: 0.5rem;
     text-decoration: none;
     scroll-snap-align: start;
     overflow: hidden;
-    box-shadow: 0 40px 70px -50px rgba(0, 0, 40, 0.4), inset 0 0 50px #dff7e4;
+    box-shadow: 0 40px 70px -50px rgba(0, 0, 40, 0.4), inset 0 0 50px var(--gradient-1);
     transition: 0.3s ease;
     font-size: 17px;
 
@@ -66,6 +66,16 @@
         width: 100%;
         object-fit: cover;
       }
+    }
+
+    &:nth-child(even) {
+      .slidycard__image {
+        grid-row: 1;
+        margin: -4rem 0 1rem -4rem;
+        mask-image: radial-gradient(circle at bottom right, #000 60%, transparent 100%);
+      }
+      .slidycard__title { grid-row: 2; }
+      .slidycard__description { grid-row: 3; }
     }
 
     &:hover {

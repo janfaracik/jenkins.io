@@ -26,10 +26,10 @@ css:
     { image: "jd",        title: "JD.com" }
   ]
   plugins = [
-    { id: "pipeline-graph-view", title: "Pipeline Graph View", description: "Pipeline Graph View makes it easy to view pipeline progress and structure." },
-    { id: "embeddable-build-status", title: "Embeddable Build Status", description: "This plugin provides customizable badges (similar to shields.io) to any website." },
-    { id: "credentials", title: "Credentials", description: "Pipeline Graph View makes it easy to view pipeline progress and structure." },
-    { id: "dark-theme", title: "Dark Theme", description: "Pipeline Graph View makes it easy to view pipeline progress and structure." }
+    { id: "pipeline-graph-view", title: "Pipeline Graph View", description: "Pipeline Graph View makes it easy to view pipeline progress and structure.", gradient1: "#dff7e4", gradient2: "#c89aff" },
+    { id: "embeddable-build-status", title: "Embeddable Build Status", description: "This plugin provides customizable badges (similar to shields.io) to any website.", gradient1: "#e6d9c9", gradient2: "#a57d73" },
+    { id: "dark-theme", title: "Dark Theme", description: "Pipeline Graph View makes it easy to view pipeline progress and structure.", gradient1: "#3c516d", gradient2: "#171c23" },
+    { id: "credentials", title: "Credentials", description: "Pipeline Graph View makes it easy to view pipeline progress and structure.", gradient1: "#ffefae", gradient2: "#c51c2b" }
   ]
 
 %div.app-container
@@ -191,7 +191,7 @@ css:
 
     .slidy
       - plugins.each do |plugin|
-        %a.slidycard{:href => 'https://plugins.jenkins.io/' + plugin[:id] + '/'}
+        %a.slidycard{:href => 'https://plugins.jenkins.io/' + plugin[:id] + '/', :style => '--gradient-1: ' + plugin[:gradient1] + '; --gradient-2: ' + plugin[:gradient2] + ';'}
           .slidycard__title
             = plugin[:title]
           .slidycard__description
