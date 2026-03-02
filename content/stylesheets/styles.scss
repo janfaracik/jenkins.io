@@ -26,14 +26,14 @@
     height: 350px;
     background: var(--color);
     flex-shrink: 0;
-    padding: 1.5rem;
+    padding: 1.75rem;
     border-radius: 1.5rem;
     box-shadow: var(--control-shadow);
     color: var(--background);
     text-wrap: pretty;
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    gap: 0.5rem;
     text-decoration: none;
     scroll-snap-align: start;
 
@@ -44,6 +44,21 @@
 
     &__description {
       opacity: 0.75;
+    }
+
+    &__image {
+      background: white;
+      margin-top: 1rem;
+      margin-right: -1.75rem;
+      margin-bottom: -1.75rem;
+      border-top-left-radius: inherit;
+      border-bottom-right-radius: inherit;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
     }
   }
 }
