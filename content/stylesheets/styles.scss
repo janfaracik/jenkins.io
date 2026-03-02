@@ -526,6 +526,10 @@
 }
 
 .app-home-section {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
   position: relative;
   padding-block: 3rem;
 
@@ -566,7 +570,6 @@
 }
 
 .app-home-landing {
-
   display: grid;
   grid-template-columns: 2fr 1fr;
 
@@ -646,6 +649,15 @@
       }
 
       pointer-events: none;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    display: flex;
+    flex-direction: column;
+
+    .app-home-landing__logo {
+      display: none;
     }
   }
 
