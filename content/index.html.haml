@@ -192,10 +192,11 @@ css:
           Stories
         %p{:class => 'app-home-landing__contents__description'}
           Hear from experts on how they use Jenkins to power their workflows.
-        %a.app-button.app-button--primary{:href => "https://stories.jenkins.io"}
+        %a.app-button.app-button--dark{:href => "https://stories.jenkins.io"}
           View stories
           %ion-icon{:name => "chevron-forward-outline"}
       .slidy
+        %a.story.storyheadline{:href => 'https://stories.jenkins.io'}
         - stories.each do |story|
           %a.story{:href => 'https://stories.jenkins.io/user-story/' + story[:id] + '/'}
             .story__title
@@ -213,7 +214,7 @@ css:
           Plugins
         %p{:class => 'app-home-landing__contents__description'}
           Make Jenkins your own with thousands of plugins available to install and customize.
-        %a.app-button.app-button--primary{:href => "https://plugins.jenkins.io"}
+        %a.app-button.app-button--dark{:href => "https://plugins.jenkins.io"}
           View plugins
           %ion-icon{:name => "chevron-forward-outline"}
       .plugins-grid
@@ -237,7 +238,7 @@ css:
       %p{:class => 'app-home-landing__contents__description'}
         Meet your Jenkins match - a gallery of playful, community-made Jenkins variations, each with its own personality and style.
       .betty
-        %a.app-button.app-button--primary{:href => "artwork"}
+        %a.app-button.app-button--dark{:href => "artwork"}
           Find your Jenkins
           %ion-icon{:name => "chevron-forward-outline"}
       %div.artworkpop
@@ -250,7 +251,7 @@ css:
       %p{:class => 'app-home-landing__contents__description'}
         Jenkins wouldn't be Jenkins without its thousands of contributors. Every contribution matters: code, documentation, localization, blog posts, artwork, meetups, and more.
       .betty
-        %a.app-button.app-button--primary{:href => "participate"}
+        %a.app-button.app-button--dark{:href => "participate"}
           Get involved
           %ion-icon{:name => "chevron-forward-outline"}
     = partial('thank-you-note.html.haml')
