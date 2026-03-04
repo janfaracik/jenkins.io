@@ -26,12 +26,48 @@ css:
     { image: "jd",        title: "JD.com" }
   ]
   stories = [
-    { id: "todo", quote: '"Jenkins is the best way to build software at scale. Jenkins could only be built on Jenkins."', description: "Tim Jacomb for Jenkins" },
-    { id: "to-deliver-amazing-products-easily", quote: '"The extensibility of Jenkins was the prime reason we were able to make an excellent solution for our organization."', description: "Chaitanya Dwivedi for ARM" },
-    { id: "to-produce-ultra-modern-and-sophisticated-electronic-devices", quote: '"It\'s the secret of successful rollouts by giving us the ability to run extensive automated tests."', description: "Ankit Menon for Apple" },
-    { id: "to-keep-ibm-always-on", quote: '"Jenkins is a huge part of our DevOps journey. It allows us to streamline and standardize, so we can focus elsewhere."', description: "Alec Rieger for IBM" },
-    { id: "to-keep-ibm-always-on", quote: '"Jenkins is a huge part of our DevOps journey. It allows us to streamline and standardize, so we can focus elsewhere."', description: "Alec Rieger for IBM" },
-    { id: "to-keep-ibm-always-on", quote: '"Jenkins is a huge part of our DevOps journey. It allows us to streamline and standardize, so we can focus elsewhere."', description: "Alec Rieger for IBM" }
+    {
+      id: "todo",
+      organisation: 'jenkins',
+      quote: '"Jenkins is the best way to build software at scale. Jenkins could only be built on Jenkins."',
+      description: "Tim Jacomb",
+      image: "https://www.jenkins.io/images/avatars/timja.jpg"
+    },
+    {
+      id: "to-deliver-amazing-products-easily",
+      organisation: 'ibm',
+      quote: '"The extensibility of Jenkins was the prime reason we were able to make an excellent solution for our organization."',
+      description: "Chaitanya Dwivedi",
+      image: "https://stories.jenkins.io/static/40cae6eacf73449a4505668f2569946d/507b0/quote.webp"
+    },
+    {
+      id: "to-produce-ultra-modern-and-sophisticated-electronic-devices",
+      organisation: 'apple',
+      quote: '"It\'s the secret of successful rollouts."',
+      description: "Ankit Menon",
+      image: "https://stories.jenkins.io/static/1e409698e31e8bf097c8392cd388fcf4/507b0/quote.webp"
+    },
+    {
+      id: "to-keep-ibm-always-on",
+      organisation: 'ibm',
+      quote: '"Jenkins is a huge part of our DevOps journey. It allows us to streamline and standardize, so we can focus elsewhere."',
+      description: "Alec Rieger",
+      image: "https://stories.jenkins.io/static/d150eee2289987b3851f374a3636f72f/507b0/quote.webp"
+    },
+    {
+      id: "to-keep-ibm-always-on",
+      organisation: 'jenkins',
+      quote: '"Jenkins is a huge part of our DevOps journey. It allows us to streamline and standardize, so we can focus elsewhere."',
+      description: "Alec Rieger",
+      image: "https://www.jenkins.io/images/avatars/timja.jpg"
+    },
+    {
+      id: "to-keep-ibm-always-on",
+      organisation: 'jenkins',
+      quote: '"Jenkins is a huge part of our DevOps journey. It allows us to streamline and standardize, so we can focus elsewhere."',
+      description: "Alec Rieger",
+      image: "https://www.jenkins.io/images/avatars/timja.jpg"
+    }
   ]
   plugins = [
     { id: "pipeline-graph-view", title: "Pipeline Graph View", description: "Pipeline Graph View makes it easy to view pipeline progress and structure.", icon: 'git-network-outline', gradient1: "#dff7e4", gradient2: "#c89aff" },
@@ -40,196 +76,199 @@ css:
     { id: "credentials", title: "Credentials", description: "Credentials provides a secure place to store credentials.", icon: 'id-card-outline', gradient1: "#ffefae", gradient2: "#c51c2b" }
   ]
 
-%div.app-container
-  %div.app-home-section.app-home-landing
-    %div.app-home-landing__contents
-      %h1
-        Build great things at
-        %span
-          any
-        scale.
-      %p{:class => 'app-home-landing__contents__description'}
-        The leading open source automation server, Jenkins provides thousands of plugins to support building, deploying, and automating any project.
-      %div{:class => 'betty'}
-        %a{:class => 'app-button app-button--primary', :href => '/download'}
-          %ion-icon{:name => "download"}
-          Get Jenkins
-        %a{:class => 'app-button', :href => '/changelog/' + latestRelease}
-          %ion-icon{:name => "sparkles"}
-          What's new in Jenkins
-          = latestRelease
-    %div.app-home-landing__logo
-      %img{:src => "/images/logos/jenkins/jenkins.svg"}
+%div.overflowno
+  %div.app-container
+    %div.app-home-section.app-home-landing
+      %div.app-home-landing__contents
+        %h1
+          Build great things at
+          %span
+            any
+          scale.
+        %p{:class => 'app-home-landing__contents__description'}
+          The leading open source automation server, Jenkins provides thousands of plugins to support building, deploying, and automating any project.
+        %div{:class => 'betty'}
+          %a{:class => 'app-button app-button--primary', :href => '/download'}
+            %ion-icon{:name => "download"}
+            Get Jenkins
+          %a{:class => 'app-button', :href => '/changelog/' + latestRelease}
+            %ion-icon{:name => "sparkles"}
+            What's new in Jenkins
+            = latestRelease
+      %div.app-home-landing__logo
+        %img{:src => "/images/logos/jenkins/jenkins.svg"}
 
-  %div.app-home-section.darkbg
-    %div.logo-marquee
-      %div.logo-track
-        - users.shuffle.each do |user|
-          = File.read("content/images/sponsors/#{user[:image]}.svg")
+    %div.app-home-section.darkbg
+      %div.logo-marquee
+        %div.logo-track
+          - users.shuffle.each do |user|
+            = File.read("content/images/sponsors/#{user[:image]}.svg")
 
+    :javascript
+      document.addEventListener("DOMContentLoaded", () => {
+        const marquees = document.querySelectorAll(".logo-marquee");
 
-  :javascript
-    document.addEventListener("DOMContentLoaded", () => {
-      const marquees = document.querySelectorAll(".logo-marquee");
+        marquees.forEach((marquee) => {
+          const track = marquee.querySelector(".logo-track");
+          if (!track) return;
 
-      marquees.forEach((marquee) => {
-        const track = marquee.querySelector(".logo-track");
-        if (!track) return;
+          // Clone once to create a seamless loop
+          const originals = Array.from(track.children);
+          originals.forEach((node) => track.appendChild(node.cloneNode(true)));
 
-        // Clone once to create a seamless loop
-        const originals = Array.from(track.children);
-        originals.forEach((node) => track.appendChild(node.cloneNode(true)));
+          let x = 0;
+          let singleSetWidth = 0;
 
-        let x = 0;
-        let singleSetWidth = 0;
+          const recalc = () => {
+            // After cloning once, total width is ~2x, so half is one set
+            const total = track.scrollWidth;
+            singleSetWidth = total / 2;
+            // Keep x within bounds on resize
+            if (singleSetWidth > 0) x = x % singleSetWidth;
+          };
 
-        const recalc = () => {
-          // After cloning once, total width is ~2x, so half is one set
-          const total = track.scrollWidth;
-          singleSetWidth = total / 2;
-          // Keep x within bounds on resize
-          if (singleSetWidth > 0) x = x % singleSetWidth;
-        };
+          recalc();
+          window.addEventListener("resize", recalc);
 
-        recalc();
-        window.addEventListener("resize", recalc);
+          const speed = 0.7; // pixels per frame, tweak as you like
 
-        const speed = 0.7; // pixels per frame, tweak as you like
+          const tick = () => {
+            x -= speed;
 
-        const tick = () => {
-          x -= speed;
+            // Reset when we've moved one full set
+            if (singleSetWidth > 0 && Math.abs(x) >= singleSetWidth) {
+              x += singleSetWidth;
+            }
 
-          // Reset when we've moved one full set
-          if (singleSetWidth > 0 && Math.abs(x) >= singleSetWidth) {
-            x += singleSetWidth;
-          }
+            track.style.transform = `translate3d(${x}px, 0, 0)`;
+            requestAnimationFrame(tick);
+          };
 
-          track.style.transform = `translate3d(${x}px, 0, 0)`;
           requestAnimationFrame(tick);
-        };
-
-        requestAnimationFrame(tick);
+        });
       });
-    });
 
 
 
-  %div.app-home-section.idkkkk
-    %h2.testingtestingtodo
-      Why Jenkins
-    .cards
-      .slidycard
-        %ion-icon{:name=>"git-pull-request-outline"}
-        %h5
-          Continuous Integration and Continuous Delivery
-        %p
-          As an extensible automation server, Jenkins can be used as a simple
-          CI server or turned into the continuous delivery hub for any project.
-      .slidycard
-        %ion-icon{:name=>"download-outline"}
-        %h5
-          Easy installation
-        %p
-          Jenkins is a self-contained Java-based program, ready to run
-          out-of-the-box, with packages for Windows, Linux, macOS and other
-          Unix-like operating systems.
-      .slidycard
-        %ion-icon{:name=>"options-outline"}
-        %h5
-          Easy configuration
-        %p
-          Jenkins can be easily set up and configured via its web interface,
-          which includes on-the-fly error checks and built-in help.
-      .slidycard
-        %ion-icon{:name=>"git-network-outline"}
-        %h5
-          Distributed
-        %p
-          Jenkins can easily distribute work across multiple machines,
-          helping drive builds, tests and deployments across multiple
-          platforms faster.
 
-  %div.app-home-section
-    .lordeeeee
+    %div.app-home-section.idkkkk
+      %h2.testingtestingtodo
+        Why Jenkins
+      .home-items
+        .home-item
+          %ion-icon{:name=>"git-pull-request-outline"}
+          .home-item__title
+            Continuous Integration and Continuous Delivery
+          .home-item__description
+            As an extensible automation server, Jenkins can be used as a simple
+            CI server or turned into the continuous delivery hub for any project.
+        .home-item
+          %ion-icon{:name=>"download-outline"}
+          .home-item__title
+            Easy installation
+          .home-item__description
+            Jenkins is a self-contained Java-based program, ready to run
+            out-of-the-box, with packages for Windows, Linux, macOS and other
+            Unix-like operating systems.
+        .home-item
+          %ion-icon{:name=>"options-outline"}
+          .home-item__title
+            Easy configuration
+          .home-item__description
+            Jenkins can be easily set up and configured via its web interface,
+            which includes on-the-fly error checks and built-in help.
+        .home-item
+          %ion-icon{:name=>"git-network-outline"}
+          .home-item__title
+            Distributed
+          .home-item__description
+            Jenkins can easily distribute work across multiple machines,
+            helping drive builds, tests and deployments across multiple
+            platforms faster.
+
+    %div.app-home-section
+      .lordeeeee
+        %h2
+          Stories
+        %p{:class => 'app-home-landing__contents__description'}
+          Hear from experts on how they use Jenkins to power their workflows.
+        %a.app-button.app-button--primary{:href => "https://stories.jenkins.io"}
+          View stories
+          %ion-icon{:name => "chevron-forward-outline"}
+      .slidy
+        - stories.each do |story|
+          %a.story{:href => 'https://stories.jenkins.io/user-story/' + story[:id] + '/'}
+            .story__title
+              = story[:quote]
+            .story__description
+              %img{:src => story[:image], :aria-hidden => false}
+              = story[:description]
+              for
+              %ion-icon{:name => "logo-" + story[:organisation]}
+              %ion-icon{:name => "chevron-forward-outline"}
+
+    %div.app-home-section
+      .lordeeeee
+        %h2
+          Plugins
+        %p{:class => 'app-home-landing__contents__description'}
+          Make Jenkins your own with thousands of plugins available to install and customize.
+        %a.app-button.app-button--primary{:href => "https://plugins.jenkins.io"}
+          View plugins
+          %ion-icon{:name => "chevron-forward-outline"}
+      .plugins-grid
+        - plugins.each do |plugin|
+          %a.slidycard{:class => ("slidycard--dark" if plugin[:dark]), :href => 'https://plugins.jenkins.io/' + plugin[:id] + '/', :style => '--gradient-1: ' + plugin[:gradient1] + '; --gradient-2: ' + plugin[:gradient2] + ';'}
+            .slidycard__title
+              %ion-icon{:name => plugin[:icon]}
+              = plugin[:title]
+              %ion-icon{:name => "chevron-forward-outline"}
+            .slidycard__description
+              = plugin[:description]
+            .slidycard__image
+              %img{:src => "/images/plugins/#{plugin[:id]}.png", :aria-hidden => true}
+
+    %div.app-home-section
+      = partial('blogs.html.haml')
+
+    %div.app-home-section
       %h2
-        Stories
+        There's a Jenkins for you
       %p{:class => 'app-home-landing__contents__description'}
-        Hear from experts on how they use Jenkins to power their workflows.
-      %a.app-button.app-button--primary{:href => "https://stories.jenkins.io"}
-        View stories
-        %ion-icon{:name => "chevron-forward-outline"}
-    .slidy
-      - stories.each do |story|
-        %a.story{:href => 'https://stories.jenkins.io/user-story/' + story[:id] + '/'}
-          .story__title
-            = story[:quote]
-          .story__description
-            %ion-icon{:name => "logo-apple"}
-            = story[:description]
-            %ion-icon{:name => "chevron-forward-outline"}
+        Meet your Jenkins match - a gallery of playful, community-made Jenkins variations, each with its own personality and style.
+      .betty
+        %a.app-button.app-button--primary{:href => "artwork"}
+          Find your Jenkins
+          %ion-icon{:name => "chevron-forward-outline"}
+      %div.artworkpop
+        - site.logo.to_a.shuffle.select { |_, logo| logo[:vector] || logo["vector"] }.first(5).each do |key, logo|
+          %img.logo-thumb{:src => expand_link("images/#{logo['vector']}"), :alt => logo['name'], :loading => "lazy", :style => "rotate: 10deg"}
 
-  %div.app-home-section
-    .lordeeeee
+    %div.app-home-section
       %h2
-        Plugins
-      %p{:class => 'app-home-landing__contents__description'}
-        Make Jenkins your own with thousands of plugins available to install and customize.
-      %a.app-button.app-button--primary{:href => "https://plugins.jenkins.io"}
-        View plugins
-        %ion-icon{:name => "chevron-forward-outline"}
-    .slidy
-      - plugins.each do |plugin|
-        %a.slidycard{:class => ("slidycard--dark" if plugin[:dark]), :href => 'https://plugins.jenkins.io/' + plugin[:id] + '/', :style => '--gradient-1: ' + plugin[:gradient1] + '; --gradient-2: ' + plugin[:gradient2] + ';'}
-          .slidycard__title
-            %ion-icon{:name => plugin[:icon]}
-            = plugin[:title]
-            %ion-icon{:name => "chevron-forward-outline"}
-          .slidycard__description
-            = plugin[:description]
-          .slidycard__image
-            %img{:src => "/images/plugins/#{plugin[:id]}.png", :aria-hidden => true}
-
-  %div.app-home-section
-    = partial('blogs.html.haml')
-
-  %div.app-home-section
-    %h2
-      There's a Jenkins for you
-    %p{:class => 'app-home-landing__contents__description'}
-      Meet your Jenkins match - a gallery of playful, community-made Jenkins variations, each with its own personality and style.
-    .betty
-      %a.app-button.app-button--primary{:href => "artwork"}
-        Find your Jenkins
-        %ion-icon{:name => "chevron-forward-outline"}
-    %div.artworkpop
-      - site.logo.to_a.shuffle.select { |_, logo| logo[:vector] || logo["vector"] }.first(5).each do |key, logo|
-        %img.logo-thumb{:src => expand_link("images/#{logo['vector']}"), :alt => logo['name'], :loading => "lazy", :style => "rotate: 10deg"}
-
-  %div.app-home-section
-    %h2
-      Get involved
-    %p{:class => 'app-home-landing__contents__description'}
-      Jenkins wouldn't be Jenkins without its thousands of contributors. Every contribution matters: code, documentation, localization, blog posts, artwork, meetups, and more.
-    .betty
-      %a.app-button.app-button--primary{:href => "participate"}
         Get involved
-        %ion-icon{:name => "chevron-forward-outline"}
-  = partial('thank-you-note.html.haml')
+      %p{:class => 'app-home-landing__contents__description'}
+        Jenkins wouldn't be Jenkins without its thousands of contributors. Every contribution matters: code, documentation, localization, blog posts, artwork, meetups, and more.
+      .betty
+        %a.app-button.app-button--primary{:href => "participate"}
+          Get involved
+          %ion-icon{:name => "chevron-forward-outline"}
+    = partial('thank-you-note.html.haml')
 
-  %div.app-home-section
-    %h2
-      With thanks to
-    %p{:class => 'app-home-landing__contents__description'}
-      We thank the following organizations for their major commitments to
-      support the Jenkins project.
+    %div.app-home-section
+      %h2
+        With thanks to
+      %p{:class => 'app-home-landing__contents__description'}
+        We thank the following organizations for their major commitments to
+        support the Jenkins project.
 
-    %ul.supporters
-      - supporters.select{|sponsor| sponsor[:logo]}.each do |sponsor|
-        %li
-          %a{:href => sponsor[:url]}
-            = File.read("content/images/sponsors/#{sponsor[:logo]}")
+      %ul.supporters
+        - supporters.select{|sponsor| sponsor[:logo]}.each do |sponsor|
+          %li
+            %a{:href => sponsor[:url]}
+              = File.read("content/images/sponsors/#{sponsor[:logo]}")
 
-    %ul.supporters
-      - supporters.reject{|supporter| supporter[:logo]}.each do |supporter|
-        %li
-          %a{:href => supporter[:url]}= supporter[:name]
+      %ul.supporters
+        - supporters.reject{|supporter| supporter[:logo]}.each do |supporter|
+          %li
+            %a{:href => supporter[:url]}= supporter[:name]
