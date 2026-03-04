@@ -434,20 +434,17 @@
 }
 
 .darkbg {
-  position: relative;
+  display: flex;
+  gap: 1.5rem;
+  overflow: auto clip;
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    translate: -50% 0;
-    width: 100vmax;
-    background: var(--color--secondary);
-    opacity: 0.05;
-    pointer-events: none;
-  }
+  width: 100vw;
+  margin-left: 50%;
+  translate: -50% 0;
+
+  $contentWidth: clamp(#{$app-tablet-breakpoint}, 85vw, 1600px);
+  $containerPad: 1rem;
+  background: color-mix(in srgb, var(--color--secondary) 5%, transparent);
 }
 
 .testingtestingtodo {
@@ -699,7 +696,7 @@
 .logo-track {
   display: flex;
   align-items: center;
-  gap: 3rem;
+  gap: 4rem;
   will-change: transform;
   transform: translate3d(0, 0, 0);
   padding: 12px 0;
