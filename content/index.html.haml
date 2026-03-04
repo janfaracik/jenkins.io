@@ -33,8 +33,8 @@ css:
   plugins = [
     { id: "pipeline-graph-view", title: "Pipeline Graph View", description: "Pipeline Graph View makes it easy to view pipeline progress and structure.", icon: 'git-network-outline', gradient1: "#dff7e4", gradient2: "#c89aff" },
     { id: "embeddable-build-status", title: "Embeddable Build Status", description: "This plugin provides customizable badges (similar to shields.io) to any website.", icon: 'shield-outline', gradient1: "#e6d9c9", gradient2: "#a57d73" },
-    { id: "dark-theme", title: "Dark Theme", description: "Pipeline Graph View makes it easy to view pipeline progress and structure.", icon: 'moon-outline', gradient1: "#3c516d", gradient2: "#171c23" },
-    { id: "credentials", title: "Credentials", description: "Pipeline Graph View makes it easy to view pipeline progress and structure.", icon: 'id-card-outline', gradient1: "#ffefae", gradient2: "#c51c2b" }
+    { id: "dark-theme", title: "Dark Theme", description: "A sleek, modern look that's easy on the eyes.", icon: 'moon-outline', gradient1: "#3c516d", gradient2: "#171c23", dark: true },
+    { id: "credentials", title: "Credentials", description: "Credentials provides a secure place to store credentials.", icon: 'id-card-outline', gradient1: "#ffefae", gradient2: "#c51c2b" }
   ]
 
 %div.app-container
@@ -175,7 +175,7 @@ css:
         %ion-icon{:name => "chevron-forward-outline"}
     .slidy
       - plugins.each do |plugin|
-        %a.slidycard{:href => 'https://plugins.jenkins.io/' + plugin[:id] + '/', :style => '--gradient-1: ' + plugin[:gradient1] + '; --gradient-2: ' + plugin[:gradient2] + ';'}
+        %a.slidycard{:class => ("slidycard--dark" if plugin[:dark]), :href => 'https://plugins.jenkins.io/' + plugin[:id] + '/', :style => '--gradient-1: ' + plugin[:gradient1] + '; --gradient-2: ' + plugin[:gradient2] + ';'}
           .slidycard__title
             %ion-icon{:name => plugin[:icon]}
             = plugin[:title]

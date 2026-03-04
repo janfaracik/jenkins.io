@@ -31,7 +31,7 @@
 
 .slidycard {
   background: linear-gradient(135deg, var(--gradient-1, gray), var(--gradient-2, gray));
-  color: oklch(from var(--gradient-1, gray) calc(l + (1 - 2 * l) * 0.75) c h);
+  color: oklch(from var(--gradient-1, gray) 35% c h) !important;
   flex-shrink: 0;
   padding: 2rem;
   border-radius: 1.5rem;
@@ -39,7 +39,7 @@
   display: grid;
   grid-template-rows: auto auto 1fr;
   gap: 0.5rem;
-  text-decoration: none;
+  text-decoration: none !important;
   scroll-snap-align: start;
   overflow: hidden;
   box-shadow: 0 40px 70px -50px rgba(0, 0, 40, 0.4), inset 0 0 50px var(--gradient-1, gray);
@@ -74,7 +74,6 @@
     border-top-left-radius: inherit;
     border-bottom-right-radius: inherit;
     overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     mask-image: radial-gradient(circle at top left, #000 60%, transparent 100%);
 
     img {
@@ -90,6 +89,11 @@
       grid-row: 1;
       margin: -4rem 0 1rem -4rem;
       mask-image: radial-gradient(circle at bottom right, #000 60%, transparent 100%);
+
+      img {
+        object-fit: contain;
+        object-position: bottom right;
+      }
     }
     .slidycard__title { grid-row: 2; }
     .slidycard__description { grid-row: 3; }
@@ -98,6 +102,15 @@
   &:hover {
     translate: 0 -2px;
     scale: 1.05;
+  }
+
+  &--dark {
+    color: oklch(from var(--gradient-1) 90% c h) !important;
+
+    .slidycard__image {
+      background: #0d0f13;
+      filter: contrast(0.9);
+    }
   }
 }
 
