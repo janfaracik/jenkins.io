@@ -106,6 +106,12 @@
       margin-right: 0.25rem;
     }
 
+    svg {
+      width: auto;
+      max-width: 2.5rem;
+      height: 1.5ch;
+    }
+
     ion-icon {
       &:last-of-type {
         opacity: 0.5;

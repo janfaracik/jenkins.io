@@ -22,20 +22,13 @@ css:
     { image: "salesforce", title: "Salesforce" },
     { image: "autodesk",  title: "Autodesk" },
     { image: "amexgbt",   title: "American Express Global Business Travel" },
-    { image: "cern",      title: "CERN" },
-    { image: "jd",        title: "JD.com" }
+    { image: "ibm",      title: "IBM" },
+    { image: "arm",        title: "arm.com" }
   ]
   stories = [
     {
-      id: "todo",
-      organisation: 'jenkins',
-      quote: '"Jenkins is the best way to build software at scale. Jenkins could only be built on Jenkins."',
-      description: "Tim Jacomb",
-      image: "https://www.jenkins.io/images/avatars/timja.jpg"
-    },
-    {
       id: "to-deliver-amazing-products-easily",
-      organisation: 'ibm',
+      organisation: 'arm',
       quote: '"The extensibility of Jenkins was the prime reason we were able to make an excellent solution for our organization."',
       description: "Chaitanya Dwivedi",
       image: "https://stories.jenkins.io/static/40cae6eacf73449a4505668f2569946d/507b0/quote.webp"
@@ -205,7 +198,7 @@ css:
               %img{:src => story[:image], :aria-hidden => false}
               = story[:description]
               for
-              %ion-icon{:name => "logo-" + story[:organisation]}
+              = File.read("content/images/sponsors/#{story[:organisation]}.svg")
               %ion-icon{:name => "chevron-forward-outline"}
 
     %div.app-home-section
