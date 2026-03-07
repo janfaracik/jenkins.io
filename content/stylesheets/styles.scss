@@ -4,6 +4,42 @@
 @import "components/_all";
 @import "pages/_all";
 
+.peopleeee {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  margin-left: 50%;
+  translate: -50% 0;
+
+  & > * {
+    flex-shrink: 0;
+  }
+
+  & > img {
+    width: 7rem;
+    height: 7rem;
+    animation: ripple 2s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  @for $i from 1 through 20 {
+    & > img:nth-child(#{$i}) {
+      animation-delay: $i * 0.2s;
+    }
+  }
+}
+
+@keyframes ripple {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
 .slidy {
   display: flex;
   gap: 1.5rem;

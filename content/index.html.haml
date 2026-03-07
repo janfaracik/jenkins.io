@@ -246,15 +246,22 @@ css:
           %img.logo-thumb{:src => expand_link("images/#{logo['vector']}"), :alt => logo['name'], :loading => "lazy", :style => "rotate: 10deg"}
 
     %div.app-home-section
-      %h2
-        Get involved
-      %p{:class => 'app-home-landing__contents__description'}
-        Jenkins wouldn't be Jenkins without its thousands of contributors. Every contribution matters: code, documentation, localization, blog posts, artwork, meetups, and more.
-      .betty
+      .lordeeeee
+        %h2
+          Get involved
+        %p{:class => 'app-home-landing__contents__description'}
+          Jenkins wouldn't be Jenkins without its thousands of contributors. Every contribution matters: code, documentation, localization, blog posts, artwork, meetups, and more.
         %a.app-button.app-button--dark{:href => "participate"}
           Get involved
           %ion-icon{:name => "chevron-forward-outline"}
-    = partial('thank-you-note.html.haml')
+
+      .peopleeee
+        - images = Dir.glob("content/images/avatars/*.{png,jpg,jpeg,gif,webp}").sample(20)
+        - images.slice(0, 10).each do |image_path|
+          %img.app-avatar__image{:src => image_path.sub(/^content\//, "/"), :alt => 'test', :loading => 'lazy', :onload => 'this.style.opacity = 1'}
+        = partial('thank-you-note.html.haml')
+        - images.slice(10, 20).each do |image_path|
+          %img.app-avatar__image{:src => image_path.sub(/^content\//, "/"), :alt => 'test', :loading => 'lazy', :onload => 'this.style.opacity = 1'}
 
     %div.app-home-section
       %h2
