@@ -230,14 +230,18 @@ css:
               %img{:src => "/images/plugins/#{plugin[:id]}.png", :aria-hidden => true}
 
     %div.app-home-section
+      .lordeeeee
+        %a.app-button.app-button--dark{:href => "blog"}
+          Read all about it
+          %ion-icon{:name => "chevron-forward-outline"}
       = partial('blogs.html.haml')
 
     %div.app-home-section
-      %h2
-        There's a Jenkins for you
-      %p{:class => 'app-home-landing__contents__description'}
-        Meet your Jenkins match - a gallery of playful, community-made Jenkins variations, each with its own personality and style.
-      .betty
+      .lordeeeee
+        %h2
+          There's a Jenkins for you
+        %p{:class => 'app-home-landing__contents__description'}
+          Meet your Jenkins match - a gallery of playful, community-made Jenkins variations, each with its own personality and style.
         %a.app-button.app-button--dark{:href => "artwork"}
           Find your Jenkins
           %ion-icon{:name => "chevron-forward-outline"}
@@ -252,6 +256,7 @@ css:
         %p{:class => 'app-home-landing__contents__description'}
           Jenkins wouldn't be Jenkins without its thousands of contributors. Every contribution matters: code, documentation, localization, blog posts, artwork, meetups, and more.
         %a.app-button.app-button--dark{:href => "participate"}
+          %ion-icon{:name => "heart-outline"}
           Get involved
           %ion-icon{:name => "chevron-forward-outline"}
 

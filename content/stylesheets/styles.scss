@@ -15,6 +15,7 @@
 
   & > * {
     flex-shrink: 0;
+    padding: 0;
   }
 
   & > img {
@@ -877,13 +878,13 @@
     color: var(--color) !important;
     z-index: 1;
 
-    ion-icon {
+    ion-icon:last-of-type {
       margin-right: -0.375rem;
       transition: 0.2s ease;
     }
 
     &:hover {
-      ion-icon {
+      ion-icon:last-of-type {
         translate: 0.25rem 0;
       }
     }
