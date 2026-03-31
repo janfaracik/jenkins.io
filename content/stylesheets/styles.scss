@@ -23,6 +23,7 @@
     height: 7rem;
     animation: ripple 2s ease-in-out infinite;
     will-change: transform;
+    transform: translateY(4px);
   }
 
   @for $i from 1 through 20 {
@@ -34,10 +35,11 @@
 
 @keyframes ripple {
   0%, 100% {
-    transform: translateY(0);
+    transform: translateY(4px);
   }
   50% {
-    transform: translateY(-8px);
+    transform: translateY(-4px);
+    scale: 1.05;
   }
 }
 
