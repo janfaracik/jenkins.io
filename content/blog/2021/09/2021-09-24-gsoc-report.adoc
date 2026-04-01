@@ -17,8 +17,6 @@ description: >
   We summarize the project results and the events associated with the program.
 ---
 
-image:/images/gsoc/jenkins-gsoc-logo_small.png[Jenkins GSoC, role=center, float=right]
-
 Congratulations to all Google Summer of Code (GSoC) 2021 students!
 On behalf of the Jenkins org team, we would like to thank all participants: students, mentors, applicants, and dozens of other contributors who participated in GSoC this year.
 

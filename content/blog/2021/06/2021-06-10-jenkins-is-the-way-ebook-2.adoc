@@ -17,8 +17,6 @@ links:
   discourse: https://community.jenkins.io/t/new-ebook-jenkins-is-the-way-for-it-and-software-developers/136
 ---
 
-image:/images/post-images/jenkins-is-the-way/ebook/ebook2_front.png["Jenkins Is The Way. User Stories IT-eBook",role=right,width=300]
-
 A little over a year ago, we launched JenkinsIsTheWay.io, a website whose sole purpose is to share Jenkins user stories with the developers and engineers in our community.  Over a hundred of you have already link:https://stories.jenkins.io[shared your innovations], and they just keep coming.  It comes as no surprise that many of the submitted stories are from IT consultants and software developers around the world building next-generation DevOps and CI/CD platforms to fuel the modernization of enterprise companies far and wide.
 
 That’s why we’ve dedicated link:https://stories.jenkins.io/wp-content/uploads/2021/03/2021-Jenkins-User-Story-IT-focused-ebook.pdf[our latest eBook] to focus on Jenkins users in the global Information Technology sector.  We shine the spotlight on these developers and engineers who have solved unique software development and DevOps challenges by turning to the leading open source automation server.  From powering large enterprises needing a better way to manage their inventory to innovative tech firms looking to advance technologies and healthcare initiatives during a pandemic, you’ll read about how teams everywhere solved their unique challenges — with the help of Jenkins. 

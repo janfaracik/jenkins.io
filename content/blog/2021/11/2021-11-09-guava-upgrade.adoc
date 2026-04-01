@@ -14,8 +14,6 @@ opengraph:
   image: /images/post-images/2021-11-guava-upgrade/guava-upgrade-opengraph.png
 ---
 
-image:/images/post-images/2021-11-guava-upgrade/guava-upgrade.png[Guava Upgrade, role=center]
-
 == Summary
 
 Jenkins bundles https://guava.dev/[Guava], a core Java library from Google.

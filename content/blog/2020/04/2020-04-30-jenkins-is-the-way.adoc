@@ -13,8 +13,6 @@ opengraph:
   image: /images/post-images/jenkins-is-the-way/jenkins-is-the-way-opengraph.png
 ---
 
-image:/images/post-images/jenkins-is-the-way/jenkins-is-the-way.png[Jenkins Is The Way, role=center, float=right, height=284]
-
 One of the things we loved about going to developer conferences was meeting Jenkins users — newbies and old-timers alike — who are excited to talk about their projects and share tips on how to move forward using Jenkins.
 Since the coronavirus pandemic, we're learning to rely more on new ways to gather, and it's happening via link:/events/online-meetup/[Jenkins online meetups], GitHub collaborations, and Twitter threads, to name a few.
 

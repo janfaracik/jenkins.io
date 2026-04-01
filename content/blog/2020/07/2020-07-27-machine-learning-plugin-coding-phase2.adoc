@@ -14,8 +14,6 @@ opengraph:
   image: /images/gsoc/2020/machine_learning_plugin/jenkins-gsoc-machine-learning-opengraph.png
 ---
 
-image::/images/gsoc/jenkins-gsoc-logo_small.png[align="center"]
-
 Welcome back folks!
 
 This blog post is about my coding phase 2 in Jenkins link:/projects/gsoc/2020/projects/machine-learning/[Machine Learning Plugin] for this GSoC 2020.

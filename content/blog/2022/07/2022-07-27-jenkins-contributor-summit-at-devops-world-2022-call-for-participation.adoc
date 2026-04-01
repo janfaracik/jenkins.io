@@ -13,8 +13,6 @@ opengraph:
   image: /images/post-images/Jenkins-DevOps.png
 ---
 
-image::/images/post-images/Jenkins-DevOps.png[role=right]
-
 == About
 The Jenkins Contributor Summit brings together current and future contributors to the Jenkins project. It is a community driven event, with its agenda created with input and suggestions from Jenkins community members.
 

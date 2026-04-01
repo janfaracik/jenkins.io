@@ -10,8 +10,6 @@ opengraph:
 discourse: true
 ---
 
-image:/images/post-images/2024/07/24/2024-07-24-amazon-donates-to-jenkins.png[image,width=839]
-
 Amazon Web Services has graciously donated $60,000 in cloud credits to the Jenkins project.
 Their continued support of the Jenkins project is massively important for several services and functions.
 AWS' support for Jenkins over the years has enabled the Jenkins project to run its infrastructure and services efficiently.

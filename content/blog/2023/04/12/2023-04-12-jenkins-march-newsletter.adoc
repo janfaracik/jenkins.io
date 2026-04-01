@@ -19,8 +19,6 @@ links:
 discourse: true
 ---
 
-image:/images/post-images/2023/02/07/2023-02-07-jenkins-newsletter/centered-newsletter.png[Jenkins March Newsletter]
-
 ==  Highlights
 
 * Jenkins 2.397 and 2.387.2 are both using new Linux repository signing keys.

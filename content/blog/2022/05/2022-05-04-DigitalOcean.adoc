@@ -13,8 +13,6 @@ opengraph:
   image: /images/post-images/2022-05-DigitalOcean-sponsors-Jenkins.png
 ---
 
-image::/images/post-images/2022-05-DigitalOcean-sponsors-Jenkins.png[DigitalOcean sponsors the Jenkins project]
-
 The Jenkins infrastructure team has extended the reach of the ci.jenkins.io agents.
 We're grateful that DigitalOcean has donated $2760 to the Jenkins project.
 The donation has allowed us to run jobs from link:https://ci.jenkins.io[ci.jenkins.io] on an additional cluster hosted by DigitalOcean.

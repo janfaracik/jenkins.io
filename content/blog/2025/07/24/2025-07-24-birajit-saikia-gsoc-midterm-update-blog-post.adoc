@@ -17,8 +17,6 @@ opengraph:
   image: /images/gsoc/2025/birajit-midterm-blogimage.png
 ---
 
-image:/images/gsoc/jenkins-gsoc-logo_small.png[Jenkins GSoC Logo, role="right", width="200"]
-
 This post details the progress made during the first half of Google Summer of Code 2025 on the *link:/projects/gsoc/2025/projects/complete-alternative-jenkins-io-build-retooling/[Complete Build Retooling of jenkins.io]* project, which aims to modernize the Jenkins documentation infrastructure.
 
 == Table of Contents

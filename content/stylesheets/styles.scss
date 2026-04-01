@@ -3,3 +3,11 @@
 @import "core/_all";
 @import "components/_all";
 @import "pages/_all";
+
+.app-post-headline-image {
+  border-radius: 0.75rem;
+  outline: 1px solid color-mix(in srgb, var(--color) 4%, transparent);
+  outline-offset: -1px;
+  max-height: 450px;
+  margin-bottom: 1.5rem;
+}

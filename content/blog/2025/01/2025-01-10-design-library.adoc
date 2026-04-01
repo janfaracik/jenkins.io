@@ -12,8 +12,6 @@ opengraph:
 discourse: true
 ---
 
-image::/images/post-images/2025/01/2025-01-10-design-library/opengraph.png[role=center]
-
 We’re thrilled to announce that the link:https://weekly.ci.jenkins.io/design-library[**Jenkins Design Library 3**] is now live! 🎉
 
 With this release, we’ve refined every aspect of the library to provide better documentation for plugin developers and ensure a more consistent,

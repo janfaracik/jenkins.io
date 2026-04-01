@@ -19,8 +19,6 @@ opengraph:
   image: /images/post-images/Jenkins-DevOps.png
 ---
 
-image::/images/post-images/Jenkins-DevOps.png[role=right]
-
 == Create iOS Unity build pipelines on AWS with Jenkins and EC2 Mac instances
 
 Every mobile game, whether it is a multiplayer or standalone game, must

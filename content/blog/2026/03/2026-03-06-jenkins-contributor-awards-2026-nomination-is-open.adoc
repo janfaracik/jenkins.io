@@ -11,8 +11,6 @@ opengraph:
   image: /images/post-images/2026/03/cdf_community_awards.png
 ---
 
-image:/images/post-images/2026/03/cdf_community_awards.png[role=center]
-
 The Jenkins community thrives because of its contributors.
 
 Every day, maintainers, advocates, security researchers, and community members invest their time to improve Jenkins and support users around the world.

@@ -14,8 +14,6 @@ opengraph:
 
 == The Present and the Future of Jenkins
 
-image:/images/post-images/2026/03/contributor_summit_officers_view.jpg[role=center]
-
 This post continues the recap of the Jenkins Contributor Summit held in Brussels alongside FOSDEM.
 If you missed the first overview of the event, you can read it here:
 

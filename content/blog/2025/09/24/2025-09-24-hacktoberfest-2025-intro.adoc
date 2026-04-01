@@ -14,8 +14,6 @@ opengraph:
   image: /images/hacktoberfest/hacktoberfest_2025_social.png
 ---
 
-image:/images/hacktoberfest/hacktoberfest_2025_logo.svg[Hacktoberfest, role=center, width='75%']
-
 The annual link:https://hacktoberfest.com/[Hacktoberfest] is back!
 Please join us as we celebrate and support open-source during the month of October.
 Contributors can earn badges and improve their open source contribution skills.

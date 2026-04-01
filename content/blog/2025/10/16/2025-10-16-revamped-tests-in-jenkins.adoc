@@ -15,8 +15,6 @@ links:
   discourse: true
 ---
 
-image:/images/post-images/2025/10/16/revamped-tests-in-jenkins.png[Revamped Tests in Jenkins]
-
 The JUnit plugin has received a major redesign, focusing on a cleaner and more consistent UI. This work draws directly
 from the Pipeline Graph View plugin and the Jenkins Design Library, bringing much-needed polish to one of Jenkins'
 oldest plugins.

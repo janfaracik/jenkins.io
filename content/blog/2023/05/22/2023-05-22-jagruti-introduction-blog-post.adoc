@@ -15,8 +15,6 @@ sig:
 - gsoc
 ---
 
-image:/images/gsoc/jenkins-gsoc-logo_small.png[Jenkins GSoC, role=center, float=right]
-
 == Background
 
 I started contributing to open-source projects in Jan 2022. I tried setting up well-known projects like Django, Brave browser, and Chromium but failed miserably. I didn’t know that open source is not about projects but about community. Gradually I stumbled upon https://www.freecodecamp.org/[freeCodeCamp]. That’s where I wrote my first test case and fixed minor bugs. I gained the confidence to continue contributing to open source.

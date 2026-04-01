@@ -14,8 +14,6 @@ opengraph:
   image: /images/post-images/2025/05/2025-05-02-pipeline-graph-view/opengraph.png
 ---
 
-image::/images/post-images/2025/05/2025-05-02-pipeline-graph-view/opengraph.png[role=center]
-
 We're excited to announce a major update to the https://plugins.jenkins.io/pipeline-graph-view/[Pipeline Graph View]
 plugin - a complete redesign that introduces a modern, user-focused interface that enhances pipeline visualization,
 customization, and performance.

@@ -13,8 +13,6 @@ links:
   discourse: true
 ---
 
-image:/images/post-images/2026/03/19/revamped-build-monitor-plugin.png[Revamped Build Monitor plugin]
-
 We're excited to announce a major update to the https://plugins.jenkins.io/build-monitor-plugin/[Build Monitor]
 plugin - a complete redesign that refreshes its big-screen view with a cleaner, more modern interface for
 following build statuses.

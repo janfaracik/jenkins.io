@@ -19,8 +19,6 @@ links:
 discourse: true
 ---
 
-image:/images/post-images/2023/02/07/2023-02-07-jenkins-newsletter/centered-newsletter.png[Jenkins January Newsletter]
-
 ==  Highlights
 
 * FOSDEM 2023 insights

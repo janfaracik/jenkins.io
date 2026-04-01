@@ -12,8 +12,6 @@ opengraph:
   image: /images/post-images/Jenkins-DevOps.png
 ---
 
-image::/images/post-images/Jenkins-DevOps.png[role=right]
-
 == About
 
 In the Jenkins ecosystem, there are over 1800 plugins.

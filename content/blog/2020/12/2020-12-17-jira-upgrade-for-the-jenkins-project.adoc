@@ -11,8 +11,6 @@ opengraph:
   image: /images/post-images/2020-12-17-jira-upgrade-for-the-jenkins-project/jira-upgrade-for-the-jenkins-project.png
 ---
 
-image::/images/post-images/2020-12-17-jira-upgrade-for-the-jenkins-project/jira-logo.png[float="right",align="center"]
-
 The Jenkins project has used Jira to track issues for many years.
 Jenkins core, Jenkins modules, Jenkins infrastructure, and many Jenkins plugins manage their issue reports with our link:https://issues.jenkins.io/[Jira server].
 

@@ -16,8 +16,6 @@ opengraph:
   image: /images/gsoc/2022/here-we-come.png
 ---
 
-image:/images/gsoc/jenkins-gsoc-logo_small.png[Jenkins GSoC, role=center, float=right]
-
 We are thrilled to announce that Jenkins has been accepted to 
 link:https://summerofcode.withgoogle.com/[Google Summer of Code 2022]! 
 This will be Jenkins' sixth year as a mentoring organization. 

@@ -12,10 +12,6 @@ opengraph:
   image: /images/post-images/2026/03/plugin_of_the_month_march.png
 ---
 
-== Introducing the Jenkins Plugin of the Month
-
-image:/images/post-images/2026/03/plugin_of_the_month_march.png[role=center]
-
 The Jenkins ecosystem thrives because of its plugins.
 
 With more than two thousand plugins available, Jenkins users can extend their automation platform in countless ways—integrating with tools, improving security, enhancing the user interface, or supporting new development workflows.

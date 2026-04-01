@@ -14,8 +14,6 @@ opengraph:
   image: /images/post-images/2021-07-31-remoting-monitoring-phase-1/opengraph.png
 ---
 
-image:/images/post-images/2021-07-31-remoting-monitoring-phase-1/opengraph.png[Remoting Monitoring with OpenTelemetry]
-
 == Goal
 
 image:/images/post-images/2021-07-31-remoting-monitoring-phase-1/goal.png[Goal of Remoting Monitoring with OpenTelemetry, align="center", width=700]

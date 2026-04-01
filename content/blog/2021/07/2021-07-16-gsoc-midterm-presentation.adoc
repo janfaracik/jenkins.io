@@ -12,8 +12,6 @@ opengraph:
   image: /images/gsoc/2021/cdf_gsoc_org.jpeg
 ---
 
-image:/images/gsoc/jenkins-gsoc-logo_small.png[Jenkins GSoC, role=center, float=right]
-
 Congratulations to all GSoC students who have made it through the first half of the GSoC 2021 coding phase!
 
 This year, the Jenkins project has been participating in GSoC as part of the Continuous Delivery Foundation's GSoC org.

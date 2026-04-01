@@ -49,6 +49,9 @@ section: blog
             = File.read("content/images/symbols/bluesky.svg")
 
   %div.blog-content
+    - if page.opengraph&.image
+      %img{:src => page.opengraph.image, :alt => page.title, :class => 'app-post-headline-image'}
+
     - if page.note
       = asciidoc("NOTE: #{page.note}")
     = content

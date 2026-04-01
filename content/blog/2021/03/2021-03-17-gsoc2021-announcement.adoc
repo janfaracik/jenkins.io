@@ -12,8 +12,6 @@ opengraph:
   image: /images/gsoc/2021/cdf_gsoc_org.jpeg
 ---
 
-image:/images/gsoc/jenkins-gsoc-logo_small.png[Jenkins GSoC, role=center, float=right]
-
 On behalf of the Jenkins GSoC org team,
 I am happy to announce that this year, for the first time, the Jenkins projects will be participating in
 link:https://summerofcode.withgoogle.com/[Google Summer of Code 2021]

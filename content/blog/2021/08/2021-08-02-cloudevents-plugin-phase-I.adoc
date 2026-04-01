@@ -15,8 +15,6 @@ opengraph:
   image: /images/post-images/2021-08-cloudevents-plugin/jcdevents.JPG
 ---
 
-image:/images/post-images/2021-08-cloudevents-plugin/jcdevents.JPG[CloudEvents Plugin for Jenkins,  align="center"]
-
 == The What, Why and How of Interoperability
 
 With workloads and teams becoming more diverse and complex, there is an increasing need to automate various tasks in the CI/CD ecosystem of an application as a way to decrease complexity that can come with CI/CD. 

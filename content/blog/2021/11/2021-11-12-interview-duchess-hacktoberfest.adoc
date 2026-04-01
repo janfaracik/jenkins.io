@@ -14,8 +14,6 @@ opengraph:
   image: /images/post-images/2021-11-duchess-hacktoberfest/jenkins-and-duchess.png
 ---
 
-image:/images/post-images/2021-11-duchess-hacktoberfest/jenkins-and-duchess.png[Jenkins and Duchess, role=center]
-
 This year, the Duchess community embraced a new challenge:
 working on women’s presence in Open Source while participating in Jenkins during the Hacktoberfest, a yearly event.
 

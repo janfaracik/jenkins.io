@@ -17,8 +17,6 @@ opengraph:
   image: /images/gsoc/opengraph.png
 ---
 
-image:/images/gsoc/jenkins-gsoc-logo_small.png[Jenkins GSoC, role=center, float=right]
-
 On behalf of the Jenkins GSoC team and mentors,
 We would like to welcome
 link:https://github.com/dheerajodha[Dheeraj Singh Jodha],

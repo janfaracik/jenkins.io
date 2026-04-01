@@ -18,8 +18,6 @@ opengraph:
   image: /images/gsoc/opengraph.png
 ---
 
-image:/images/gsoc/jenkins-gsoc-logo_small.png[Jenkins GSoC Logo, role="right", width="200"]
-
 This post marks the successful completion of my Google Summer of Code 2025 project: *link:/projects/gsoc/2025/projects/complete-alternative-jenkins-io-build-retooling/[Complete Build Retooling of jenkins.io]*. Over the past months, we've transformed the Jenkins documentation infrastructure from legacy systems to a modern, performant, and well-organized platform.
 
 == Table of Contents

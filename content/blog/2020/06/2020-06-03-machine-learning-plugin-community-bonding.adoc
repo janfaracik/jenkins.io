@@ -14,8 +14,6 @@ opengraph:
   image: /images/gsoc/opengraph.png
 ---
 
-image::/images/gsoc/jenkins-gsoc-logo_small.png[align="center"]
-
 Hello everyone !
 
 This is one of the Jenkins project in GSoC 2020. We are working this new link:/projects/gsoc/2020/projects/machine-learning/[Machine Learning Plugin] for this GSoC 2020.

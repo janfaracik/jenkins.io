@@ -11,8 +11,6 @@ opengraph:
   image: /images/post-images/2023/12/gsoc-call-for-mentors.png
 ---
 
-image:/images/post-images/2023/12/gsoc-call-for-mentors.png[Google Summer of Code call for mentors., role=center, float=center]
-
 === TL,DR:
 
 Jenkins is preparing to participate in its tenth (10th) year in Google Summer of Code (GSoC). We are seeking volunteers to be Jenkins mentors in the program:

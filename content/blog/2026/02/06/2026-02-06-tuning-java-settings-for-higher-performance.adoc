@@ -16,8 +16,6 @@ authors:
   - clintonsteiner
 ---
 
-image:/images/post-images/2026/02/06/2026-02-06-tuning-java-settings-for-higher-performance.png[Tuning Java Settings for Higher Performance, 50%]
-
 Hello, Jenkins Community!
 
 As of Java 17, the JVM's defaults have improved to the point where hand-tuned configurations often

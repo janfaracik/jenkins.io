@@ -17,8 +17,6 @@ links:
   discourse: true
 ---
 
-image:/images/post-images/2025/08/31/gsoc-maeveho-tekton.png[Advancing the Jenkins Tekton Plugin]
-
 The Jenkins Tekton Client Plugin bridges Jenkins and Kubernetes-native Tekton pipelines, allowing Jenkins users to trigger and manage Tekton resources directly from their existing CI/CD workflows. Over the course of Google Summer of Code 2025, significant progress was made in modernizing, stabilizing, and extending the plugin’s capabilities.
 
 This project introduced end-to-end CI automation, migrated tests to JUnit 5, implemented large-scale CRD-to-Java and UI generation systems, and improved Jenkins–Tekton interoperability.

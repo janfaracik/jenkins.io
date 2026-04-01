@@ -12,9 +12,6 @@ sig:
 - gsoc
 ---
 
-image:/images/gsoc/jenkins-gsoc-logo_small.png[Jenkins GSoC, role=center, float=right]
-
-
 Dear Jenkins Community,
 
 I am thrilled to have this opportunity to introduce myself as the Google Summer of Code (GSoC) 2023 contributor who will be working on the exciting project of "Building jenkins.io with alternative tools". 

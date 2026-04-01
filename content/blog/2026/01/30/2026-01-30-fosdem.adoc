@@ -12,8 +12,6 @@ opengraph:
   image: /images/post-images/2026/fosdem2026.png
 ---
 
-image:/images/post-images/2026/fosdem2026.png[FOSDEM 2026, role=center, float=center]
-
 == Meet Jenkins at FOSDEM Brussels
 
 We’re excited to share that **Jenkins has a stand at FOSDEM in Brussels** this year!
