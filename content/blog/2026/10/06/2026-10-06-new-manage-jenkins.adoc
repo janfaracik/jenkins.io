@@ -1,0 +1,68 @@
+---
+layout: post
+title: A new way to Manage Jenkins in Jenkins 2.585
+tags:
+- jenkins
+- user-experience
+- ux
+- manage-jenkins
+authors:
+- janfaracik
+opengraph:
+  image: /images/post-images/2026/10/06/new-manage-jenkins.png
+links:
+  discourse: true
+---
+
+image:/images/post-images/2026/10/06/new-manage-jenkins.png[A new way to Manage Jenkins]
+
+With Jenkins 2.585, the new Manage Jenkins experience is enabled by default for everyone.
+What started as an experimental opt-in layout is now the way to configure, maintain, and secure your Jenkins controller,
+as part of the wider effort to modernize the Jenkins interface with a focus on clarity and simpler navigation.
+
+---
+
+=== So what's new?
+
+**Goodbye hub page**
+
+The old Manage Jenkins 'hub' page, with its long grid of links, has been removed.
+Instead, you land directly in the settings you need.
+
+**A sidebar for every page**
+
+Every Manage Jenkins page now has a sidebar, making it easy to jump between pages
+without returning to an overview page first.
+
+**Plugins are one click away**
+
+Plugin pages are now simpler, and they're one click away from any Manage Jenkins page.
+
+**Just 'Save'**
+
+The 'Save' and 'Apply' buttons have been simplified to a single 'Save' button, which keeps you on the same page
+so you can carry on where you left off.
+
+**Plugins are already on board**
+
+Popular plugins have already been updated for the new design, including
+link:/blog/2026/04/02/redesigned-credentials-plugin/[Credentials] and
+https://plugins.jenkins.io/matrix-auth/[Matrix Authorization Strategy].
+If you maintain a plugin, now is a great time to check how it looks in the new layout.
+
+=== Available now 🚀
+
+The new Manage Jenkins experience is available now in Jenkins 2.585.
+
+Not quite ready to switch? You can still opt out for now by turning off the 'New Manage Jenkins UI' experiment
+on the Experiments page in your user settings.
+This option will be removed in a future release, so please let us know about anything that's holding you back.
+Known open issues are tracked in link:https://github.com/jenkinsci/sig-ux/issues/10[jenkinsci/sig-ux#10].
+
+---
+
+If you want to get involved in the UI and UX discussions of Jenkins join the link:/sigs/ux[User Experience SIG].
+
+Take advantage of new components and patterns in your plugin via the link:https://weekly.ci.jenkins.io/design-library/[Design Library].
+
+You can watch our monthly meetings on link:https://www.youtube.com/playlist?list=PLN7ajX_VdyaOnsIIsZHsv_fM9QhOcajWe[YouTube] and you can view in-progress work on link:https://github.com/jenkinsci/jenkins/pulls?q=is%3Apr+is%3Aopen+label%3Aweb-ui[GitHub].
