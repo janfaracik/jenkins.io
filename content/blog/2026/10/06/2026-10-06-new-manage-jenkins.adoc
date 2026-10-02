@@ -16,8 +16,7 @@ links:
 
 image:/images/post-images/2026/10/06/new-manage-jenkins.png[A new way to Manage Jenkins]
 
-With Jenkins 2.585, the new Manage Jenkins experience is enabled by default for everyone.
-What started as an experimental opt-in layout is now the way to configure, maintain, and secure your Jenkins controller,
+With Jenkins 2.585, the new Manage Jenkins experience is enabled by default for everyone. What started as an experimental opt-in layout is now the way to configure, maintain, and secure your Jenkins controller,
 as part of the wider effort to modernize the Jenkins interface with a focus on clarity and simpler navigation.
 
 ---
@@ -50,13 +49,14 @@ link:/blog/2026/04/02/redesigned-credentials-plugin/[Credentials] and
 https://plugins.jenkins.io/matrix-auth/[Matrix Authorization Strategy].
 If you maintain a plugin, now is a great time to check how it looks in the new layout.
 
+---
+
 === Available now 🚀
 
 The new Manage Jenkins experience is available now in Jenkins 2.585.
 
-Not quite ready to switch? You can still opt out for now by turning off the 'New Manage Jenkins UI' experiment
-on the Experiments page in your user settings.
 This option will be removed in a future release, so please let us know about anything that's holding you back.
+
 Known open issues are tracked in link:https://github.com/jenkinsci/sig-ux/issues/10[jenkinsci/sig-ux#10].
 
 ---
